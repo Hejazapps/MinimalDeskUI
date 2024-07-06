@@ -7,7 +7,7 @@
 
 import SwiftUI
 import TabBarModule
-let screenWidth = UIScreen.main.bounds.width
+ 
 
 
 
