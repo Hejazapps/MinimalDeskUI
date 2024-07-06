@@ -1,0 +1,628 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C84B21A42C39594600825521 /* MinimalDeskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21A32C39594600825521 /* MinimalDeskApp.swift */; };
+		C84B21A62C39594600825521 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21A52C39594600825521 /* ContentView.swift */; };
+		C84B21A82C39594800825521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84B21A72C39594800825521 /* Assets.xcassets */; };
+		C84B21AB2C39594800825521 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84B21AA2C39594800825521 /* Preview Assets.xcassets */; };
+		C84B21B52C39594800825521 /* MinimalDeskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21B42C39594800825521 /* MinimalDeskTests.swift */; };
+		C84B21BF2C39594800825521 /* MinimalDeskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21BE2C39594800825521 /* MinimalDeskUITests.swift */; };
+		C84B21C12C39594800825521 /* MinimalDeskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21C02C39594800825521 /* MinimalDeskUITestsLaunchTests.swift */; };
+		C84B21CE2C39689C00825521 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21CD2C39689C00825521 /* AddView.swift */; };
+		C84B21D12C396DF200825521 /* TabBarModule in Frameworks */ = {isa = PBXBuildFile; productRef = C84B21D02C396DF200825521 /* TabBarModule */; };
+		C84B21D32C396F3200825521 /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21D22C396F3000825521 /* Widget.swift */; };
+		C84B21D52C396FBB00825521 /* Tutorials.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21D42C396FB900825521 /* Tutorials.swift */; };
+		C84B21D72C39702800825521 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21D62C39702400825521 /* Settings.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C84B21B12C39594800825521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C84B21982C39594600825521 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C84B219F2C39594600825521;
+			remoteInfo = MinimalDesk;
+		};
+		C84B21BB2C39594800825521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C84B21982C39594600825521 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C84B219F2C39594600825521;
+			remoteInfo = MinimalDesk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C84B21A02C39594600825521 /* MinimalDesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalDesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C84B21A32C39594600825521 /* MinimalDeskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalDeskApp.swift; sourceTree = "<group>"; };
+		C84B21A52C39594600825521 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C84B21A72C39594800825521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C84B21AA2C39594800825521 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C84B21B02C39594800825521 /* MinimalDeskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinimalDeskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C84B21B42C39594800825521 /* MinimalDeskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalDeskTests.swift; sourceTree = "<group>"; };
+		C84B21BA2C39594800825521 /* MinimalDeskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinimalDeskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C84B21BE2C39594800825521 /* MinimalDeskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalDeskUITests.swift; sourceTree = "<group>"; };
+		C84B21C02C39594800825521 /* MinimalDeskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalDeskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C84B21CD2C39689C00825521 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		C84B21D22C396F3000825521 /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
+		C84B21D42C396FB900825521 /* Tutorials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorials.swift; sourceTree = "<group>"; };
+		C84B21D62C39702400825521 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C84B219D2C39594600825521 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C84B21D12C396DF200825521 /* TabBarModule in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C84B21AD2C39594800825521 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C84B21B72C39594800825521 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C84B21972C39594600825521 = {
+			isa = PBXGroup;
+			children = (
+				C84B21A22C39594600825521 /* MinimalDesk */,
+				C84B21B32C39594800825521 /* MinimalDeskTests */,
+				C84B21BD2C39594800825521 /* MinimalDeskUITests */,
+				C84B21A12C39594600825521 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C84B21A12C39594600825521 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C84B21A02C39594600825521 /* MinimalDesk.app */,
+				C84B21B02C39594800825521 /* MinimalDeskTests.xctest */,
+				C84B21BA2C39594800825521 /* MinimalDeskUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C84B21A22C39594600825521 /* MinimalDesk */ = {
+			isa = PBXGroup;
+			children = (
+				C84B21D62C39702400825521 /* Settings.swift */,
+				C84B21D42C396FB900825521 /* Tutorials.swift */,
+				C84B21D22C396F3000825521 /* Widget.swift */,
+				C84B21CD2C39689C00825521 /* AddView.swift */,
+				C84B21A32C39594600825521 /* MinimalDeskApp.swift */,
+				C84B21A52C39594600825521 /* ContentView.swift */,
+				C84B21A72C39594800825521 /* Assets.xcassets */,
+				C84B21A92C39594800825521 /* Preview Content */,
+			);
+			path = MinimalDesk;
+			sourceTree = "<group>";
+		};
+		C84B21A92C39594800825521 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C84B21AA2C39594800825521 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C84B21B32C39594800825521 /* MinimalDeskTests */ = {
+			isa = PBXGroup;
+			children = (
+				C84B21B42C39594800825521 /* MinimalDeskTests.swift */,
+			);
+			path = MinimalDeskTests;
+			sourceTree = "<group>";
+		};
+		C84B21BD2C39594800825521 /* MinimalDeskUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C84B21BE2C39594800825521 /* MinimalDeskUITests.swift */,
+				C84B21C02C39594800825521 /* MinimalDeskUITestsLaunchTests.swift */,
+			);
+			path = MinimalDeskUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C84B219F2C39594600825521 /* MinimalDesk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C84B21C42C39594800825521 /* Build configuration list for PBXNativeTarget "MinimalDesk" */;
+			buildPhases = (
+				C84B219C2C39594600825521 /* Sources */,
+				C84B219D2C39594600825521 /* Frameworks */,
+				C84B219E2C39594600825521 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MinimalDesk;
+			packageProductDependencies = (
+				C84B21D02C396DF200825521 /* TabBarModule */,
+			);
+			productName = MinimalDesk;
+			productReference = C84B21A02C39594600825521 /* MinimalDesk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C84B21AF2C39594800825521 /* MinimalDeskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C84B21C72C39594800825521 /* Build configuration list for PBXNativeTarget "MinimalDeskTests" */;
+			buildPhases = (
+				C84B21AC2C39594800825521 /* Sources */,
+				C84B21AD2C39594800825521 /* Frameworks */,
+				C84B21AE2C39594800825521 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C84B21B22C39594800825521 /* PBXTargetDependency */,
+			);
+			name = MinimalDeskTests;
+			productName = MinimalDeskTests;
+			productReference = C84B21B02C39594800825521 /* MinimalDeskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C84B21B92C39594800825521 /* MinimalDeskUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C84B21CA2C39594800825521 /* Build configuration list for PBXNativeTarget "MinimalDeskUITests" */;
+			buildPhases = (
+				C84B21B62C39594800825521 /* Sources */,
+				C84B21B72C39594800825521 /* Frameworks */,
+				C84B21B82C39594800825521 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C84B21BC2C39594800825521 /* PBXTargetDependency */,
+			);
+			name = MinimalDeskUITests;
+			productName = MinimalDeskUITests;
+			productReference = C84B21BA2C39594800825521 /* MinimalDeskUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C84B21982C39594600825521 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					C84B219F2C39594600825521 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					C84B21AF2C39594800825521 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = C84B219F2C39594600825521;
+					};
+					C84B21B92C39594800825521 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = C84B219F2C39594600825521;
+					};
+				};
+			};
+			buildConfigurationList = C84B219B2C39594600825521 /* Build configuration list for PBXProject "MinimalDesk" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C84B21972C39594600825521;
+			packageReferences = (
+				C84B21CF2C396DF200825521 /* XCRemoteSwiftPackageReference "swiftui-tab-bar" */,
+			);
+			productRefGroup = C84B21A12C39594600825521 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C84B219F2C39594600825521 /* MinimalDesk */,
+				C84B21AF2C39594800825521 /* MinimalDeskTests */,
+				C84B21B92C39594800825521 /* MinimalDeskUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C84B219E2C39594600825521 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C84B21AB2C39594800825521 /* Preview Assets.xcassets in Resources */,
+				C84B21A82C39594800825521 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C84B21AE2C39594800825521 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C84B21B82C39594800825521 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C84B219C2C39594600825521 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C84B21D72C39702800825521 /* Settings.swift in Sources */,
+				C84B21A62C39594600825521 /* ContentView.swift in Sources */,
+				C84B21D52C396FBB00825521 /* Tutorials.swift in Sources */,
+				C84B21CE2C39689C00825521 /* AddView.swift in Sources */,
+				C84B21D32C396F3200825521 /* Widget.swift in Sources */,
+				C84B21A42C39594600825521 /* MinimalDeskApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C84B21AC2C39594800825521 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C84B21B52C39594800825521 /* MinimalDeskTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C84B21B62C39594800825521 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C84B21BF2C39594800825521 /* MinimalDeskUITests.swift in Sources */,
+				C84B21C12C39594800825521 /* MinimalDeskUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C84B21B22C39594800825521 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C84B219F2C39594600825521 /* MinimalDesk */;
+			targetProxy = C84B21B12C39594800825521 /* PBXContainerItemProxy */;
+		};
+		C84B21BC2C39594800825521 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C84B219F2C39594600825521 /* MinimalDesk */;
+			targetProxy = C84B21BB2C39594800825521 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C84B21C22C39594800825521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C84B21C32C39594800825521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C84B21C52C39594800825521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MinimalDesk/Preview Content\"";
+				DEVELOPMENT_TEAM = 68W2966MBV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDesk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C84B21C62C39594800825521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MinimalDesk/Preview Content\"";
+				DEVELOPMENT_TEAM = 68W2966MBV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDesk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C84B21C82C39594800825521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDeskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MinimalDesk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MinimalDesk";
+			};
+			name = Debug;
+		};
+		C84B21C92C39594800825521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDeskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MinimalDesk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MinimalDesk";
+			};
+			name = Release;
+		};
+		C84B21CB2C39594800825521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDeskUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MinimalDesk;
+			};
+			name = Debug;
+		};
+		C84B21CC2C39594800825521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDeskUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MinimalDesk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C84B219B2C39594600825521 /* Build configuration list for PBXProject "MinimalDesk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C84B21C22C39594800825521 /* Debug */,
+				C84B21C32C39594800825521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C84B21C42C39594800825521 /* Build configuration list for PBXNativeTarget "MinimalDesk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C84B21C52C39594800825521 /* Debug */,
+				C84B21C62C39594800825521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C84B21C72C39594800825521 /* Build configuration list for PBXNativeTarget "MinimalDeskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C84B21C82C39594800825521 /* Debug */,
+				C84B21C92C39594800825521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C84B21CA2C39594800825521 /* Build configuration list for PBXNativeTarget "MinimalDeskUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C84B21CB2C39594800825521 /* Debug */,
+				C84B21CC2C39594800825521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C84B21CF2C396DF200825521 /* XCRemoteSwiftPackageReference "swiftui-tab-bar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zijievv/swiftui-tab-bar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C84B21D02C396DF200825521 /* TabBarModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C84B21CF2C396DF200825521 /* XCRemoteSwiftPackageReference "swiftui-tab-bar" */;
+			productName = TabBarModule;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C84B21982C39594600825521 /* Project object */;
+}
