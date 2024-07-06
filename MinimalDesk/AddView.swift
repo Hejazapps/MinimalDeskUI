@@ -22,9 +22,6 @@ struct AddView: View {
         VStack {
             
             Color.black.edgesIgnoringSafeArea(.all)
-            
-            // Main content here
-            
             Spacer()
             
             
@@ -50,7 +47,7 @@ struct AddView: View {
                          
                     
                     Text("Add remove or reorder apps")
-                        .font(.system(size: 9))
+                        .font(.system(size: 10))
                         .foregroundColor(Color(red: 175.0/255, green: 175.0/255, blue: 179.0/255))
                 }
                 .frame(width: widthToSet, height: heightToSet)
@@ -70,7 +67,7 @@ struct AddView: View {
                     
                     
                     Text("Add apps by using URL Schemes")
-                        .font(.system(size: 9))
+                        .font(.system(size: 10))
                         .foregroundColor(Color(red: 175.0/255, green: 175.0/255, blue: 179.0/255))
                 }
                 .frame(width: widthToSet, height: heightToSet)
@@ -78,13 +75,14 @@ struct AddView: View {
                 .cornerRadius(10)
               
               
-            }
-            .padding()
+            }.padding(.bottom,40)
+             
            
-        }
+        } .background(Color.black)
+            
         .onAppear {
             
-            widthToSet = (screenWidth * 0.8)/2.0
+            widthToSet = (screenWidth * 0.85)/2.0
             gap = (screenWidth - widthToSet * 2)/3.0
             heightToSet = (112 * widthToSet) / 176.0
             // Perform any actions you want when the view appears
