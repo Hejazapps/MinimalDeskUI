@@ -60,6 +60,8 @@ struct CustomWidget: View {
                                 .font(.headline)
                                 .foregroundColor(Color.white)
                                 .padding(.leading)
+                                .bold()
+                            
                             
                             Spacer()
                             
@@ -86,6 +88,7 @@ struct CustomWidget: View {
                                 .font(.headline)
                                 .foregroundColor(Color.white)
                                 .padding(.leading)
+                                .bold()
                             
                             Spacer()
                             
@@ -118,6 +121,7 @@ struct CustomWidget: View {
                                 .font(.headline)
                                 .foregroundColor(Color.white)
                                 .padding(.leading)
+                                .bold()
                             Spacer()
                             
                             
@@ -165,6 +169,26 @@ struct CustomWidget: View {
                     
                     VStack() {
                         
+                        HStack(alignment: .top) { // Align items to the top
+                            Text("Text color")
+                                .font(.headline)
+                                .foregroundColor(Color.white)
+                                .padding(.leading)
+                                .bold()
+                            Spacer()
+                            
+                            
+                        }.padding(.top,15)
+                        
+                        VStack {
+                            Image("e2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30)
+                            Text("vvvvv").foregroundColor(Color.black)
+                        }.padding(.top,0)
+                        
+                        Spacer()
                         
                     }
                     .frame(width: widthToSet, height: widthToSet)
