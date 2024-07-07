@@ -18,6 +18,7 @@ struct CustomWidget: View {
     @Environment(\.dismiss) var dismiss
     @State var selectedColor =  Color.white
     @State var presentColorView = false
+    @State var fontSize = 48
     
     var body: some View {
         
@@ -48,246 +49,321 @@ struct CustomWidget: View {
                 .padding(.leading,1.2*gap)
                 .bold()
             
-            
-            
-            VStack(spacing: gap) {
+            ScrollView {
                 
-                HStack(spacing:gap) {
-                    
-                    
-                    
-                    VStack {
-                        HStack(alignment: .top) { // Align items to the top
-                            Text("Top\n Wedget")
-                                .font(.headline)
-                                .foregroundColor(Color.white)
-                                .padding(.leading)
-                                .bold()
-                            
-                            
-                            Spacer()
-                            
-                            Image("arrow")
-                                .padding(.trailing)
-                                .padding(.top)
-                        }.padding(.top,15)
-                        
-                        Spacer()
-                        
-                        
-                    }
-                    .frame(width: widthToSet, height: widthToSet)
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
-                    )
-                    
-                    VStack() {
-                        
-                        HStack(alignment: .top) { // Align items to the top
-                            Text("Custom\n Wallpaper")
-                                .font(.headline)
-                                .foregroundColor(Color.white)
-                                .padding(.leading)
-                                .bold()
-                            
-                            Spacer()
-                            
-                            Image("arrow")
-                                .padding(.trailing)
-                                .padding(.top)
-                        }.padding(.top,15)
-                        
-                        Spacer()
-                        
-                    }
-                    .frame(width: widthToSet, height: widthToSet)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
-                    )
-                    .cornerRadius(10)
-                    
-                    
-                }
                 
-                HStack(spacing:gap) {
+                VStack(spacing: gap) {
                     
-                    
-                    
-                    VStack(spacing:0) {
+                    HStack(spacing:gap) {
                         
-                        HStack(alignment: .top) { // Align items to the top
-                            Text("Widget color")
-                                .font(.headline)
-                                .foregroundColor(Color.white)
-                                .padding(.leading)
-                                .bold()
+                        
+                        
+                        VStack {
+                            HStack(alignment: .top) { // Align items to the top
+                                Text("Top\n Wedget")
+                                    .font(.headline)
+                                    .foregroundColor(Color.white)
+                                    .padding(.leading)
+                                    .bold()
+                                
+                                
+                                Spacer()
+                                
+                                Image("arrow")
+                                    .padding(.trailing)
+                                    .padding(.top)
+                            }.padding(.top,15)
+                            
                             Spacer()
                             
                             
-                        }.padding(.top,15)
+                        }
+                        .frame(width: widthToSet, height: widthToSet)
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
+                        )
                         
-                        
-                        
-                        HStack(alignment: .top,spacing: 20) {
-                            VStack {
-                                Image("e1")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
-                                Text("Ash").foregroundColor(Color.white)
-                            }
-                            VStack {
-                                Image("e2")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
-                                Text("Light").foregroundColor(Color.white)
-                            }
-                            VStack {
+                        VStack() {
+                            
+                            HStack(alignment: .top) { // Align items to the top
+                                Text("Custom\n Wallpaper")
+                                    .font(.headline)
+                                    .foregroundColor(Color.white)
+                                    .padding(.leading)
+                                    .bold()
                                 
-                                Image("e3")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
+                                Spacer()
                                 
-                                Text("Dark").foregroundColor(Color.white)
-                            }
-                        }.padding(.top,15)
-                        
-                        Spacer()
-                        
+                                Image("arrow")
+                                    .padding(.trailing)
+                                    .padding(.top)
+                            }.padding(.top,15)
+                            
+                            Spacer()
+                            
+                        }
+                        .frame(width: widthToSet, height: widthToSet)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
+                        )
+                        .cornerRadius(10)
                         
                         
                     }
-                    .frame(width: widthToSet, height: widthToSet)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
-                    )
-                    .cornerRadius(10)
                     
-                    VStack() {
+                    HStack(spacing:gap) {
                         
-                        ZStack {
+                        
+                        
+                        VStack(spacing:0) {
                             
-                            VStack {
+                            HStack(alignment: .top) { // Align items to the top
+                                Text("Widget color")
+                                    .font(.headline)
+                                    .foregroundColor(Color.white)
+                                    .padding(.leading)
+                                    .bold()
+                                Spacer()
                                 
-                                HStack(alignment: .top) { // Align items to the top
-                                    Text("Text color")
-                                        .font(.headline)
-                                        .foregroundColor(Color.white)
-                                        .padding(.leading)
-                                        .bold()
-                                    Spacer()
-                                    
-                                    
-                                }.padding(.top,15)
                                 
+                            }.padding(.top,15)
+                            
+                            
+                            
+                            HStack(alignment: .top,spacing: 20) {
                                 VStack {
-                                    Image("e2")
-                                        .renderingMode(.template)
+                                    Image("e1")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 30, height: 30)
-                                        .foregroundColor(Color.black)
-                                        
-                                    Text("vvvvv").foregroundColor(Color.black)
-                                }.padding(.top,0)
-                            }.overlay {
-                                ColorPicker("", selection: $selectedColor)
-                                    .labelsHidden()
-                                    .opacity(1.0)
-                                    .padding(.top,10)
-                            }
-                        }
-                        
-                        Spacer()
-                        
-                    }
-                    .frame(width: widthToSet, height: widthToSet)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
-                    )
-                    .cornerRadius(10)
-                    
-                    
-                }
-                
-                HStack(spacing:gap) {
-                    
-                    
-                    
-                    VStack() {
-                        
-                    }
-                    .frame(width: widthToSet, height: widthToSet)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
-                    )
-                    .cornerRadius(10)
-                    
-                    VStack(spacing:0) {
-                        
-                        HStack(alignment: .top) { // Align items to the top
-                            Text("Alignment")
-                                .font(.headline)
-                                .foregroundColor(Color.white)
-                                .padding(.leading)
-                                .bold()
+                                    Text("Ash").foregroundColor(Color.white)
+                                }
+                                VStack {
+                                    Image("e2")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 30, height: 30)
+                                    Text("Light").foregroundColor(Color.white)
+                                }
+                                VStack {
+                                    
+                                    Image("e3")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 30, height: 30)
+                                    
+                                    Text("Dark").foregroundColor(Color.white)
+                                }
+                            }.padding(.top,15)
+                            
                             Spacer()
                             
                             
-                        }.padding(.top,15)
+                            
+                        }
+                        .frame(width: widthToSet, height: widthToSet)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
+                        )
+                        .cornerRadius(10)
                         
-                        
-                        
-                        HStack(alignment: .top,spacing: 20) {
-                            VStack {
-                                Image("a")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
-                                Text("Ash").foregroundColor(Color.black)
-                            }
-                            VStack {
-                                Image("b")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
-                                Text("Light").foregroundColor(Color.black)
-                            }
-                            VStack {
+                        VStack() {
+                            
+                            ZStack {
                                 
-                                Image("b")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
-                                
-                                Text("Dark").foregroundColor(Color.black)
+                                VStack {
+                                    
+                                    HStack(alignment: .top) { // Align items to the top
+                                        Text("Text color")
+                                            .font(.headline)
+                                            .foregroundColor(Color.white)
+                                            .padding(.leading)
+                                            .bold()
+                                        Spacer()
+                                        
+                                        
+                                    }.padding(.top,15)
+                                    
+                                    VStack {
+                                        Image("e2")
+                                            .renderingMode(.template)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 30, height: 30)
+                                            .foregroundColor(Color.black)
+                                        
+                                        Text("vvvvv").foregroundColor(Color.black)
+                                    }.padding(.top,0)
+                                }.overlay {
+                                    ColorPicker("", selection: $selectedColor)
+                                        .labelsHidden()
+                                        .opacity(1.0)
+                                        .padding(.top,10)
+                                }
                             }
-                        }.padding(.top,15)
+                            
+                            Spacer()
+                            
+                        }
+                        .frame(width: widthToSet, height: widthToSet)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
+                        )
+                        .cornerRadius(10)
                         
-                        Spacer()
+                        
+                    }
+                    
+                    HStack(spacing:gap) {
+                        
+                        
+                        
+                        VStack() {
+                            
+                        }
+                        .frame(width: widthToSet, height: widthToSet)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
+                        )
+                        .cornerRadius(10)
+                        
+                        VStack(spacing:0) {
+                            
+                            HStack(alignment: .top) { // Align items to the top
+                                Text("Alignment")
+                                    .font(.headline)
+                                    .foregroundColor(Color.white)
+                                    .padding(.leading)
+                                    .bold()
+                                Spacer()
+                                
+                                
+                            }.padding(.top,15)
+                            
+                            
+                            
+                            HStack(alignment: .top,spacing: 20) {
+                                VStack {
+                                    Image("a")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 30, height: 30)
+                                    Text("Ash").foregroundColor(Color.black)
+                                }
+                                VStack {
+                                    Image("b")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 30, height: 30)
+                                    Text("Light").foregroundColor(Color.black)
+                                }
+                                VStack {
+                                    
+                                    Image("b")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 30, height: 30)
+                                    
+                                    Text("Dark").foregroundColor(Color.black)
+                                }
+                            }.padding(.top,15)
+                            
+                            Spacer()
+                            
+                            
+                            
+                        }
+                        .frame(width: widthToSet, height: widthToSet)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
+                        )
+                        .cornerRadius(10)
+                        
                         
                         
                         
                     }
-                    .frame(width: widthToSet, height: widthToSet)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
-                    )
-                    .cornerRadius(10)
                     
+                    HStack(spacing:gap) {
+                        
+                        
+                        
+                        VStack() {
+                            
+                        }
+                        .frame(width: widthToSet, height: widthToSet)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
+                        )
+                        .cornerRadius(10)
+                        
+                        VStack(spacing:0) {
+                            
+                            HStack(alignment: .top) { // Align items to the top
+                                Text("Size")
+                                    .foregroundColor(Color.white)
+                                    .font(.system(size: 20))
+                                    .padding(.leading)
+                                    .bold()
+                                Spacer()
+                                
+                                
+                            }.padding(.top,15)
+                            
+                            
+                            
+                            HStack(alignment: .top,spacing: 20) {
+                                VStack {
+                                    Image("minus")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 15, height: 15)
+                                }.padding(.top,30)
+                                VStack {
+                                  
+                                    Text("\(fontSize)").foregroundColor(Color.white).bold()
+                                        .font(.system(size: 25))
+                                       
+                                }.padding(.top,20)
+                                VStack {
+                                    
+                                    Image("plus")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 15, height: 15)
+                                } .padding(.top,30)
+                            }
+                            
+                            Spacer()
+                            
+                            
+                            
+                        }
+                        .frame(width: widthToSet, height: widthToSet)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
+                        )
+                        .cornerRadius(10)
+                        
+                        
+                        
+                        
+                    }
                     
-                }
+                }.padding(.bottom,bottomGap > 0 ? bottomGap : 10)
                 
-            }.padding(.bottom,bottomGap > 0 ? bottomGap : 10)
+            }
+            .frame(height: screenHeight - 250)
+            
             
             
             
