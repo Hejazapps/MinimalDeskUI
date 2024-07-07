@@ -16,6 +16,8 @@ struct CustomWidget: View {
     @State var bottomGap:CGFloat = 0
     @State var gapNeedToGive:CGFloat = 0
     @Environment(\.dismiss) var dismiss
+    @State var selectedColor =  Color.white
+    @State var presentColorView = false
     
     var body: some View {
         
@@ -127,7 +129,7 @@ struct CustomWidget: View {
                             
                         }.padding(.top,15)
                         
-                       
+                        
                         
                         HStack(alignment: .top,spacing: 20) {
                             VStack {
@@ -182,14 +184,22 @@ struct CustomWidget: View {
                         
                         VStack {
                             Image("e2")
+                                .renderingMode(.template)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 30, height: 30)
+                                .foregroundColor(selectedColor)
                             Text("vvvvv").foregroundColor(Color.black)
                         }.padding(.top,0)
+                           
                         
                         Spacer()
                         
+                    } .overlay {
+                        
+                        ColorPicker("", selection: $selectedColor)
+                            .labelsHidden()
+                            .opacity(0.015)
                     }
                     .frame(width: widthToSet, height: widthToSet)
                     .overlay(
