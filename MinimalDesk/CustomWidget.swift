@@ -325,20 +325,32 @@ struct CustomWidget: View {
                                     Image("minus")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 15, height: 15)
+                                        .frame(width: 30, height: 30)
+                                        .onTapGesture {
+                                            
+                                            if fontSize >= 11 {
+                                                fontSize -= 1
+                                            }
+                                        }
                                 }.padding(.top,30)
                                 VStack {
-                                  
+                                    
                                     Text("\(fontSize)").foregroundColor(Color.white).bold()
                                         .font(.system(size: 25))
-                                       
-                                }.padding(.top,20)
+                                    
+                                }.padding(.top,30)
                                 VStack {
                                     
                                     Image("plus")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 15, height: 15)
+                                        .frame(width: 30, height: 30)
+                                        .onTapGesture {
+                                            
+                                            if fontSize <= 60 {
+                                                fontSize += 1
+                                            }
+                                        }
                                 } .padding(.top,30)
                             }
                             
