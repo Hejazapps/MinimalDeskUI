@@ -19,6 +19,7 @@
 		C84B21D32C396F3200825521 /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21D22C396F3000825521 /* Widget.swift */; };
 		C84B21D52C396FBB00825521 /* Tutorials.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21D42C396FB900825521 /* Tutorials.swift */; };
 		C84B21D72C39702800825521 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21D62C39702400825521 /* Settings.swift */; };
+		C8D763DA2C3A0905008615A2 /* CustomWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D763D92C3A0904008615A2 /* CustomWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C84B21D22C396F3000825521 /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
 		C84B21D42C396FB900825521 /* Tutorials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorials.swift; sourceTree = "<group>"; };
 		C84B21D62C39702400825521 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		C8D763D92C3A0904008615A2 /* CustomWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWidget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		C84B21A22C39594600825521 /* MinimalDesk */ = {
 			isa = PBXGroup;
 			children = (
+				C8D763D92C3A0904008615A2 /* CustomWidget.swift */,
 				C84B21D62C39702400825521 /* Settings.swift */,
 				C84B21D42C396FB900825521 /* Tutorials.swift */,
 				C84B21D22C396F3000825521 /* Widget.swift */,
@@ -279,6 +282,7 @@
 			files = (
 				C84B21D72C39702800825521 /* Settings.swift in Sources */,
 				C84B21A62C39594600825521 /* ContentView.swift in Sources */,
+				C8D763DA2C3A0905008615A2 /* CustomWidget.swift in Sources */,
 				C84B21D52C396FBB00825521 /* Tutorials.swift in Sources */,
 				C84B21CE2C39689C00825521 /* AddView.swift in Sources */,
 				C84B21D32C396F3200825521 /* Widget.swift in Sources */,
