@@ -63,6 +63,20 @@ struct CustomWidget: View {
                     
                     VStack() {
                         
+                        HStack(alignment: .top) { // Align items to the top
+                            Text("Custom\n Wallpaper")
+                                .font(.headline)
+                                .foregroundColor(Color.white)
+                                .padding(.leading)
+                            
+                            Spacer()
+                            
+                            Image("arrow")
+                                .padding(.trailing)
+                                .padding(.top)
+                        }.padding(.top,15)
+                        
+                        Spacer()
                         
                     }
                     .frame(width: widthToSet, height: widthToSet)
