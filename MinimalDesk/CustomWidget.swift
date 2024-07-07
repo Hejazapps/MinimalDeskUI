@@ -171,35 +171,41 @@ struct CustomWidget: View {
                     
                     VStack() {
                         
-                        HStack(alignment: .top) { // Align items to the top
-                            Text("Text color")
-                                .font(.headline)
-                                .foregroundColor(Color.white)
-                                .padding(.leading)
-                                .bold()
-                            Spacer()
+                        ZStack {
                             
-                            
-                        }.padding(.top,15)
-                        
-                        VStack {
-                            Image("e2")
-                                .renderingMode(.template)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(selectedColor)
-                            Text("vvvvv").foregroundColor(Color.black)
-                        }.padding(.top,0)
-                           
+                            VStack {
+                                
+                                HStack(alignment: .top) { // Align items to the top
+                                    Text("Text color")
+                                        .font(.headline)
+                                        .foregroundColor(Color.white)
+                                        .padding(.leading)
+                                        .bold()
+                                    Spacer()
+                                    
+                                    
+                                }.padding(.top,15)
+                                
+                                VStack {
+                                    Image("e2")
+                                        .renderingMode(.template)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 30, height: 30)
+                                        .foregroundColor(Color.black)
+                                        
+                                    Text("vvvvv").foregroundColor(Color.black)
+                                }.padding(.top,0)
+                            }.overlay {
+                                ColorPicker("", selection: $selectedColor)
+                                    .labelsHidden()
+                                    .opacity(1.0)
+                                    .padding(.top,10)
+                            }
+                        }
                         
                         Spacer()
                         
-                    } .overlay {
-                        
-                        ColorPicker("", selection: $selectedColor)
-                            .labelsHidden()
-                            .opacity(0.015)
                     }
                     .frame(width: widthToSet, height: widthToSet)
                     .overlay(
@@ -225,7 +231,49 @@ struct CustomWidget: View {
                     )
                     .cornerRadius(10)
                     
-                    VStack() {
+                    VStack(spacing:0) {
+                        
+                        HStack(alignment: .top) { // Align items to the top
+                            Text("Alignment")
+                                .font(.headline)
+                                .foregroundColor(Color.white)
+                                .padding(.leading)
+                                .bold()
+                            Spacer()
+                            
+                            
+                        }.padding(.top,15)
+                        
+                        
+                        
+                        HStack(alignment: .top,spacing: 20) {
+                            VStack {
+                                Image("a")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 30, height: 30)
+                                Text("Ash").foregroundColor(Color.black)
+                            }
+                            VStack {
+                                Image("b")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 30, height: 30)
+                                Text("Light").foregroundColor(Color.black)
+                            }
+                            VStack {
+                                
+                                Image("b")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 30, height: 30)
+                                
+                                Text("Dark").foregroundColor(Color.black)
+                            }
+                        }.padding(.top,15)
+                        
+                        Spacer()
+                        
                         
                         
                     }
