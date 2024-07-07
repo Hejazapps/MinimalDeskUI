@@ -20,6 +20,7 @@ struct CustomWidget: View {
     @State var presentColorView = false
     @State var fontSize = 48
     @State var space = 0
+    @State var widghet = 10
     var body: some View {
         
         VStack() {
@@ -407,6 +408,103 @@ struct CustomWidget: View {
                             
                             Spacer()
                             
+                            
+                            
+                        }
+                        .frame(width: widthToSet, height: widthToSet)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
+                        )
+                        .cornerRadius(10)
+                        
+                        
+                        
+                        
+                    }
+                    
+                    HStack(spacing:gap) {
+                        
+                        
+                        
+                        VStack(spacing:0) {
+                            
+                            HStack(alignment: .top) { // Align items to the top
+                                Text("App / Widget")
+                                    .foregroundColor(Color.white)
+                                    .font(.system(size: 20))
+                                    .padding(.leading)
+                                    .bold()
+                                Spacer()
+                                
+                                
+                            }.padding(.top,15)
+                            
+                            
+                            
+                            HStack(alignment: .top,spacing: 20) {
+                                VStack {
+                                    Image("minus")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 30, height: 30)
+                                        .onTapGesture {
+                                            
+                                            if widghet >= 5 {
+                                                widghet -= 1
+                                            }
+                                        }
+                                }.padding(.top,30)
+                                VStack {
+                                    
+                                    Text("\(widghet)").foregroundColor(Color.white).bold()
+                                        .font(.system(size: 25))
+                                    
+                                }.padding(.top,30)
+                                VStack {
+                                    
+                                    Image("plus")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 30, height: 30)
+                                        .onTapGesture {
+                                            
+                                            if widghet <= 20 {
+                                                widghet += 1
+                                            }
+                                        }
+                                } .padding(.top,30)
+                            }
+                            
+                            Spacer()
+                            
+                            
+                            
+                        }
+                        .frame(width: widthToSet, height: widthToSet)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
+                        )
+                        .cornerRadius(10)
+                        
+                        VStack() {
+                            HStack(alignment: .top) { // Align items to the top
+                                Text("Reset\nValue")
+                                    .font(.headline)
+                                    .foregroundColor(Color.white)
+                                    .padding(.leading)
+                                    .bold()
+                                
+                                
+                                Spacer()
+                                
+                                Image("arrow")
+                                    .padding(.trailing)
+                                    .padding(.top)
+                            }.padding(.top,15)
+                            
+                            Spacer()
                             
                             
                         }
