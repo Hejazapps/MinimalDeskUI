@@ -19,7 +19,7 @@ struct CustomWidget: View {
     @State var selectedColor =  Color.white
     @State var presentColorView = false
     @State var fontSize = 48
-    
+    @State var space = 0
     var body: some View {
         
         VStack() {
@@ -295,7 +295,58 @@ struct CustomWidget: View {
                         
                         
                         
-                        VStack() {
+                        VStack(spacing:0) {
+                            
+                            HStack(alignment: .top) { // Align items to the top
+                                Text("Spacing")
+                                    .foregroundColor(Color.white)
+                                    .font(.system(size: 20))
+                                    .padding(.leading)
+                                    .bold()
+                                Spacer()
+                                
+                                
+                            }.padding(.top,15)
+                            
+                            
+                            
+                            HStack(alignment: .top,spacing: 20) {
+                                VStack {
+                                    Image("minus")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 30, height: 30)
+                                        .onTapGesture {
+                                            
+                                            if space >= 1 {
+                                                space -= 1
+                                            }
+                                        }
+                                }.padding(.top,30)
+                                VStack {
+                                    
+                                    Text("\(space)").foregroundColor(Color.white).bold()
+                                        .font(.system(size: 25))
+                                    
+                                }.padding(.top,30)
+                                VStack {
+                                    
+                                    Image("plus")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 30, height: 30)
+                                        .onTapGesture {
+                                            
+                                            if space <= 15 {
+                                                space += 1
+                                            }
+                                        }
+                                } .padding(.top,30)
+                            }
+                            
+                            Spacer()
+                            
+                            
                             
                         }
                         .frame(width: widthToSet, height: widthToSet)
