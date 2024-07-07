@@ -14,18 +14,36 @@ struct CustomWidget: View {
     @State var widthToSet:CGFloat =  0
     @State var gap:CGFloat = 0
     @State var bottomGap:CGFloat = 0
+    @State var gapNeedToGive:CGFloat = 0
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         
         VStack() {
             
             Color.black
+            HStack {
+                
+                Spacer()
+                VStack {
+                    Button(action: {
+                        dismiss()
+                        // action to perform when the button is tapped
+                    }) {
+                        Image("roundedCross")
+                            .resizable() // This allows the image to be resized
+                            .frame(width: 30, height: 30) // This sets the size of the image
+                    }
+                }.padding(.trailing,30)
+            }
+            
             
             Text("Customize widgets")
                 .foregroundColor(Color.white)
-                .frame(width: screenWidth)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.system(size: 30))
                 .padding(.bottom,2*gap)
+                .padding(.leading,1.2*gap)
                 .bold()
             
             
@@ -52,13 +70,13 @@ struct CustomWidget: View {
                         
                         Spacer()
                         
-                       
+                        
                     }
                     .frame(width: widthToSet, height: widthToSet)
                     .cornerRadius(10)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color(red: 41/255, green: 44/255, blue: 53/255), lineWidth: 1)
+                            .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
                     )
                     
                     VStack() {
@@ -82,7 +100,77 @@ struct CustomWidget: View {
                     .frame(width: widthToSet, height: widthToSet)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color(red: 41/255, green: 44/255, blue: 53/255), lineWidth: 1)
+                            .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
+                    )
+                    .cornerRadius(10)
+                    
+                    
+                }
+                
+                HStack(spacing:gap) {
+                    
+                    
+                    
+                    VStack(spacing:0) {
+                        
+                        HStack(alignment: .top) { // Align items to the top
+                            Text("Widget color")
+                                .font(.headline)
+                                .foregroundColor(Color.white)
+                                .padding(.leading)
+                            Spacer()
+                            
+                            
+                        }.padding(.top,15)
+                        
+                       
+                        
+                        HStack(alignment: .top,spacing: 20) {
+                            VStack {
+                                Image("e1")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 30, height: 30)
+                                Text("Ash").foregroundColor(Color.white)
+                            }
+                            VStack {
+                                Image("e2")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 30, height: 30)
+                                Text("Light").foregroundColor(Color.white)
+                            }
+                            VStack {
+                                
+                                Image("e3")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 30, height: 30)
+                                
+                                Text("Dark").foregroundColor(Color.white)
+                            }
+                        }.padding(.top,15)
+                        
+                        Spacer()
+                        
+                        
+                        
+                    }
+                    .frame(width: widthToSet, height: widthToSet)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
+                    )
+                    .cornerRadius(10)
+                    
+                    VStack() {
+                        
+                        
+                    }
+                    .frame(width: widthToSet, height: widthToSet)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
                     )
                     .cornerRadius(10)
                     
@@ -99,7 +187,7 @@ struct CustomWidget: View {
                     .frame(width: widthToSet, height: widthToSet)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color(red: 41/255, green: 44/255, blue: 53/255), lineWidth: 1)
+                            .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
                     )
                     .cornerRadius(10)
                     
@@ -110,35 +198,7 @@ struct CustomWidget: View {
                     .frame(width: widthToSet, height: widthToSet)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color(red: 41/255, green: 44/255, blue: 53/255), lineWidth: 1)
-                    )
-                    .cornerRadius(10)
-                    
-                    
-                }
-                
-                HStack(spacing:gap) {
-                    
-                    
-                    
-                    VStack() {
-                        
-                    }
-                    .frame(width: widthToSet, height: widthToSet)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color(red: 41/255, green: 44/255, blue: 53/255), lineWidth: 1)
-                    )
-                    .cornerRadius(10)
-                    
-                    VStack() {
-                        
-                        
-                    }
-                    .frame(width: widthToSet, height: widthToSet)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color(red: 41/255, green: 44/255, blue: 53/255), lineWidth: 1)
+                            .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
                     )
                     .cornerRadius(10)
                     
@@ -157,8 +217,9 @@ struct CustomWidget: View {
                 gap = 20.0
                 widthToSet = (screenWidth - 3 * gap) / 2.0
                 bottomGap = (screenHeight - 3 * widthToSet - 4*gap - 70) / 3.0
+                gapNeedToGive = (screenWidth - 3*30)/3
                 
-                print("i found \(bottomGap)")
+                print("i have found \(gapNeedToGive) \(screenWidth)")
                 
                 
             }
@@ -168,5 +229,5 @@ struct CustomWidget: View {
 }
 
 #Preview {
-    Widget()
+    CustomWidget()
 }

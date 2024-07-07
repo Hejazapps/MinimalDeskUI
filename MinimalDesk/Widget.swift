@@ -17,7 +17,8 @@ struct Widget: View {
     @State var heightToSet:CGFloat =  0
     @State var gap:CGFloat = 0
     @State private var isPresented = false
-
+   
+    
     
     
     var body: some View {
@@ -43,9 +44,16 @@ struct Widget: View {
                     
                     
                     
-                    Text("Customize\n Wedget")
-                        .font(.headline)
-                        .foregroundColor(Color.white)
+                    VStack(spacing: 0) {
+                        Text("Customize")
+                            .font(.headline)
+                            .foregroundColor(Color.white)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        Text("Wedget")
+                            .font(.headline)
+                            .foregroundColor(Color.white)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    }
                     
                     
                     
@@ -56,20 +64,26 @@ struct Widget: View {
                 .gesture(TapGesture().onEnded {
                     isPresented = true
                 })
-                .sheet(isPresented: $isPresented, content: {
-                    // Content of the sheet view you want to present
+                
+                .fullScreenCover(isPresented: $isPresented) {
                     CustomWidget()
-                })
+                }
                 VStack(spacing: 8) {
                     
                     Image("widghet") // Replace "yourImageName" with the name of your image asset
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 35, height: 35)
-                    
-                    Text("Customize\nTop Wedget")
-                        .font(.headline)
-                        .foregroundColor(Color.white)
+                    VStack(spacing: 0) {
+                        Text("Customize")
+                            .font(.headline)
+                            .foregroundColor(Color.white)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        Text("Top Wedget")
+                            .font(.headline)
+                            .foregroundColor(Color.white)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    }
                     
                     
                     
@@ -97,5 +111,6 @@ struct Widget: View {
 }
 
 #Preview {
+    
     Widget()
 }
