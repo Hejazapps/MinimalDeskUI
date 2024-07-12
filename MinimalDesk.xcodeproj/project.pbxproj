@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1232B2CF2C4187E500DD2FEE /* FirebaseDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232B2CE2C4187E500DD2FEE /* FirebaseDataViewModel.swift */; };
+		1232B2D12C41885800DD2FEE /* FirebaseDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232B2D02C41885800DD2FEE /* FirebaseDataView.swift */; };
+		1232B2D32C418A1F00DD2FEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1232B2D22C418A1F00DD2FEE /* GoogleService-Info.plist */; };
 		C8052A2C2C3F755B009E0E9B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C8052A2B2C3F755B009E0E9B /* FirebaseAnalytics */; };
 		C8052A2E2C3F755B009E0E9B /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = C8052A2D2C3F755B009E0E9B /* FirebaseAnalyticsOnDeviceConversion */; };
 		C8052A302C3F755B009E0E9B /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C8052A2F2C3F755B009E0E9B /* FirebaseAnalyticsSwift */; };
@@ -68,6 +71,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1232B2CE2C4187E500DD2FEE /* FirebaseDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataViewModel.swift; sourceTree = "<group>"; };
+		1232B2D02C41885800DD2FEE /* FirebaseDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataView.swift; sourceTree = "<group>"; };
+		1232B2D22C418A1F00DD2FEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C84B21A02C39594600825521 /* MinimalDesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalDesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84B21A32C39594600825521 /* MinimalDeskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalDeskApp.swift; sourceTree = "<group>"; };
 		C84B21A52C39594600825521 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 		C84B21972C39594600825521 = {
 			isa = PBXGroup;
 			children = (
+				C84B21A32C39594600825521 /* MinimalDeskApp.swift */,
 				C84B21A22C39594600825521 /* MinimalDesk */,
 				C84B21B32C39594800825521 /* MinimalDeskTests */,
 				C84B21BD2C39594800825521 /* MinimalDeskUITests */,
@@ -162,15 +169,17 @@
 		C84B21A22C39594600825521 /* MinimalDesk */ = {
 			isa = PBXGroup;
 			children = (
+				1232B2D22C418A1F00DD2FEE /* GoogleService-Info.plist */,
 				C8D763D92C3A0904008615A2 /* CustomWidget.swift */,
 				C84B21D62C39702400825521 /* Settings.swift */,
 				C84B21D42C396FB900825521 /* Tutorials.swift */,
 				C84B21D22C396F3000825521 /* Widget.swift */,
 				C84B21CD2C39689C00825521 /* AddView.swift */,
-				C84B21A32C39594600825521 /* MinimalDeskApp.swift */,
 				C84B21A52C39594600825521 /* ContentView.swift */,
-				C84B21A72C39594800825521 /* Assets.xcassets */,
+				1232B2D02C41885800DD2FEE /* FirebaseDataView.swift */,
+				1232B2CE2C4187E500DD2FEE /* FirebaseDataViewModel.swift */,
 				C84B21A92C39594800825521 /* Preview Content */,
+				C84B21A72C39594800825521 /* Assets.xcassets */,
 			);
 			path = MinimalDesk;
 			sourceTree = "<group>";
@@ -341,6 +350,7 @@
 			files = (
 				C84B21AB2C39594800825521 /* Preview Assets.xcassets in Resources */,
 				C84B21A82C39594800825521 /* Assets.xcassets in Resources */,
+				1232B2D32C418A1F00DD2FEE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,11 +375,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1232B2D12C41885800DD2FEE /* FirebaseDataView.swift in Sources */,
 				C84B21D72C39702800825521 /* Settings.swift in Sources */,
 				C84B21A62C39594600825521 /* ContentView.swift in Sources */,
 				C8D763DA2C3A0905008615A2 /* CustomWidget.swift in Sources */,
 				C84B21D52C396FBB00825521 /* Tutorials.swift in Sources */,
 				C84B21CE2C39689C00825521 /* AddView.swift in Sources */,
+				1232B2CF2C4187E500DD2FEE /* FirebaseDataViewModel.swift in Sources */,
 				C84B21D32C396F3200825521 /* Widget.swift in Sources */,
 				C84B21A42C39594600825521 /* MinimalDeskApp.swift in Sources */,
 			);
