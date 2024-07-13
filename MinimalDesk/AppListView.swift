@@ -19,60 +19,60 @@ struct AppListView: View {
     }
     
     var body: some View {
-        VStack {
-            Color.black.edgesIgnoringSafeArea(.all)
+        ZStack {
+            Color(red: 25 / 255, green: 25 / 255, blue: 25 / 255).edgesIgnoringSafeArea(.all)
             
-            VStack(spacing: 5) {
-              
+            VStack {
+                
                 HStack {
-                    VStack {
-                        Button(action: {
-                            dismiss()
-                        }) {
-                            Image("Back")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                        }
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        Image("Back")
+                            .resizable()
+                            .frame(width: 40, height: 40)
                     }
-                    .padding(.trailing, 30)
                     
                     Spacer()
                 }
-                .background(Color.black)
                 
-                HStack {
-                    Spacer()
-                    Text("Add Favorite Apps")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .bold()
-                    Spacer()
-                }
-                .padding()
-                .background(Color.black)
-                
-                HStack {
-                    Spacer()
+                VStack(spacing: 5) {
+                    HStack {
+                        Spacer()
+                        Text("Add Favorite Apps")
+                            .font(.title)
+                            .bold()
+                        Spacer()
+                    }
                     
-                    Text("Pick your top 6 frequently used apps to keep on your home screen for easy access, avoiding clutter and distractions.")
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(Color(red: 142/255, green: 142/255, blue: 142/255))
+                    HStack {
+                        Spacer()
                         
-                     
-                         
-                    Spacer()
+                        Text("Pick your top 6 frequently used apps to keep on your home screen for easy access, avoiding clutter and distractions.")
+                            .multilineTextAlignment(.center)
+//                            .foregroundColor(Color(red: 142/255, green: 142/255, blue: 142/255))
+                        
+                        Spacer()
+                    }
+
+                    
+                    TextField("Search", text: $searchText)
+                        .padding([.top, .horizontal])
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
-                .padding()
-                .background(Color.black)
                 
+                List(viewModel.appList) { app in
+                    Text(app.appName)
+                        .listRowBackground(Color(red: 25 / 255, green: 25 / 255, blue: 25 / 255))
+                }
+                .scrollContentBackground(.hidden)
+                .listStyle(.plain)
+                .padding(.leading)
                 
-                TextField("Search", text: $searchText)
-                               .padding()
-                               .textFieldStyle(RoundedBorderTextFieldStyle())
+                Spacer()
             }
             
-            
         }
-        .background(Color.black)
+        .foregroundColor(.gray)
     }
 }
