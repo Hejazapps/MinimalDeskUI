@@ -7,7 +7,7 @@
 
 import SwiftUI
 import TabBarModule
- 
+
 
 
 
@@ -17,7 +17,7 @@ struct AddView: View {
     @State var heightToSet:CGFloat =  0
     @State var gap:CGFloat = 0
     @State private var isDetailViewVisible = false
-
+    
     
     
     var body: some View {
@@ -29,7 +29,7 @@ struct AddView: View {
             
             Spacer() // Pushes the following view to the bottom
             
-
+            
             
             HStack(spacing:gap) {
                 
@@ -40,13 +40,13 @@ struct AddView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 35, height: 35)
-                         
-                        
+                    
+                    
                     
                     Text("Add Apps")
                         .font(.headline)
                         .foregroundColor(Color.white)
-                         
+                    
                     
                     Text("Add remove or reorder apps")
                         .font(.system(size: 10))
@@ -57,15 +57,16 @@ struct AddView: View {
                 .cornerRadius(10)
                 
                 .onTapGesture {
-                           self.isDetailViewVisible.toggle()
-                       }
-                       .sheet(isPresented: $isDetailViewVisible) {
-                           // Replace with the view you want to appear when tapped
-                           AppListView(viewModel:  FirebaseDataViewModel())
-                       }
+                    self.isDetailViewVisible.toggle()
+                }
+                
+                
+                .fullScreenCover(isPresented: $isDetailViewVisible) {
+                    AppListView(viewModel:  FirebaseDataViewModel())
+                }
                 
                 VStack(spacing: 8) {
-                     
+                    
                     Image("RightThumb") // Replace "yourImageName" with the name of your image asset
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -83,20 +84,20 @@ struct AddView: View {
                 .frame(width: widthToSet, height: heightToSet)
                 .background(Color(red: 41/255, green: 44/255, blue: 53/255))
                 .cornerRadius(10)
-              
-              
+                
+                
             }.padding(.bottom,40)
-             
-           
+            
+            
         } .background(Color.black)
-            
-        .onAppear {
-            
-            widthToSet = (screenWidth * 0.85)/2.0
-            gap = (screenWidth - widthToSet * 2)/3.0
-            heightToSet = (112 * widthToSet) / 176.0
-            // Perform any actions you want when the view appears
-        }
+        
+            .onAppear {
+                
+                widthToSet = (screenWidth * 0.85)/2.0
+                gap = (screenWidth - widthToSet * 2)/3.0
+                heightToSet = (112 * widthToSet) / 176.0
+                // Perform any actions you want when the view appears
+            }
         
         
     }

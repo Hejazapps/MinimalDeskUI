@@ -16,6 +16,8 @@ struct AppListView: View {
         print("[FirebaseDataView] IN")
         self.viewModel = viewModel
         viewModel.fetchAllSubscribers()
+        
+         
     }
     
     var body: some View {
@@ -28,13 +30,15 @@ struct AppListView: View {
                     Button(action: {
                         dismiss()
                     }) {
+                        
                         Image("Back")
                             .resizable()
-                            .frame(width: 40, height: 40)
+                            .frame(width: 50, height: 50)
+                        
                     }
                     
                     Spacer()
-                }
+                }.padding(.leading,15)
                 
                 VStack(spacing: 5) {
                     HStack {
@@ -59,6 +63,11 @@ struct AppListView: View {
                     TextField("Search", text: $searchText)
                         .padding([.top, .horizontal])
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                        
+
+                        
+                       
+
                 }
                 
                 List(viewModel.appList) { app in
