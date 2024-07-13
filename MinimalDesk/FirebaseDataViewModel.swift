@@ -12,11 +12,13 @@ import Firebase
 
 public class FirebaseDataViewModel: ObservableObject {
     @Published var appList = [Appp]()
+    @Published var onlyAppName = [String]()
 
     private let dbRef = Firestore.firestore().collection("AppList")
     
     func fetchAllSubscribers() {
         var newAppList = [Appp]()
+        var onlyAppName = [String]()
 
         dbRef.getDocuments { [weak self] snapshot, error in
             guard error == nil else {
@@ -37,6 +39,7 @@ public class FirebaseDataViewModel: ObservableObject {
 
                 print("i have found \(appName) \(appLink)")
                 newAppList.append(Appp(appName: appName, appLink: appLink))
+                onlyAppName.append(appName)
                 print("[FirebaseDataViewModel] [fetchAllSubscribers] \(document.documentID) --> \(document.data())")
             }
             
@@ -46,6 +49,7 @@ public class FirebaseDataViewModel: ObservableObject {
             }
             
             self.appList = newAppList
+            self.onlyAppName = onlyAppName
         }
     }
 }
