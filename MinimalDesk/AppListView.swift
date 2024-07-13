@@ -81,25 +81,28 @@ struct AppListView: View {
                 
                 List {
                     ForEach(searchResults, id: \.self) { name in
-                        HStack {
-                            Text(name)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.leading, 16) // Adjust padding as needed
+                        ZStack {
+                            Color.black // Set background color directly
                             
-                            Image("right")
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                                .padding(.trailing,16)
+                            HStack {
+                                Text(name)
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 16)
+                                
+                                Image("right")
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                    .padding(.trailing, 16)
+                            }
+                            .listRowInsets(EdgeInsets()) // Remove default padding
+                            .listRowSeparator(.hidden) // Hide row separator
                         }
-                        .listRowInsets(EdgeInsets()) // Remove default padding
-                        .listRowSeparator(.hidden) // Hide row separator
-                        .background(Color.black) // Background color for each row
+                        .frame(maxWidth: .infinity, maxHeight: .infinity) // Ensure ZStack fills entire row
                     }
                 }
-                .background(Color(red: 0 / 255, green: 0 / 255, blue: 0 / 255).edgesIgnoringSafeArea(.all)) // Background color for the entire List
+                .background(Color.black.edgesIgnoringSafeArea(.all)) // Background color for the entire List
                 .listStyle(PlainListStyle()) // Optional: Use plain list style for consistency
-                
  
                 Spacer()
             }
