@@ -81,15 +81,24 @@ struct AppListView: View {
                 
                 List {
                     ForEach(searchResults, id: \.self) { name in
-                        Text(name)
-                            .listRowBackground(Color(red: 0 / 255, green: 0 / 255, blue: 0 / 255))
-                            .listRowSeparator(.hidden)
-                            .foregroundColor(Color.white)
+                        HStack {
+                            Text(name)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, 16) // Adjust padding as needed
+                            
+                            Image("right")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .padding(.trailing,16)
+                        }
+                        .listRowInsets(EdgeInsets()) // Remove default padding
+                        .listRowSeparator(.hidden) // Hide row separator
+                        .background(Color.black) // Background color for each row
                     }
-                }.scrollContentBackground(.hidden)
-                    .listStyle(.plain)
-                    .padding(.leading)
-                    .padding(.top,10)
+                }
+                .background(Color(red: 0 / 255, green: 0 / 255, blue: 0 / 255).edgesIgnoringSafeArea(.all)) // Background color for the entire List
+                .listStyle(PlainListStyle()) // Optional: Use plain list style for consistency
                 
  
                 Spacer()
