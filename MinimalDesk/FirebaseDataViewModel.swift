@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import Firebase
 
-class FirebaseDataViewModel: ObservableObject {
+public class FirebaseDataViewModel: ObservableObject {
     @Published var appList = [Appp]()
 
     private let dbRef = Firestore.firestore().collection("AppList")
@@ -28,11 +28,14 @@ class FirebaseDataViewModel: ObservableObject {
                 guard
                     let appName = document["appName"] as? String,
                     let appLink = document["appLink"] as? String
+                        
+                    
                 else {
                     print("[FirebaseDataViewModel] [fetchAllSubscribers] Did not find the properties")
                     return
                 }
 
+                print("i have found \(appName) \(appLink)")
                 newAppList.append(Appp(appName: appName, appLink: appLink))
                 print("[FirebaseDataViewModel] [fetchAllSubscribers] \(document.documentID) --> \(document.data())")
             }

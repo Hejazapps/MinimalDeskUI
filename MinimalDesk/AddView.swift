@@ -16,6 +16,8 @@ struct AddView: View {
     @State var widthToSet:CGFloat =  0
     @State var heightToSet:CGFloat =  0
     @State var gap:CGFloat = 0
+    @State private var isDetailViewVisible = false
+
     
     
     var body: some View {
@@ -53,6 +55,14 @@ struct AddView: View {
                 .frame(width: widthToSet, height: heightToSet)
                 .background(Color(red: 41/255, green: 44/255, blue: 53/255))
                 .cornerRadius(10)
+                
+                .onTapGesture {
+                           self.isDetailViewVisible.toggle()
+                       }
+                       .sheet(isPresented: $isDetailViewVisible) {
+                           // Replace with the view you want to appear when tapped
+                           AppListView(viewModel:  FirebaseDataViewModel())
+                       }
                 
                 VStack(spacing: 8) {
                      
