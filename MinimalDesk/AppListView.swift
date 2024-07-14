@@ -6,7 +6,7 @@ struct AppListView: View {
     @ObservedObject private var viewModel: FirebaseDataViewModel
     @Environment(\.dismiss) var dismiss
     @State var showCancelButton = false
-  
+    
     
     @State var widthToSet: CGFloat = 0
     @State var heightToSet: CGFloat = 0
@@ -14,12 +14,12 @@ struct AppListView: View {
     @State private var searchText = ""
     
     var searchResults: [String] {
-           if searchText.isEmpty {
-               return viewModel.onlyAppName
-           } else {
-               return viewModel.onlyAppName.filter { $0.contains(searchText) }
-           }
-       }
+        if searchText.isEmpty {
+            return viewModel.onlyAppName
+        } else {
+            return viewModel.onlyAppName.filter { $0.contains(searchText) }
+        }
+    }
     
     
     init(viewModel: FirebaseDataViewModel) {
@@ -78,32 +78,28 @@ struct AppListView: View {
                         .padding([.top, .horizontal])
                     //                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
-                
-                List {
-                    ForEach(searchResults, id: \.self) { name in
-                        ZStack {
-                            Color.black // Set background color directly
-                            
-                            HStack {
-                                Text(name)
-                                    .foregroundColor(.white)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(.leading, 16)
-                                
-                                Image("right")
-                                    .resizable()
-                                    .frame(width: 20, height: 20)
-                                    .padding(.trailing, 16)
-                            }
-                            .listRowInsets(EdgeInsets()) // Remove default padding
-                            .listRowSeparator(.hidden) // Hide row separator
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity) // Ensure ZStack fills entire row
+                List(searchResults, id: \.self) { name in
+                    
+                    HStack {
+                        Text(name)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading, 16)
+                        
+                        Image("right")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .padding(.trailing, 16)
                     }
+                    .padding()
+                    .background(.black)
+                    .listRowInsets(EdgeInsets()) // Remove default padding
+                    .listRowSeparator(.hidden)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity) // Ensure ZStack fills entire row
                 }
-                .background(Color.black.edgesIgnoringSafeArea(.all)) // Background color for the entire List
-                .listStyle(PlainListStyle()) // Optional: Use plain list style for consistency
- 
+                //                    .scrollContentBackground(.hidden)
+                .listStyle(.plain)
+                
                 Spacer()
             }
             
