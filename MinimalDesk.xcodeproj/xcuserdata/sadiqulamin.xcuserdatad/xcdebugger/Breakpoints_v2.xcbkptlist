@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DBE5BFB1-AE2E-435B-B622-D5E18657545E"
+            uuid = "D6E0F90A-710A-4455-8915-2FCD0C7C9751"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MinimalDesk/FirebaseDataViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "fetchAllSubscribers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,15 +23,61 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C4B60B79-3212-4912-8F0F-9F8B24AE9341"
+            uuid = "1CE8B45F-9C37-42C0-A486-A862CC31B138"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MinimalDesk/FirebaseDataViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "fetchAllSubscribers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1CE8B45F-9C37-42C0-A486-A862CC31B138 - 3d29591f690367bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MinimalDesk.FirebaseDataViewModel.fetchAllSubscribers() -&gt; ()"
+                  moduleName = "MinimalDesk.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/MinimalDeskUI/MinimalDesk/FirebaseDataViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73">
+               </Location>
+               <Location
+                  uuid = "1CE8B45F-9C37-42C0-A486-A862CC31B138 - d48bca59174fce93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRQueryDocumentSnapshot) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MinimalDesk.FirebaseDataViewModel.fetchAllSubscribers() -&gt; ()"
+                  moduleName = "MinimalDesk.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/MinimalDeskUI/MinimalDesk/FirebaseDataViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C6B58007-DE74-4B1A-B0EB-F9F184AC03F7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MinimalDesk/FirebaseDataViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "fetchAllSubscribers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -39,129 +85,93 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "01696349-8A4E-4387-B6E8-5FD0709B4B7A"
+            uuid = "51ACFE53-5F59-4795-943F-84175CD9EB0E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MinimalDesk/FirebaseDataViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "fetchAllSubscribers()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "51ACFE53-5F59-4795-943F-84175CD9EB0E - 55b0b99e4ddd62c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MinimalDesk.FirebaseDataViewModel.fetchAllSubscribers() -&gt; ()"
+                  moduleName = "MinimalDesk.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/MinimalDeskUI/MinimalDesk/FirebaseDataViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67">
+               </Location>
+               <Location
+                  uuid = "51ACFE53-5F59-4795-943F-84175CD9EB0E - 3d29591f690366e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MinimalDesk.FirebaseDataViewModel.fetchAllSubscribers() -&gt; ()"
+                  moduleName = "MinimalDesk.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/MinimalDeskUI/MinimalDesk/FirebaseDataViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3CB479C5-9FC1-4EBB-9450-88344B728721"
+            uuid = "97202384-EDD7-4BC0-ADCB-7740AFC75236"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MinimalDesk/FirebaseDataViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "fetchAllSubscribers()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "52B1B544-8B00-4B65-914D-EC727161678B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MinimalDesk/FirebaseDataViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "fetchAllSubscribers()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8D6E5417-CADF-46C7-9E56-51D560C6E4EC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MinimalDesk/FirebaseDataViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "fetchAllSubscribers()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E3B6CE02-7D62-4773-A2E4-4D2970D25DE3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MinimalDesk/FirebaseDataViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "fetchAllSubscribers()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B751EC20-21E4-4175-AE39-DD5221C381FE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MinimalDesk/FirebaseDataViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "fetchAllSubscribers()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "75BA3A8B-5A3B-4F1C-9E70-8E4E271D54DC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MinimalDesk/FirebaseDataViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "fetchAllSubscribers()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4C5F9A1A-A945-49CA-9C55-9D8CDEC1B6AE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MinimalDesk/FirebaseDataViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "fetchAllSubscribers()"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "97202384-EDD7-4BC0-ADCB-7740AFC75236 - 55b0b99e4ddd62c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MinimalDesk.FirebaseDataViewModel.fetchAllSubscribers() -&gt; ()"
+                  moduleName = "MinimalDesk.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/MinimalDeskUI/MinimalDesk/FirebaseDataViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67">
+               </Location>
+               <Location
+                  uuid = "97202384-EDD7-4BC0-ADCB-7740AFC75236 - 3d29591f690366e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MinimalDesk.FirebaseDataViewModel.fetchAllSubscribers() -&gt; ()"
+                  moduleName = "MinimalDesk.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sadiqulamin/Documents/GitHub/MinimalDeskUI/MinimalDesk/FirebaseDataViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

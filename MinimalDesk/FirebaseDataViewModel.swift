@@ -16,6 +16,50 @@ public class FirebaseDataViewModel: ObservableObject {
 
     private let dbRef = Firestore.firestore().collection("AppList")
     
+    func saveUserDefault () {
+        
+        
+        let encoder = JSONEncoder()
+
+        do {
+            // Encode the array of objects to JSON Data
+            let encodedData = try encoder.encode(appList)
+            
+            // Save the encoded data to UserDefaults
+            UserDefaults.standard.set(encodedData, forKey: "saveAppList")
+            
+            // Synchronize UserDefaults to persist the data immediately (optional)
+            UserDefaults.standard.synchronize()
+            
+            print("Saved array of persons to UserDefaults")
+        } catch {
+            print("Error encoding or saving array of persons: \(error.localizedDescription)")
+        }
+        
+    }
+    
+    func getList() {
+        
+        if let savedData = UserDefaults.standard.data(forKey: "saveAppList") {
+            let decoder = JSONDecoder()
+            
+            do {
+                // Decode the JSON Data into an array of Person objects
+                let saveAppList = try decoder.decode([Appp].self, from: savedData)
+                
+                // Use the retrieved array of objects
+                print("Retrieved array of persons:")
+                for app in saveAppList {
+                    print("Retrieved array of persons: \(app.appLink), \(app.appName)")
+                }
+            } catch {
+                print("Error decoding or retrieving array of persons: \(error.localizedDescription)")
+            }
+        } else {
+            print("No saved array of persons data found in UserDefaults")
+        }
+    }
+    
     func fetchAllSubscribers() {
         var newAppList = [Appp]()
         var onlyAppName = [String]()
@@ -37,26 +81,30 @@ public class FirebaseDataViewModel: ObservableObject {
                     return
                 }
 
-                print("i have found \(appName) \(appLink)")
+              //  print("i have found \(appName) \(appLink)")
                 newAppList.append(Appp(appName: appName, appLink: appLink))
                 onlyAppName.append(appName)
-                print("[FirebaseDataViewModel] [fetchAllSubscribers] \(document.documentID) --> \(document.data())")
+               // print("[FirebaseDataViewModel] [fetchAllSubscribers] \(document.documentID) --> \(document.data())")
             }
             
             guard let self else {
-                print("[FirebaseDataViewModel] [fetchAllSubscribers] self is nil")
+               print("[FirebaseDataViewModel] [fetchAllSubscribers] self is nil")
                 return
             }
             
             self.appList = newAppList
             self.onlyAppName = onlyAppName
         }
+       
     }
+    
+    
+    
 }
 
 // MARK: - Models
-struct Appp: Identifiable {
-    let id = UUID()
+struct Appp: Codable {
+    
     let appName: String
     let appLink: String
 }

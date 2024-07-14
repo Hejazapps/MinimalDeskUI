@@ -1,4 +1,5 @@
 {
+  "originHash" : "040013b9cf38c8d15f13ce55ca95ee1ba845a65541fda6ba8f6c88dd040434fa",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -7,6 +8,15 @@
       "state" : {
         "revision" : "748c7837511d0e6a507737353af268484e1745e2",
         "version" : "1.2024011601.1"
+      }
+    },
+    {
+      "identity" : "alerttoast",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/elai950/AlertToast.git",
+      "state" : {
+        "revision" : "b39252eacd159904afd7d718bba0afabb87f2f2f",
+        "version" : "1.3.9"
       }
     },
     {
@@ -109,6 +119,15 @@
       }
     },
     {
+      "identity" : "reachability.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ashleymills/Reachability.swift.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "7cbd73f46a7dfaeca079e18df7324c6de6d1834a"
+      }
+    },
+    {
       "identity" : "swift-protobuf",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-protobuf.git",
@@ -127,5 +146,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

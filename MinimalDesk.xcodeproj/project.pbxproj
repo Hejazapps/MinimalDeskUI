@@ -50,6 +50,8 @@
 		C84B21D52C396FBB00825521 /* Tutorials.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21D42C396FB900825521 /* Tutorials.swift */; };
 		C84B21D72C39702800825521 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21D62C39702400825521 /* Settings.swift */; };
 		C8BCA7082C425CDA0026DC58 /* AppListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCA7072C425CD90026DC58 /* AppListView.swift */; };
+		C8C78BF42C439D53008CE138 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = C8C78BF32C439D53008CE138 /* AlertToast */; };
+		C8C78BF72C43AD94008CE138 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = C8C78BF62C43AD94008CE138 /* Reachability */; };
 		C8D763DA2C3A0905008615A2 /* CustomWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D763D92C3A0904008615A2 /* CustomWidget.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,7 @@
 				C8052A4A2C3F755B009E0E9B /* FirebaseFunctions in Frameworks */,
 				C8052A402C3F755B009E0E9B /* FirebaseDatabaseSwift in Frameworks */,
 				C8052A622C3F755B009E0E9B /* FirebaseVertexAI-Preview in Frameworks */,
+				C8C78BF42C439D53008CE138 /* AlertToast in Frameworks */,
 				C8052A502C3F755B009E0E9B /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				C8052A562C3F755B009E0E9B /* FirebaseMessaging in Frameworks */,
 				C8052A362C3F755B009E0E9B /* FirebaseAppDistribution-Beta in Frameworks */,
@@ -117,6 +120,7 @@
 				C8052A3C2C3F755B009E0E9B /* FirebaseCrashlytics in Frameworks */,
 				C8052A522C3F755B009E0E9B /* FirebaseInstallations in Frameworks */,
 				C8052A5A2C3F755B009E0E9B /* FirebaseRemoteConfig in Frameworks */,
+				C8C78BF72C43AD94008CE138 /* Reachability in Frameworks */,
 				C8052A5E2C3F755B009E0E9B /* FirebaseStorage in Frameworks */,
 				C8052A3E2C3F755B009E0E9B /* FirebaseDatabase in Frameworks */,
 				C8052A602C3F755B009E0E9B /* FirebaseStorageCombine-Community in Frameworks */,
@@ -255,6 +259,8 @@
 				C8052A5D2C3F755B009E0E9B /* FirebaseStorage */,
 				C8052A5F2C3F755B009E0E9B /* FirebaseStorageCombine-Community */,
 				C8052A612C3F755B009E0E9B /* FirebaseVertexAI-Preview */,
+				C8C78BF32C439D53008CE138 /* AlertToast */,
+				C8C78BF62C43AD94008CE138 /* Reachability */,
 			);
 			productName = MinimalDesk;
 			productReference = C84B21A02C39594600825521 /* MinimalDesk.app */;
@@ -331,6 +337,8 @@
 			packageReferences = (
 				C84B21CF2C396DF200825521 /* XCRemoteSwiftPackageReference "swiftui-tab-bar" */,
 				C8052A2A2C3F755B009E0E9B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C8C78BF22C439D53008CE138 /* XCRemoteSwiftPackageReference "AlertToast" */,
+				C8C78BF52C43AD66008CE138 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 			);
 			productRefGroup = C84B21A12C39594600825521 /* Products */;
 			projectDirPath = "";
@@ -723,6 +731,22 @@
 				minimumVersion = 1.0.1;
 			};
 		};
+		C8C78BF22C439D53008CE138 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
+		C8C78BF52C43AD66008CE138 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -870,6 +894,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C84B21CF2C396DF200825521 /* XCRemoteSwiftPackageReference "swiftui-tab-bar" */;
 			productName = TabBarModule;
+		};
+		C8C78BF32C439D53008CE138 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8C78BF22C439D53008CE138 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+		C8C78BF62C43AD94008CE138 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8C78BF52C43AD66008CE138 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

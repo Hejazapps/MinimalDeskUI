@@ -1,12 +1,13 @@
 import SwiftUI
-
+import AlertToast
+import Reachability
 
 struct AppListView: View {
     
     @ObservedObject private var viewModel: FirebaseDataViewModel
     @Environment(\.dismiss) var dismiss
     @State var showCancelButton = false
-    
+    @State var showToast =  false
     
     @State var widthToSet: CGFloat = 0
     @State var heightToSet: CGFloat = 0
@@ -24,24 +25,26 @@ struct AppListView: View {
     
     
     init(viewModel: FirebaseDataViewModel) {
-        print("[FirebaseDataView] IN")
+       
         self.viewModel = viewModel
         viewModel.fetchAllSubscribers()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            if viewModel.appList.count > 0 {
+                viewModel.saveUserDefault()
+            }
+        
+        }
+        
+       
     }
     
-    private func toggleSelection(index: String) {
-        if selectedIndices.contains(index) {
-            selectedIndices.remove(index)
-        } else {
-            if selectedIndices.count < 6 {
-                selectedIndices.insert(index)
-            }
-        }
-    }
+    
     
     var body: some View {
         ZStack {
             Color(red: 0 / 255, green: 0 / 255, blue: 0 / 255).edgesIgnoringSafeArea(.all)
+            
             
             VStack {
                 
@@ -115,8 +118,20 @@ struct AppListView: View {
                     .listRowSeparator(.hidden)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .onTapGesture {
-                        self.toggleSelection(index: name)
+                        if selectedIndices.contains(name) {
+                            selectedIndices.remove(name)
+                        } else {
+                            if selectedIndices.count < 6 {
+                                selectedIndices.insert(name)
+                            }
+                            else {
+                                showToast = true
+                            }
+                        }
+                        
+                        
                     }
+                    
                     
                     // Ensure ZStack fills entire row
                 }
