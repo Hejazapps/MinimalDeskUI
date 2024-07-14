@@ -20,6 +20,9 @@ struct Settings: View {
             
             Color.black.edgesIgnoringSafeArea(.all)
             VStack {
+                 
+                Text("Settings").bold()
+                    .foregroundColor(Color.white).font(.system(size: 40))
                 
             }
            

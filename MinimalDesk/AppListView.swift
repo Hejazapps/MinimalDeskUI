@@ -119,7 +119,6 @@ struct AppListView: View {
                     .padding()
                     .background(.black)
                     .listRowInsets(EdgeInsets()) // Remove default padding
-                    .listRowSeparator(.hidden)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .onTapGesture {
                         if selectedIndices.contains(name) {
