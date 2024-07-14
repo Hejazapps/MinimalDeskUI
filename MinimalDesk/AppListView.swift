@@ -12,6 +12,7 @@ struct AppListView: View {
     @State var heightToSet: CGFloat = 0
     @State var gap: CGFloat = 0
     @State private var searchText = ""
+    @State private var selectedIndices: Set<String> = []
     
     var searchResults: [String] {
         if searchText.isEmpty {
@@ -26,6 +27,16 @@ struct AppListView: View {
         print("[FirebaseDataView] IN")
         self.viewModel = viewModel
         viewModel.fetchAllSubscribers()
+    }
+    
+    private func toggleSelection(index: String) {
+        if selectedIndices.contains(index) {
+            selectedIndices.remove(index)
+        } else {
+            if selectedIndices.count < 6 {
+                selectedIndices.insert(index)
+            }
+        }
     }
     
     var body: some View {
@@ -46,6 +57,9 @@ struct AppListView: View {
                     Spacer()
                 }
                 .padding(.leading,15)
+                
+                
+                
                 
                 VStack(spacing: 5) {
                     HStack {
@@ -74,6 +88,7 @@ struct AppListView: View {
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(Color(red: 28 / 255, green: 28 / 255, blue: 28 / 255))
                         )
+                        .foregroundColor(.white)
                     
                         .padding([.top, .horizontal])
                     //                        .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -86,16 +101,24 @@ struct AppListView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading, 16)
                         
-                        Image("right")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            .padding(.trailing, 16)
+                        
+                        if self.selectedIndices.contains(name) {
+                            Image("right")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .padding(.trailing, 16)
+                        }
                     }
                     .padding()
                     .background(.black)
                     .listRowInsets(EdgeInsets()) // Remove default padding
                     .listRowSeparator(.hidden)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity) // Ensure ZStack fills entire row
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .onTapGesture {
+                        self.toggleSelection(index: name)
+                    }
+                    
+                    // Ensure ZStack fills entire row
                 }
                 //                    .scrollContentBackground(.hidden)
                 .listStyle(.plain)
@@ -106,8 +129,29 @@ struct AppListView: View {
         }
         .foregroundColor(.gray)
     }
+    
+    
 }
 
 #Preview {
     AppListView(viewModel: FirebaseDataViewModel())
+}
+
+
+struct ToastView: View {
+    let message: String
+    
+    var body: some View {
+        VStack {
+            Text(message)
+                .foregroundColor(.white)
+                .padding(.vertical, 10)
+                .padding(.horizontal, 20)
+                .background(Color.black.opacity(0.7))
+                .cornerRadius(25)
+        }
+        .frame(maxWidth: .infinity)
+        .padding()
+        .transition(.opacity)
+    }
 }
