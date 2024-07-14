@@ -29,6 +29,10 @@ struct AppListView: View {
         self.viewModel = viewModel
         viewModel.fetchAllSubscribers()
         
+        if viewModel.appList.count < 1 {
+            viewModel.getList()
+        }
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             if viewModel.appList.count > 0 {
                 viewModel.saveUserDefault()

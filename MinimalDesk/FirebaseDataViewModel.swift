@@ -40,6 +40,8 @@ public class FirebaseDataViewModel: ObservableObject {
     
     func getList() {
         
+        appList.removeAll()
+        onlyAppName.removeAll()
         if let savedData = UserDefaults.standard.data(forKey: "saveAppList") {
             let decoder = JSONDecoder()
             
@@ -51,6 +53,10 @@ public class FirebaseDataViewModel: ObservableObject {
                 print("Retrieved array of persons:")
                 for app in saveAppList {
                     print("Retrieved array of persons: \(app.appLink), \(app.appName)")
+                    appList.append(Appp(appName: app.appLink, appLink: app.appName))
+                    if !onlyAppName.contains(app.appName) {
+                        onlyAppName.append(app.appName)
+                    }
                 }
             } catch {
                 print("Error decoding or retrieving array of persons: \(error.localizedDescription)")
@@ -83,7 +89,10 @@ public class FirebaseDataViewModel: ObservableObject {
 
               //  print("i have found \(appName) \(appLink)")
                 newAppList.append(Appp(appName: appName, appLink: appLink))
-                onlyAppName.append(appName)
+                if !onlyAppName.contains(appName) {
+                    onlyAppName.append(appName)
+                }
+               
                // print("[FirebaseDataViewModel] [fetchAllSubscribers] \(document.documentID) --> \(document.data())")
             }
             
