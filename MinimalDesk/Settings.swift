@@ -71,6 +71,35 @@ struct Settings: View {
                             .padding(.top,4)
                             .padding(.bottom,4)
                     }.cornerRadius(20)
+                        .frame(height: 37)
+                    
+                    
+                    ZStack {
+                        
+                        Color(red: 25.0 / 255, green: 25.0 / 255, blue: 25.0 / 255).edgesIgnoringSafeArea(.all)
+                        HStack {
+                            HStack {
+                                Image("Rectangle")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                
+                                Text("AppIcon")
+                                    .foregroundColor(Color.white).font(.system(size: 18))
+                            }.padding(.leading,15)
+                            
+                            Spacer()
+                            
+                            Image("arrow r")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .padding(.trailing,15)
+                            
+                        }
+                        
+                    }.cornerRadius(20)
+                        .frame(height: 37)
+                    
+                    
                         
                     
                 }
