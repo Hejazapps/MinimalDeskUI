@@ -27,7 +27,7 @@ struct Settings: View {
             
             ScrollView {
                 
-                VStack(spacing: 10) {
+                VStack(spacing: 17) {
                     
                     Text("Settings").bold()
                         .foregroundColor(Color.white).font(.system(size: 40))
@@ -38,32 +38,40 @@ struct Settings: View {
                         .frame(width: screenWidth * 0.8, height: getHeight())
                     
                     Text("Themes").foregroundColor(Color.white)
+                        .frame(maxWidth: .infinity, alignment: .leading).padding(.leading,20)
                     
-                    
-                    VStack {
-                        Picker(selection: $favoriteColor, label: Text("What is your favorite color?")) {
-                            ForEach(0..<colors.count) { index in
-                                Text(colors[index])
-                                    .tag(index)
+                    ZStack {
+                        
+                        Color(red: 25.0 / 255, green: 25.0 / 255, blue: 25.0 / 255).edgesIgnoringSafeArea(.all)
+                        
+                        VStack {
+                            Picker(selection: $favoriteColor, label: Text("What is your favorite color?")) {
+                                ForEach(0..<colors.count) { index in
+                                    Text(colors[index])
+                                        .tag(index)
+                                }
                             }
-                        }
-                        .pickerStyle(SegmentedPickerStyle())
-                        .foregroundColor(.white) // Default text color
+                            .pickerStyle(SegmentedPickerStyle())
+                            .foregroundColor(.white) // Default text color
+                            
+                            // Custom segmented control style
+                            .background(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color(red: 39.0 / 255, green: 39.0 / 255, blue: 41.0 / 255)) // Selected segment color
+                            )
+                            
+                            .padding(.horizontal)
+                            
+                            .onAppear {
+                                UISegmentedControl.appearance().selectedSegmentTintColor = .white
+                                UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
+                                UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
+                            }
+                        }.frame(width: screenWidth * 0.9)
+                            .padding(.top,4)
+                            .padding(.bottom,4)
+                    }.cornerRadius(20)
                         
-                        // Custom segmented control style
-                        .background(
-                            RoundedRectangle(cornerRadius: 8)
-                                .fill(Color(red: 39.0 / 255, green: 39.0 / 255, blue: 41.0 / 255)) // Selected segment color
-                        )
-                        
-                        .padding(.horizontal)
-                        
-                        .onAppear {
-                            UISegmentedControl.appearance().selectedSegmentTintColor = .white
-                            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
-                            UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
-                        }
-                    }.frame(width: screenWidth * 0.8)
                     
                 }
             }.frame(height: screenHeight - 200)
