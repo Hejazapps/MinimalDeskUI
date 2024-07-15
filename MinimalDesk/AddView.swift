@@ -17,8 +17,7 @@ struct AddView: View {
     @State var heightToSet:CGFloat =  0
     @State var gap:CGFloat = 0
     @State private var isDetailViewVisible = false
-    
-    
+    @State private var isCustomDetailViewVisible = false
     
     var body: some View {
         VStack {
@@ -84,7 +83,14 @@ struct AddView: View {
                 .frame(width: widthToSet, height: heightToSet)
                 .background(Color(red: 41/255, green: 44/255, blue: 53/255))
                 .cornerRadius(10)
+                .onTapGesture {
+                    self.isCustomDetailViewVisible.toggle()
+                }
                 
+                
+                .fullScreenCover(isPresented: $isCustomDetailViewVisible) {
+                    AddCustom()
+                }
                 
             }.padding(.bottom,40)
             
