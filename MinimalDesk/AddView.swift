@@ -84,9 +84,9 @@ struct AddView: View {
                 .background(Color(red: 41/255, green: 44/255, blue: 53/255))
                 .cornerRadius(10)
                 .onTapGesture {
+                    print("custom view tapped")
                     self.isCustomDetailViewVisible.toggle()
                 }
-                
                 
                 .fullScreenCover(isPresented: $isCustomDetailViewVisible) {
                     AddCustom()
