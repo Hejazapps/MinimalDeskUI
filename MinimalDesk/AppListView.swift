@@ -100,6 +100,7 @@ struct AppListView: View {
                         .padding([.top, .horizontal])
                     //                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
+                
                 List(searchResults, id: \.self) { name in
                     
                     HStack {
@@ -117,9 +118,11 @@ struct AppListView: View {
                         }
                     }
                     .padding()
-                    .background(.black)
                     .listRowInsets(EdgeInsets()) // Remove default padding
+                    .listRowSeparator(.hidden)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .listRowBackground(Color.black)
+
                     .onTapGesture {
                         if selectedIndices.contains(name) {
                             selectedIndices.remove(name)
@@ -138,8 +141,9 @@ struct AppListView: View {
                     
                     // Ensure ZStack fills entire row
                 }
-                //                    .scrollContentBackground(.hidden)
                 .listStyle(.plain)
+                .background(.black)
+                .scrollContentBackground(.hidden)
                 
                 Spacer()
             }
