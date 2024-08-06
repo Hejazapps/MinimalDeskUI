@@ -1,6 +1,7 @@
 import SwiftUI
 import AlertToast
 import Reachability
+import WidgetKit
 
 struct AppListView: View {
     
@@ -25,7 +26,8 @@ struct AppListView: View {
     
     
     init(viewModel: FirebaseDataViewModel) {
-       
+        log("IN")
+        
         self.viewModel = viewModel
         viewModel.fetchAllSubscribers()
         
@@ -39,16 +41,49 @@ struct AppListView: View {
             }
         
         }
-        
-       
     }
     
+    private func updateFavoriteAppsInCache() {
+        let favApps = viewModel.appList.map { app in
+            
+            guard selectedIndices.contains(app.appName) else { return [String: String]() }
+            
+            return ["name": app.appName, "link": app.appLink]
+        }
+            .filter { $0 != [String: String]() }
+        
+        guard let userdefault = UserDefaults(suiteName: "group.minimaldesk") else {
+            log("Did not find userdefault.")
+            return
+        }
+        
+        log("favApps = \(favApps)")
+        log("selectedIndices = \(selectedIndices)")
+        
+        userdefault.set(favApps, forKey: "favorite-apps")
+        WidgetCenter.shared.reloadTimelines(ofKind: "FavAppWidget")
+    }
     
+    private func doOnAppear() {
+        let userdefault = UserDefaults(suiteName: "group.minimaldesk")
+        let apps = userdefault?.value(forKey: "favorite-apps") as? [[String: String]] ?? []
+        log("favApps in init = \(apps)")
+        
+        _ = apps.map { app in
+            log("app = \(app)")
+            
+            guard let name = app["name"] else {
+                log("app name not found.")
+                return
+            }
+            let result = selectedIndices.insert(name)
+            log("result = \(result), selectedIndices in init = \(selectedIndices)")
+        }
+    }
     
     var body: some View {
         ZStack {
-            Color(red: 0 / 255, green: 0 / 255, blue: 0 / 255).edgesIgnoringSafeArea(.all)
-            
+            Color.black.edgesIgnoringSafeArea(.all)
             
             VStack {
                 
@@ -64,8 +99,6 @@ struct AppListView: View {
                     Spacer()
                 }
                 .padding(.leading,15)
-                
-                
                 
                 
                 VStack(spacing: 5) {
@@ -101,6 +134,7 @@ struct AppListView: View {
                     //                        .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 
+                
                 List(searchResults, id: \.self) { name in
                     
                     HStack {
@@ -117,7 +151,7 @@ struct AppListView: View {
                                 .padding(.trailing, 16)
                         }
                     }
-                    .padding()
+                    .padding()                    
                     .listRowInsets(EdgeInsets()) // Remove default padding
                     .listRowSeparator(.hidden)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -135,15 +169,15 @@ struct AppListView: View {
                             }
                         }
                         
-                        
+                        updateFavoriteAppsInCache()
                     }
-                    
-                    
-                    // Ensure ZStack fills entire row
                 }
                 .listStyle(.plain)
                 .background(.black)
                 .scrollContentBackground(.hidden)
+                .onAppear {
+                    doOnAppear()
+                }
                 
                 Spacer()
             }

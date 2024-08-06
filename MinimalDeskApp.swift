@@ -15,17 +15,66 @@ struct MinimalDeskApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+                    openFavApp()
+                }
+        }
+    }
+    
+    private func openFavApp() {
+        let userDefault = UserDefaults(suiteName: "group.minimaldesk") ?? UserDefaults()
+        
+        guard
+            let urlStr = userDefault.value(forKey: "selected-fav-app") as? String,
+            let url = URL(string: urlStr)
+        else {
+            log("URL string not valid or empty.")
+            return
+        }
+        
+        userDefault.removeObject(forKey: "selected-fav-app")
+        
+        log("Selected Fav app url = \(urlStr)")
+        let application = UIApplication.shared
+        
+        application.open(url, options: [:]) { (success) in
+            if success {
+                log("\(urlStr) successfully launched.")
+            } else {
+                log("\(urlStr) failed to launch.")
+            }
         }
     }
 }
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
-  ) -> Bool {
-    FirebaseApp.configure()
+    private var app: UIApplication?
+    
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
+    ) -> Bool {
+        FirebaseApp.configure()
+        
+        return true
+    }
+}
 
-    return true
-  }
+
+
+
+
+
+
+// MARK: - Utility Functions
+func log(
+    _ message: Any = "",
+    file: String = #file,
+    function: String = #function,
+    line: Int = #line
+) {
+    print(
+        "[\((file as NSString).lastPathComponent.split(separator: ".").first ?? "File Name")] - "
+        + "[\(function)] - [\(line)] # \(message)"
+    )
 }

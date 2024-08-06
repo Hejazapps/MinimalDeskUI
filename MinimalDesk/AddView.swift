@@ -10,14 +10,14 @@ import TabBarModule
 
 
 
-
 struct AddView: View {
     
     @State var widthToSet:CGFloat =  0
     @State var heightToSet:CGFloat =  0
     @State var gap:CGFloat = 0
     @State private var isDetailViewVisible = false
-    @State private var isCustomDetailViewVisible = false
+    
+    
     
     var body: some View {
         VStack {
@@ -39,7 +39,6 @@ struct AddView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 35, height: 35)
-                    
                     
                     
                     Text("Add Apps")
@@ -83,14 +82,7 @@ struct AddView: View {
                 .frame(width: widthToSet, height: heightToSet)
                 .background(Color(red: 41/255, green: 44/255, blue: 53/255))
                 .cornerRadius(10)
-                .onTapGesture {
-                    print("custom view tapped")
-                    self.isCustomDetailViewVisible.toggle()
-                }
                 
-                .fullScreenCover(isPresented: $isCustomDetailViewVisible) {
-                    AddCustom()
-                }
                 
             }.padding(.bottom,40)
             

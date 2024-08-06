@@ -9,7 +9,23 @@
 /* Begin PBXBuildFile section */
 		1232B2CF2C4187E500DD2FEE /* FirebaseDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232B2CE2C4187E500DD2FEE /* FirebaseDataViewModel.swift */; };
 		1232B2D32C418A1F00DD2FEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1232B2D22C418A1F00DD2FEE /* GoogleService-Info.plist */; };
-		C80136922C45786200807D52 /* AddCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80136912C45785D00807D52 /* AddCustom.swift */; };
+		124AF72B2C47A3F5008AD47C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124AF6FB2C46279B008AD47C /* WidgetKit.framework */; };
+		124AF72C2C47A3F5008AD47C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124AF6FD2C46279B008AD47C /* SwiftUI.framework */; };
+		124AF72F2C47A3F5008AD47C /* MinimalDeskDateWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124AF72E2C47A3F5008AD47C /* MinimalDeskDateWidgetBundle.swift */; };
+		124AF7312C47A3F5008AD47C /* MinimalDeskDateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124AF7302C47A3F5008AD47C /* MinimalDeskDateWidget.swift */; };
+		124AF7332C47A3F6008AD47C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 124AF7322C47A3F6008AD47C /* Assets.xcassets */; };
+		124AF7372C47A3F6008AD47C /* MinimalDeskDateWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 124AF72A2C47A3F5008AD47C /* MinimalDeskDateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		124AF7402C47F88E008AD47C /* DateWidgetViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124AF73F2C47F88E008AD47C /* DateWidgetViews.swift */; };
+		124AF7412C47F88E008AD47C /* DateWidgetViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124AF73F2C47F88E008AD47C /* DateWidgetViews.swift */; };
+		124AF7432C480161008AD47C /* WidgetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124AF7422C480161008AD47C /* WidgetList.swift */; };
+		12C249152C5F77C200074874 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124AF6FB2C46279B008AD47C /* WidgetKit.framework */; };
+		12C249162C5F77C200074874 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124AF6FD2C46279B008AD47C /* SwiftUI.framework */; };
+		12C249192C5F77C200074874 /* FavAppWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C249182C5F77C200074874 /* FavAppWidgetBundle.swift */; };
+		12C2491B2C5F77C200074874 /* FavAppWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C2491A2C5F77C200074874 /* FavAppWidget.swift */; };
+		12C2491D2C5F77C300074874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12C2491C2C5F77C300074874 /* Assets.xcassets */; };
+		12C249212C5F77C300074874 /* FavAppWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 12C249142C5F77C200074874 /* FavAppWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		12C249272C5F7D1D00074874 /* OpenAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C249262C5F7D1D00074874 /* OpenAppIntent.swift */; };
+		12C249282C5F7D1D00074874 /* OpenAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C249262C5F7D1D00074874 /* OpenAppIntent.swift */; };
 		C8052A2C2C3F755B009E0E9B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C8052A2B2C3F755B009E0E9B /* FirebaseAnalytics */; };
 		C8052A2E2C3F755B009E0E9B /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = C8052A2D2C3F755B009E0E9B /* FirebaseAnalyticsOnDeviceConversion */; };
 		C8052A302C3F755B009E0E9B /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C8052A2F2C3F755B009E0E9B /* FirebaseAnalyticsSwift */; };
@@ -42,9 +58,6 @@
 		C84B21A62C39594600825521 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21A52C39594600825521 /* ContentView.swift */; };
 		C84B21A82C39594800825521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84B21A72C39594800825521 /* Assets.xcassets */; };
 		C84B21AB2C39594800825521 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84B21AA2C39594800825521 /* Preview Assets.xcassets */; };
-		C84B21B52C39594800825521 /* MinimalDeskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21B42C39594800825521 /* MinimalDeskTests.swift */; };
-		C84B21BF2C39594800825521 /* MinimalDeskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21BE2C39594800825521 /* MinimalDeskUITests.swift */; };
-		C84B21C12C39594800825521 /* MinimalDeskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21C02C39594800825521 /* MinimalDeskUITestsLaunchTests.swift */; };
 		C84B21CE2C39689C00825521 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21CD2C39689C00825521 /* AddView.swift */; };
 		C84B21D12C396DF200825521 /* TabBarModule in Frameworks */ = {isa = PBXBuildFile; productRef = C84B21D02C396DF200825521 /* TabBarModule */; };
 		C84B21D32C396F3200825521 /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21D22C396F3000825521 /* Widget.swift */; };
@@ -57,36 +70,63 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C84B21B12C39594800825521 /* PBXContainerItemProxy */ = {
+		124AF7352C47A3F6008AD47C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C84B21982C39594600825521 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C84B219F2C39594600825521;
-			remoteInfo = MinimalDesk;
+			remoteGlobalIDString = 124AF7292C47A3F5008AD47C;
+			remoteInfo = MinimalDeskDateWidgetExtension;
 		};
-		C84B21BB2C39594800825521 /* PBXContainerItemProxy */ = {
+		12C2491F2C5F77C300074874 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C84B21982C39594600825521 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C84B219F2C39594600825521;
-			remoteInfo = MinimalDesk;
+			remoteGlobalIDString = 12C249132C5F77C200074874;
+			remoteInfo = FavAppWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		124AF70E2C46279D008AD47C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				12C249212C5F77C300074874 /* FavAppWidgetExtension.appex in Embed Foundation Extensions */,
+				124AF7372C47A3F6008AD47C /* MinimalDeskDateWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1232B2CE2C4187E500DD2FEE /* FirebaseDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataViewModel.swift; sourceTree = "<group>"; };
 		1232B2D22C418A1F00DD2FEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C80136912C45785D00807D52 /* AddCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustom.swift; sourceTree = "<group>"; };
+		124AF6FB2C46279B008AD47C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		124AF6FD2C46279B008AD47C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		124AF72A2C47A3F5008AD47C /* MinimalDeskDateWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MinimalDeskDateWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		124AF72E2C47A3F5008AD47C /* MinimalDeskDateWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalDeskDateWidgetBundle.swift; sourceTree = "<group>"; };
+		124AF7302C47A3F5008AD47C /* MinimalDeskDateWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalDeskDateWidget.swift; sourceTree = "<group>"; };
+		124AF7322C47A3F6008AD47C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		124AF7342C47A3F6008AD47C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		124AF73B2C47D613008AD47C /* MinimalDeskDateWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MinimalDeskDateWidgetExtension.entitlements; sourceTree = "<group>"; };
+		124AF73C2C47D674008AD47C /* MinimalDesk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MinimalDesk.entitlements; sourceTree = "<group>"; };
+		124AF73F2C47F88E008AD47C /* DateWidgetViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateWidgetViews.swift; sourceTree = "<group>"; };
+		124AF7422C480161008AD47C /* WidgetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetList.swift; sourceTree = "<group>"; };
+		12C249142C5F77C200074874 /* FavAppWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FavAppWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		12C249182C5F77C200074874 /* FavAppWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavAppWidgetBundle.swift; sourceTree = "<group>"; };
+		12C2491A2C5F77C200074874 /* FavAppWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavAppWidget.swift; sourceTree = "<group>"; };
+		12C2491C2C5F77C300074874 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		12C2491E2C5F77C300074874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12C249252C5F792900074874 /* FavAppWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FavAppWidgetExtension.entitlements; sourceTree = "<group>"; };
+		12C249262C5F7D1D00074874 /* OpenAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAppIntent.swift; sourceTree = "<group>"; };
 		C84B21A02C39594600825521 /* MinimalDesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalDesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84B21A32C39594600825521 /* MinimalDeskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalDeskApp.swift; sourceTree = "<group>"; };
 		C84B21A52C39594600825521 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C84B21A72C39594800825521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C84B21AA2C39594800825521 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C84B21B02C39594800825521 /* MinimalDeskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinimalDeskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C84B21B42C39594800825521 /* MinimalDeskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalDeskTests.swift; sourceTree = "<group>"; };
-		C84B21BA2C39594800825521 /* MinimalDeskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinimalDeskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C84B21BE2C39594800825521 /* MinimalDeskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalDeskUITests.swift; sourceTree = "<group>"; };
-		C84B21C02C39594800825521 /* MinimalDeskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalDeskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C84B21CD2C39689C00825521 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		C84B21D22C396F3000825521 /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
 		C84B21D42C396FB900825521 /* Tutorials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorials.swift; sourceTree = "<group>"; };
@@ -96,6 +136,24 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		124AF7272C47A3F5008AD47C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				124AF72C2C47A3F5008AD47C /* SwiftUI.framework in Frameworks */,
+				124AF72B2C47A3F5008AD47C /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12C249112C5F77C200074874 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12C249162C5F77C200074874 /* SwiftUI.framework in Frameworks */,
+				12C249152C5F77C200074874 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C84B219D2C39594600825521 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,30 +192,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C84B21AD2C39594800825521 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C84B21B72C39594800825521 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		124AF6FA2C46279B008AD47C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				124AF6FB2C46279B008AD47C /* WidgetKit.framework */,
+				124AF6FD2C46279B008AD47C /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		124AF72D2C47A3F5008AD47C /* MinimalDeskDateWidget */ = {
+			isa = PBXGroup;
+			children = (
+				124AF72E2C47A3F5008AD47C /* MinimalDeskDateWidgetBundle.swift */,
+				124AF7302C47A3F5008AD47C /* MinimalDeskDateWidget.swift */,
+				124AF73F2C47F88E008AD47C /* DateWidgetViews.swift */,
+				124AF7322C47A3F6008AD47C /* Assets.xcassets */,
+				124AF7342C47A3F6008AD47C /* Info.plist */,
+			);
+			path = MinimalDeskDateWidget;
+			sourceTree = "<group>";
+		};
+		12C249172C5F77C200074874 /* FavAppWidget */ = {
+			isa = PBXGroup;
+			children = (
+				12C249182C5F77C200074874 /* FavAppWidgetBundle.swift */,
+				12C2491A2C5F77C200074874 /* FavAppWidget.swift */,
+				12C2491C2C5F77C300074874 /* Assets.xcassets */,
+				12C2491E2C5F77C300074874 /* Info.plist */,
+			);
+			path = FavAppWidget;
+			sourceTree = "<group>";
+		};
 		C84B21972C39594600825521 = {
 			isa = PBXGroup;
 			children = (
+				12C249252C5F792900074874 /* FavAppWidgetExtension.entitlements */,
+				124AF73B2C47D613008AD47C /* MinimalDeskDateWidgetExtension.entitlements */,
 				C84B21A32C39594600825521 /* MinimalDeskApp.swift */,
 				C84B21A22C39594600825521 /* MinimalDesk */,
-				C84B21B32C39594800825521 /* MinimalDeskTests */,
-				C84B21BD2C39594800825521 /* MinimalDeskUITests */,
+				124AF72D2C47A3F5008AD47C /* MinimalDeskDateWidget */,
+				12C249172C5F77C200074874 /* FavAppWidget */,
+				124AF6FA2C46279B008AD47C /* Frameworks */,
 				C84B21A12C39594600825521 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -166,8 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				C84B21A02C39594600825521 /* MinimalDesk.app */,
-				C84B21B02C39594800825521 /* MinimalDeskTests.xctest */,
-				C84B21BA2C39594800825521 /* MinimalDeskUITests.xctest */,
+				124AF72A2C47A3F5008AD47C /* MinimalDeskDateWidgetExtension.appex */,
+				12C249142C5F77C200074874 /* FavAppWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,18 +254,20 @@
 		C84B21A22C39594600825521 /* MinimalDesk */ = {
 			isa = PBXGroup;
 			children = (
-				C80136912C45785D00807D52 /* AddCustom.swift */,
+				124AF73C2C47D674008AD47C /* MinimalDesk.entitlements */,
 				C8BCA7072C425CD90026DC58 /* AppListView.swift */,
 				1232B2D22C418A1F00DD2FEE /* GoogleService-Info.plist */,
 				C8D763D92C3A0904008615A2 /* CustomWidget.swift */,
 				C84B21D62C39702400825521 /* Settings.swift */,
 				C84B21D42C396FB900825521 /* Tutorials.swift */,
 				C84B21D22C396F3000825521 /* Widget.swift */,
+				124AF7422C480161008AD47C /* WidgetList.swift */,
 				C84B21CD2C39689C00825521 /* AddView.swift */,
 				C84B21A52C39594600825521 /* ContentView.swift */,
 				1232B2CE2C4187E500DD2FEE /* FirebaseDataViewModel.swift */,
 				C84B21A92C39594800825521 /* Preview Content */,
 				C84B21A72C39594800825521 /* Assets.xcassets */,
+				12C249262C5F7D1D00074874 /* OpenAppIntent.swift */,
 			);
 			path = MinimalDesk;
 			sourceTree = "<group>";
@@ -199,26 +280,43 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C84B21B32C39594800825521 /* MinimalDeskTests */ = {
-			isa = PBXGroup;
-			children = (
-				C84B21B42C39594800825521 /* MinimalDeskTests.swift */,
-			);
-			path = MinimalDeskTests;
-			sourceTree = "<group>";
-		};
-		C84B21BD2C39594800825521 /* MinimalDeskUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C84B21BE2C39594800825521 /* MinimalDeskUITests.swift */,
-				C84B21C02C39594800825521 /* MinimalDeskUITestsLaunchTests.swift */,
-			);
-			path = MinimalDeskUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		124AF7292C47A3F5008AD47C /* MinimalDeskDateWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 124AF7382C47A3F6008AD47C /* Build configuration list for PBXNativeTarget "MinimalDeskDateWidgetExtension" */;
+			buildPhases = (
+				124AF7262C47A3F5008AD47C /* Sources */,
+				124AF7272C47A3F5008AD47C /* Frameworks */,
+				124AF7282C47A3F5008AD47C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MinimalDeskDateWidgetExtension;
+			productName = MinimalDeskDateWidgetExtension;
+			productReference = 124AF72A2C47A3F5008AD47C /* MinimalDeskDateWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		12C249132C5F77C200074874 /* FavAppWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12C249222C5F77C300074874 /* Build configuration list for PBXNativeTarget "FavAppWidgetExtension" */;
+			buildPhases = (
+				12C249102C5F77C200074874 /* Sources */,
+				12C249112C5F77C200074874 /* Frameworks */,
+				12C249122C5F77C200074874 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FavAppWidgetExtension;
+			productName = FavAppWidgetExtension;
+			productReference = 12C249142C5F77C200074874 /* FavAppWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		C84B219F2C39594600825521 /* MinimalDesk */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C84B21C42C39594800825521 /* Build configuration list for PBXNativeTarget "MinimalDesk" */;
@@ -226,10 +324,13 @@
 				C84B219C2C39594600825521 /* Sources */,
 				C84B219D2C39594600825521 /* Frameworks */,
 				C84B219E2C39594600825521 /* Resources */,
+				124AF70E2C46279D008AD47C /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				124AF7362C47A3F6008AD47C /* PBXTargetDependency */,
+				12C249202C5F77C300074874 /* PBXTargetDependency */,
 			);
 			name = MinimalDesk;
 			packageProductDependencies = (
@@ -269,42 +370,6 @@
 			productReference = C84B21A02C39594600825521 /* MinimalDesk.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C84B21AF2C39594800825521 /* MinimalDeskTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C84B21C72C39594800825521 /* Build configuration list for PBXNativeTarget "MinimalDeskTests" */;
-			buildPhases = (
-				C84B21AC2C39594800825521 /* Sources */,
-				C84B21AD2C39594800825521 /* Frameworks */,
-				C84B21AE2C39594800825521 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C84B21B22C39594800825521 /* PBXTargetDependency */,
-			);
-			name = MinimalDeskTests;
-			productName = MinimalDeskTests;
-			productReference = C84B21B02C39594800825521 /* MinimalDeskTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		C84B21B92C39594800825521 /* MinimalDeskUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C84B21CA2C39594800825521 /* Build configuration list for PBXNativeTarget "MinimalDeskUITests" */;
-			buildPhases = (
-				C84B21B62C39594800825521 /* Sources */,
-				C84B21B72C39594800825521 /* Frameworks */,
-				C84B21B82C39594800825521 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C84B21BC2C39594800825521 /* PBXTargetDependency */,
-			);
-			name = MinimalDeskUITests;
-			productName = MinimalDeskUITests;
-			productReference = C84B21BA2C39594800825521 /* MinimalDeskUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -312,19 +377,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					124AF7292C47A3F5008AD47C = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					12C249132C5F77C200074874 = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					C84B219F2C39594600825521 = {
 						CreatedOnToolsVersion = 16.0;
-					};
-					C84B21AF2C39594800825521 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = C84B219F2C39594600825521;
-					};
-					C84B21B92C39594800825521 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = C84B219F2C39594600825521;
 					};
 				};
 			};
@@ -348,13 +411,29 @@
 			projectRoot = "";
 			targets = (
 				C84B219F2C39594600825521 /* MinimalDesk */,
-				C84B21AF2C39594800825521 /* MinimalDeskTests */,
-				C84B21B92C39594800825521 /* MinimalDeskUITests */,
+				124AF7292C47A3F5008AD47C /* MinimalDeskDateWidgetExtension */,
+				12C249132C5F77C200074874 /* FavAppWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		124AF7282C47A3F5008AD47C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				124AF7332C47A3F6008AD47C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12C249122C5F77C200074874 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12C2491D2C5F77C300074874 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C84B219E2C39594600825521 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -365,23 +444,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C84B21AE2C39594800825521 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C84B21B82C39594800825521 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		124AF7262C47A3F5008AD47C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				124AF7312C47A3F5008AD47C /* MinimalDeskDateWidget.swift in Sources */,
+				124AF7412C47F88E008AD47C /* DateWidgetViews.swift in Sources */,
+				124AF72F2C47A3F5008AD47C /* MinimalDeskDateWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12C249102C5F77C200074874 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12C249192C5F77C200074874 /* FavAppWidgetBundle.swift in Sources */,
+				12C2491B2C5F77C200074874 /* FavAppWidget.swift in Sources */,
+				12C249282C5F7D1D00074874 /* OpenAppIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C84B219C2C39594600825521 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,48 +475,153 @@
 				C84B21A62C39594600825521 /* ContentView.swift in Sources */,
 				C8D763DA2C3A0905008615A2 /* CustomWidget.swift in Sources */,
 				C84B21D52C396FBB00825521 /* Tutorials.swift in Sources */,
-				C80136922C45786200807D52 /* AddCustom.swift in Sources */,
 				C84B21CE2C39689C00825521 /* AddView.swift in Sources */,
+				124AF7402C47F88E008AD47C /* DateWidgetViews.swift in Sources */,
 				C8BCA7082C425CDA0026DC58 /* AppListView.swift in Sources */,
+				124AF7432C480161008AD47C /* WidgetList.swift in Sources */,
 				1232B2CF2C4187E500DD2FEE /* FirebaseDataViewModel.swift in Sources */,
 				C84B21D32C396F3200825521 /* Widget.swift in Sources */,
 				C84B21A42C39594600825521 /* MinimalDeskApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C84B21AC2C39594800825521 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C84B21B52C39594800825521 /* MinimalDeskTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C84B21B62C39594800825521 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C84B21BF2C39594800825521 /* MinimalDeskUITests.swift in Sources */,
-				C84B21C12C39594800825521 /* MinimalDeskUITestsLaunchTests.swift in Sources */,
+				12C249272C5F7D1D00074874 /* OpenAppIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C84B21B22C39594800825521 /* PBXTargetDependency */ = {
+		124AF7362C47A3F6008AD47C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C84B219F2C39594600825521 /* MinimalDesk */;
-			targetProxy = C84B21B12C39594800825521 /* PBXContainerItemProxy */;
+			target = 124AF7292C47A3F5008AD47C /* MinimalDeskDateWidgetExtension */;
+			targetProxy = 124AF7352C47A3F6008AD47C /* PBXContainerItemProxy */;
 		};
-		C84B21BC2C39594800825521 /* PBXTargetDependency */ = {
+		12C249202C5F77C300074874 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C84B219F2C39594600825521 /* MinimalDesk */;
-			targetProxy = C84B21BB2C39594800825521 /* PBXContainerItemProxy */;
+			target = 12C249132C5F77C200074874 /* FavAppWidgetExtension */;
+			targetProxy = 12C2491F2C5F77C300074874 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		124AF7392C47A3F6008AD47C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MinimalDeskDateWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 68W2966MBV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MinimalDeskDateWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MinimalDeskDateWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDesk.MinimalDeskDateWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		124AF73A2C47A3F6008AD47C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MinimalDeskDateWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 68W2966MBV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MinimalDeskDateWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MinimalDeskDateWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDesk.MinimalDeskDateWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		12C249232C5F77C300074874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = FavAppWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 68W2966MBV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FavAppWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FavAppWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDesk.FavAppWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		12C249242C5F77C300074874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = FavAppWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 68W2966MBV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FavAppWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FavAppWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDesk.FavAppWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C84B21C22C39594800825521 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -554,8 +744,10 @@
 		C84B21C52C39594800825521 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MinimalDesk/MinimalDesk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MinimalDesk/Preview Content\"";
@@ -567,6 +759,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -583,8 +776,10 @@
 		C84B21C62C39594800825521 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MinimalDesk/MinimalDesk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MinimalDesk/Preview Content\"";
@@ -596,6 +791,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,77 +805,27 @@
 			};
 			name = Release;
 		};
-		C84B21C82C39594800825521 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDeskTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MinimalDesk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MinimalDesk";
-			};
-			name = Debug;
-		};
-		C84B21C92C39594800825521 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDeskTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MinimalDesk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MinimalDesk";
-			};
-			name = Release;
-		};
-		C84B21CB2C39594800825521 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDeskUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MinimalDesk;
-			};
-			name = Debug;
-		};
-		C84B21CC2C39594800825521 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDeskUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MinimalDesk;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		124AF7382C47A3F6008AD47C /* Build configuration list for PBXNativeTarget "MinimalDeskDateWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				124AF7392C47A3F6008AD47C /* Debug */,
+				124AF73A2C47A3F6008AD47C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12C249222C5F77C300074874 /* Build configuration list for PBXNativeTarget "FavAppWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12C249232C5F77C300074874 /* Debug */,
+				12C249242C5F77C300074874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C84B219B2C39594600825521 /* Build configuration list for PBXProject "MinimalDesk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -694,24 +840,6 @@
 			buildConfigurations = (
 				C84B21C52C39594800825521 /* Debug */,
 				C84B21C62C39594800825521 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C84B21C72C39594800825521 /* Build configuration list for PBXNativeTarget "MinimalDeskTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C84B21C82C39594800825521 /* Debug */,
-				C84B21C92C39594800825521 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C84B21CA2C39594800825521 /* Build configuration list for PBXNativeTarget "MinimalDeskUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C84B21CB2C39594800825521 /* Debug */,
-				C84B21CC2C39594800825521 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

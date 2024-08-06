@@ -17,94 +17,103 @@ struct Widget: View {
     @State var heightToSet:CGFloat =  0
     @State var gap:CGFloat = 0
     @State private var isPresented = false
-   
+    @State private var isWidgetListPresented = false
     
     
     
     var body: some View {
-        VStack {
+        ZStack {
             
             Color.black.edgesIgnoringSafeArea(.all)
-            Spacer()
             
-            
-            Spacer() // Pushes the following view to the bottom
-            
-            
-            
-            HStack(spacing:gap) {
+            VStack {
                 
+                Spacer()
                 
-                
-                VStack(spacing: 8) {
-                    Image("widghet") // Replace "yourImageName" with the name of your image asset
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 35, height: 35)
+                HStack(spacing:gap) {
                     
                     
                     
-                    VStack(spacing: 0) {
-                        Text("Customize")
-                            .font(.headline)
-                            .foregroundColor(Color.white)
-                            .frame(maxWidth: .infinity, alignment: .center)
-                        Text("Wedget")
-                            .font(.headline)
-                            .foregroundColor(Color.white)
-                            .frame(maxWidth: .infinity, alignment: .center)
+                    VStack(spacing: 8) {
+                        Image("widghet") // Replace "yourImageName" with the name of your image asset
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 35, height: 35)
+                        
+                        
+                        
+                        VStack(spacing: 0) {
+                            Text("Customize")
+                                .font(.headline)
+                                .foregroundColor(Color.white)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                            Text("Wedget")
+                                .font(.headline)
+                                .foregroundColor(Color.white)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                        }
+                        
+                        
+                        
+                    }
+                    .frame(width: widthToSet, height: heightToSet)
+                    .background(Color(red: 41/255, green: 44/255, blue: 53/255))
+                    .cornerRadius(10)
+                    .gesture(TapGesture().onEnded {
+                        isPresented = true
+                    })
+                    
+                    .fullScreenCover(isPresented: $isPresented) {
+                        CustomWidget()
                     }
                     
                     
+                    VStack(spacing: 8) {
+                        
+                        Image("widghet") // Replace "yourImageName" with the name of your image asset
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 35, height: 35)
+                        VStack(spacing: 0) {
+                            Text("Customize")
+                                .font(.headline)
+                                .foregroundColor(Color.white)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                            Text("Top Widget")
+                                .font(.headline)
+                                .foregroundColor(Color.white)
+                                .frame(maxWidth: .infinity, alignment: .center)
+                        }
+                        
+                        
+                        
+                    }
+                    .frame(width: widthToSet, height: heightToSet)
+                    .background(Color(red: 41/255, green: 44/255, blue: 53/255))
+                    .cornerRadius(10)
                     
-                }
-                .frame(width: widthToSet, height: heightToSet)
-                .background(Color(red: 41/255, green: 44/255, blue: 53/255))
-                .cornerRadius(10)
-                .gesture(TapGesture().onEnded {
-                    isPresented = true
-                })
-                
-                .fullScreenCover(isPresented: $isPresented) {
-                    CustomWidget()
-                }
-                VStack(spacing: 8) {
+                    .onTapGesture {
+                        isWidgetListPresented = true
+                    }
                     
-                    Image("widghet") // Replace "yourImageName" with the name of your image asset
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 35, height: 35)
-                    VStack(spacing: 0) {
-                        Text("Customize")
-                            .font(.headline)
-                            .foregroundColor(Color.white)
-                            .frame(maxWidth: .infinity, alignment: .center)
-                        Text("Top Wedget")
-                            .font(.headline)
-                            .foregroundColor(Color.white)
-                            .frame(maxWidth: .infinity, alignment: .center)
+                    .fullScreenCover(isPresented: $isWidgetListPresented) {
+                        WidgetList()
                     }
                     
                     
+                }.padding(.bottom,40)
+                
+                
+            } .background(Color.black)
+            
+                .onAppear {
                     
-                }
-                .frame(width: widthToSet, height: heightToSet)
-                .background(Color(red: 41/255, green: 44/255, blue: 53/255))
-                .cornerRadius(10)
-                
-                
-            }.padding(.bottom,40)
-            
-            
-        } .background(Color.black)
-        
-            .onAppear {
-                
-                widthToSet = (screenWidth * 0.85)/2.0
-                gap = (screenWidth - widthToSet * 2)/3.0
-                heightToSet = (112 * widthToSet) / 176.0
-                // Perform any actions you want when the view appears
+                    widthToSet = (screenWidth * 0.85)/2.0
+                    gap = (screenWidth - widthToSet * 2)/3.0
+                    heightToSet = (112 * widthToSet) / 176.0
+                    // Perform any actions you want when the view appears
             }
+        }
         
         
     }
