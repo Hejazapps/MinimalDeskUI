@@ -88,6 +88,85 @@ struct WidgetList: View {
                             doOnTap(theme: "DateTimeViewType3")
                         }
                         .padding()
+                    
+                    
+                    DateTimeViewType4()
+                        .padding(.horizontal, 50)
+                        .padding(.vertical, 25)
+                        .clipShape(
+                            RoundedRectangle(cornerRadius: 25.0)
+                        )
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 25.0)
+                                .stroke(isSelected(viewName: "DateTimeViewType4"), lineWidth: 2.0)
+                        }
+                        .onTapGesture {
+                            doOnTap(theme: "DateTimeViewType4")
+                        }
+                        .padding()
+                    
+                    DateTimeViewType5()
+                        .padding(.horizontal, 50)
+                        .padding(.vertical, 25)
+                        .clipShape(
+                            RoundedRectangle(cornerRadius: 25.0)
+                        )
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 25.0)
+                                .stroke(isSelected(viewName: "DateTimeViewType5"), lineWidth: 2.0)
+                        }
+                        .onTapGesture {
+                            doOnTap(theme: "DateTimeViewType5")
+                        }
+                        .padding()
+                    
+                    
+                    DateTimeViewType6()
+                        .padding(.horizontal, 35)
+                        .padding(.vertical, 40)
+                        .clipShape(
+                            RoundedRectangle(cornerRadius: 25.0)
+                        )
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 25.0)
+                                .stroke(isSelected(viewName: "DateTimeViewType6"), lineWidth: 2.0)
+                        }
+                        .onTapGesture {
+                            doOnTap(theme: "DateTimeViewType6")
+                        }
+                        .padding()
+                    
+                    
+                    DateTimeViewType7()
+                        .padding(.horizontal, 35)
+                        .padding(.vertical, 40)
+                        .clipShape(
+                            RoundedRectangle(cornerRadius: 25.0)
+                        )
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 25.0)
+                                .stroke(isSelected(viewName: "DateTimeViewType7"), lineWidth: 2.0)
+                        }
+                        .onTapGesture {
+                            doOnTap(theme: "DateTimeViewType7")
+                        }
+                        .padding()
+                    
+                    DateTimeViewType8()
+                        .padding(.horizontal, 50)
+                        .padding(.vertical, 25)
+                        .clipShape(
+                            RoundedRectangle(cornerRadius: 25.0)
+                        )
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 25.0)
+                                .stroke(isSelected(viewName: "DateTimeViewType8"), lineWidth: 2.0)
+                        }
+                        .onTapGesture {
+                            doOnTap(theme: "DateTimeViewType8")
+                        }
+                        .padding()
+
 
                 }
             }
