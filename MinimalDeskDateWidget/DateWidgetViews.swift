@@ -225,16 +225,14 @@ struct DateTimeViewType6: View {
     private var year: String { date.formatted(.dateTime.year()) }
 
     var body: some View {
-        VStack (alignment: .leading) {
-            
-            
+        VStack (alignment: .leading, spacing: 5.0) {
             HStack(alignment: .center) {
-                
                 Text(date.formatted(.dateTime.weekday(.wide)))
                     .foregroundColor(.white)
                     .font(.title)
             }
-            HStack(alignment: .center) {
+            
+            HStack {
                 Text(hour)
                     .font(.title2)
                     .padding(10)
@@ -268,10 +266,12 @@ struct DateTimeViewType7: View {
     private var year: String { date.formatted(.dateTime.year()) }
     
     var body: some View {
-        VStack (alignment: .leading) {
-            Text("\(date.formatted(.dateTime.hour(.twoDigits(amPM: .abbreviated)).minute()))")
-                .font(.largeTitle)
-                .bold()
+        VStack (alignment: .leading, spacing: 5.0) {
+            HStack(alignment: .center) {
+                Text("\(date.formatted(.dateTime.hour(.twoDigits(amPM: .abbreviated)).minute()))")
+                    .font(.largeTitle)
+                    .bold()
+            }
             
             HStack(alignment: .center, spacing: 15.0) {
                 Text(day)

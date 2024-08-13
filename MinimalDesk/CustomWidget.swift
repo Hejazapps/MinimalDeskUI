@@ -22,6 +22,8 @@ struct CustomWidget: View {
     @State var fontSize = 48
     @State var space = 0
     @State var widghet = 10
+    @State private var isWidgetListPresented = false
+    @State private var isCustomWallPaperPressed = false
     var body: some View {
         
         VStack() {
@@ -62,7 +64,7 @@ struct CustomWidget: View {
                         
                         VStack {
                             HStack(alignment: .top) { // Align items to the top
-                                Text("Top\n Wedget")
+                                Text("Top\n Widget")
                                     .font(.headline)
                                     .foregroundColor(Color.white)
                                     .padding(.leading)
@@ -81,11 +83,19 @@ struct CustomWidget: View {
                             
                         }
                         .frame(width: widthToSet, height: widthToSet)
-                        .cornerRadius(10)
+                        .contentShape(RoundedRectangle(cornerRadius: 10))
+                        .onTapGesture {
+                            isWidgetListPresented = true
+                        }
                         .overlay(
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
+                                
                         )
+                        
+                        .fullScreenCover(isPresented: $isWidgetListPresented) {
+                            WidgetList()
+                        }
                         
                         VStack() {
                             
@@ -111,7 +121,13 @@ struct CustomWidget: View {
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color(red: 98/255, green: 97/255, blue: 104/255), lineWidth: 2)
                         )
-                        .cornerRadius(10)
+                        .contentShape(RoundedRectangle(cornerRadius: 10))
+                        .onTapGesture {
+                            isCustomWallPaperPressed = true
+                        }
+                        .fullScreenCover(isPresented: $isCustomWallPaperPressed) {
+                            CustomWallpaper()
+                        }
                         
                         
                     }

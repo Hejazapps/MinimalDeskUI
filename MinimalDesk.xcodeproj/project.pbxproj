@@ -63,6 +63,7 @@
 		C84B21D32C396F3200825521 /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21D22C396F3000825521 /* Widget.swift */; };
 		C84B21D52C396FBB00825521 /* Tutorials.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21D42C396FB900825521 /* Tutorials.swift */; };
 		C84B21D72C39702800825521 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21D62C39702400825521 /* Settings.swift */; };
+		C896779C2C688B7400BDF603 /* CustomWallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C896779B2C688B7400BDF603 /* CustomWallpaper.swift */; };
 		C8BCA7082C425CDA0026DC58 /* AppListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCA7072C425CD90026DC58 /* AppListView.swift */; };
 		C8C78BF42C439D53008CE138 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = C8C78BF32C439D53008CE138 /* AlertToast */; };
 		C8C78BF72C43AD94008CE138 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = C8C78BF62C43AD94008CE138 /* Reachability */; };
@@ -131,6 +132,7 @@
 		C84B21D22C396F3000825521 /* Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
 		C84B21D42C396FB900825521 /* Tutorials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorials.swift; sourceTree = "<group>"; };
 		C84B21D62C39702400825521 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		C896779B2C688B7400BDF603 /* CustomWallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWallpaper.swift; sourceTree = "<group>"; };
 		C8BCA7072C425CD90026DC58 /* AppListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListView.swift; sourceTree = "<group>"; };
 		C8D763D92C3A0904008615A2 /* CustomWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWidget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -255,10 +257,11 @@
 			isa = PBXGroup;
 			children = (
 				124AF73C2C47D674008AD47C /* MinimalDesk.entitlements */,
-				C8BCA7072C425CD90026DC58 /* AppListView.swift */,
 				1232B2D22C418A1F00DD2FEE /* GoogleService-Info.plist */,
 				C8D763D92C3A0904008615A2 /* CustomWidget.swift */,
+				C896779B2C688B7400BDF603 /* CustomWallpaper.swift */,
 				C84B21D62C39702400825521 /* Settings.swift */,
+				C8BCA7072C425CD90026DC58 /* AppListView.swift */,
 				C84B21D42C396FB900825521 /* Tutorials.swift */,
 				C84B21D22C396F3000825521 /* Widget.swift */,
 				124AF7422C480161008AD47C /* WidgetList.swift */,
@@ -481,6 +484,7 @@
 				124AF7432C480161008AD47C /* WidgetList.swift in Sources */,
 				1232B2CF2C4187E500DD2FEE /* FirebaseDataViewModel.swift in Sources */,
 				C84B21D32C396F3200825521 /* Widget.swift in Sources */,
+				C896779C2C688B7400BDF603 /* CustomWallpaper.swift in Sources */,
 				C84B21A42C39594600825521 /* MinimalDeskApp.swift in Sources */,
 				12C249272C5F7D1D00074874 /* OpenAppIntent.swift in Sources */,
 			);

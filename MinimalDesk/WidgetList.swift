@@ -122,8 +122,8 @@ struct WidgetList: View {
                     
                     
                     DateTimeViewType6()
-                        .padding(.horizontal, 35)
-                        .padding(.vertical, 40)
+                        .padding(.horizontal, 50)
+                        .padding(.vertical, 25)
                         .clipShape(
                             RoundedRectangle(cornerRadius: 25.0)
                         )
@@ -139,7 +139,7 @@ struct WidgetList: View {
                     
                     DateTimeViewType7()
                         .padding(.horizontal, 35)
-                        .padding(.vertical, 40)
+                        .padding(.vertical, 25)
                         .clipShape(
                             RoundedRectangle(cornerRadius: 25.0)
                         )
