@@ -156,7 +156,7 @@ struct AppListView: View {
                     .listRowSeparator(.hidden)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .listRowBackground(Color.black)
-
+                    .contentShape(Rectangle())
                     .onTapGesture {
                         if selectedIndices.contains(name) {
                             selectedIndices.remove(name)
