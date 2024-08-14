@@ -8,7 +8,7 @@ struct CustomWallpaper: View {
     
     @Environment(\.dismiss) var dismiss
     
-    @State private var index: Int = 0
+    @State private var index: Int? = 0
     
     private let sampleTrips = [ "Mockup1",
                                 "Mockup2",
@@ -27,17 +27,17 @@ struct CustomWallpaper: View {
         case right
     }
     private func changePic(forSwipeTo gestureType: GestureType, proxy: ScrollViewProxy) {
-        switch gestureType {
-        case .left:
-            guard index < sampleTrips.count - 1 else { return }
-            index += 1
-            proxy.scrollTo(sampleTrips[index], anchor: .topLeading)
-            
-        case .right:
-            guard index > 0 else { return }
-            index -= 1
-            proxy.scrollTo(sampleTrips[index], anchor: .topLeading)
-        }
+//        switch gestureType {
+//        case .left:
+//            guard index < sampleTrips.count - 1 else { return }
+//            index += 1
+//            proxy.scrollTo(sampleTrips[index])
+//            
+//        case .right:
+//            guard index > 0 else { return }
+//            index -= 1
+//            proxy.scrollTo(sampleTrips[index])
+//        }
     }
     
     var body: some View {
@@ -85,78 +85,67 @@ struct CustomWallpaper: View {
                     
                     HStack(spacing:10) {
                         Spacer()
-                        Text("Step to  apply the wallpaper")
+                        
+                        Text("Step to apply the wallpaper")
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color(rgbRed: 138, green: 196, blue: 75))
-                            .frame(width:300)
-                        //                            .foregroundColor(Color(red: 142/255, green: 142/255, blue: 142/255))
                         
                         Image("coloredArrow")
                             .resizable()
-                            .frame(width: 30, height: 30)
+                            .frame(width: 20, height: 25)
+                            .padding(.leading, -7)
                             .padding(.trailing,15)
                         
                         Spacer()
                         
                     }.padding(.top,20)
                     
-                    ScrollViewReader { proxy in
-                        HStack(spacing: 0) {
-                            Image(.arrowLeft)
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .onTapGesture {
-                                    changePic(forSwipeTo: .right, proxy: proxy)
-                                }
-                            
-
-                            ScrollView(.horizontal) {
-                                LazyHStack(spacing: 0) {
-                                    ForEach(sampleTrips, id: \.self) { trip in
-                                        
-                                        Image(trip)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .padding(.horizontal, 20)
-                                            .containerRelativeFrame(.horizontal)
-                                            .scrollTransition(.animated, axis: .horizontal) { content, phase in
-                                                content
-                                                    .opacity(phase.isIdentity ? 1.0 : 0.8)
-                                                    .scaleEffect(phase.isIdentity ? 1.0 : 0.8)
-                                            }
-                                            .id(trip)
-                                            .gesture(
-                                                DragGesture(minimumDistance: 0)
-                                                    .onEnded { value in
-                                                        log()
-                                                        let distance = value.translation.width
-                                                        
-                                                        guard abs(distance) > 5 else { return }
-                                                        
-                                                        if distance < 0 {
-                                                            changePic(forSwipeTo: .left, proxy: proxy)
-                                                        } else {
-                                                            changePic(forSwipeTo: .right, proxy: proxy)
-                                                        }
-                                                    }
-                                            )
-                                    }
-                                }
-                                .frame(maxHeight: 400)
+                    HStack(spacing: 0) {
+                        Image(.arrowLeft)
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .onTapGesture {
+                                guard let id = index, id > 0 else { return }
+                                
+                                index = id - 1
                             }
-                            
-                            .scrollTargetBehavior(.paging)
-                            
-                            
-                            Image(.arrowRight)
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .onTapGesture {
-                                    changePic(forSwipeTo: .left, proxy: proxy)
+                        
+
+                        ScrollView(.horizontal) {
+                            LazyHStack(spacing: 0) {
+                                ForEach(0..<sampleTrips.count, id: \.self) { id in
+                                    
+                                    Image(sampleTrips[id])
+                                        .resizable()
+                                        .scaledToFit()
+                                        .padding(.horizontal, 20)
+                                        .containerRelativeFrame(.horizontal)
+                                        .scrollTransition(.animated, axis: .horizontal) { content, phase in
+                                            content
+                                                .opacity(phase.isIdentity ? 1.0 : 0.8)
+                                                .scaleEffect(phase.isIdentity ? 1.0 : 0.8)
+                                        }
                                 }
+                            }
+                            .frame(maxHeight: 400)
+                            .scrollTargetLayout()
                         }
+                        .scrollIndicators(.hidden)
+                        .scrollTargetBehavior(.paging)
+                        .scrollPosition(id: $index)
+                        .animation(.default, value: index)
                         .padding(.horizontal, 5)
+                        
+                        Image(.arrowRight)
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .onTapGesture {
+                                guard let id = index, id < sampleTrips.count - 1 else { return }
+                                
+                                index = id + 1
+                            }
                     }
+                    .padding(.horizontal, 5)
                     
                     Button("Use this Wallpaper") {
                         

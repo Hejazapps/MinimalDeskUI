@@ -53,7 +53,7 @@ public class FirebaseDataViewModel: ObservableObject {
                 print("Retrieved array of persons:")
                 for app in saveAppList {
                     print("Retrieved array of persons: \(app.appLink), \(app.appName)")
-                    appList.append(Appp(appName: app.appLink, appLink: app.appName))
+                    appList.append(Appp(appName: app.appName, appLink: app.appLink))
                     if !onlyAppName.contains(app.appName) {
                         onlyAppName.append(app.appName)
                     }
@@ -72,34 +72,34 @@ public class FirebaseDataViewModel: ObservableObject {
 
         dbRef.getDocuments { [weak self] snapshot, error in
             guard error == nil else {
-                print("[FirebaseDataViewModel] [fetchAllSubscribers] failed with - \(String(describing: error))")
+                log("Failed with - \(String(describing: error))")
                 return
             }
 
             snapshot?.documents.forEach { document in
+                let doc = document.data()
                 guard
-                    let appName = document["appName"] as? String,
-                    let appLink = document["appLink"] as? String
-                        
-                    
+                    let appName = doc["appName"] as? String,
+                    let appLink = doc["appLink"] as? String
                 else {
-                    print("[FirebaseDataViewModel] [fetchAllSubscribers] Did not find the properties")
+                    log("Did not find the properties")
                     return
                 }
-
-              //  print("i have found \(appName) \(appLink)")
+                
+//                log(doc)
+                
                 newAppList.append(Appp(appName: appName, appLink: appLink))
                 if !onlyAppName.contains(appName) {
                     onlyAppName.append(appName)
                 }
-               
-               // print("[FirebaseDataViewModel] [fetchAllSubscribers] \(document.documentID) --> \(document.data())")
             }
             
             guard let self else {
                print("[FirebaseDataViewModel] [fetchAllSubscribers] self is nil")
                 return
             }
+            
+            log("Successfully fetched app list.")
             
             self.appList = newAppList
             self.onlyAppName = onlyAppName
