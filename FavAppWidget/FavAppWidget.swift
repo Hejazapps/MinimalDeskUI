@@ -45,29 +45,36 @@ struct FavAppWidgetEntryView : View {
     @State private var favApps = [["name": "Testapp", "link": "Testlink"]]
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                ForEach(favApps, id: \.self) { app in
-                    Button(intent: OpenAppIntent(urlStr: app["link"] ?? "Empty Link")) {
-                        Text(app["name"] ?? "Loading...")
-                    }
-                    .padding(.vertical, 3)
-                    .buttonStyle(PlainButtonStyle())
-                    .font(.title)
-                    .bold()
-                }
-                .padding(.leading, 25)
-                .onAppear {
-                    let userDefault = UserDefaults(suiteName: "group.minimaldesk") ?? UserDefaults()
-                    favApps = userDefault.value(forKey: "favorite-apps") as? [[String: String]] ?? []
-                    log(favApps)
-                }
+        if favApps.isEmpty {
+            Text("Add Favorite apps to be shown here.")
+                .font(.title2)
+                .multilineTextAlignment(.center)
                 .foregroundColor(.white)
+        } else {
+            HStack {
+                VStack(alignment: .leading) {
+                    ForEach(favApps, id: \.self) { app in
+                        Button(intent: OpenAppIntent(urlStr: app["link"] ?? "Empty Link")) {
+                            Text(app["name"] ?? "Loading...")
+                        }
+                        .padding(.vertical, 3)
+                        .buttonStyle(PlainButtonStyle())
+                        .font(.title)
+                        .bold()
+                    }
+                    .padding(.leading, 25)
+                    .onAppear {
+                        let userDefault = UserDefaults(suiteName: "group.minimaldesk") ?? UserDefaults()
+                        favApps = userDefault.value(forKey: "favorite-apps") as? [[String: String]] ?? []
+                        log(favApps)
+                    }
+                    .foregroundColor(.white)
+                }
+                
+                Spacer()
             }
-            
-            Spacer()
+            .padding(.vertical)
         }
-        .padding(.vertical)
     }
 }
 
@@ -85,8 +92,8 @@ struct FavAppWidget: Widget {
                     .background()
             }
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("FavoriteApps Widget")
+        .description("Open favorite apps quickly")
         .supportedFamilies([.systemLarge])
     }
 }

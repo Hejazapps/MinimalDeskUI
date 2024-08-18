@@ -61,17 +61,17 @@ struct MinimalDeskDateWidget: Widget {
                     .padding()
             }
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("DateTime Widget")
+        .description("Check date-time")
         .supportedFamilies([.systemMedium])
     }
 }
 
-#Preview(as: .systemMedium) {
-    MinimalDeskDateWidget()
-} timeline: {
-    SimpleEntry(date: .now)
-}
+//#Preview(as: .systemMedium) {
+//    MinimalDeskDateWidget()
+//} timeline: {
+//    SimpleEntry(date: .now)
+//}
 
 //struct ItemView_Previews: PreviewProvider {
 //

@@ -20,7 +20,7 @@ struct AppListView: View {
         if searchText.isEmpty {
             return viewModel.onlyAppName
         } else {
-            return viewModel.onlyAppName.filter { $0.contains(searchText) }
+            return viewModel.onlyAppName.filter { $0.lowercased().contains(searchText.lowercased()) }
         }
     }
     
@@ -57,8 +57,8 @@ struct AppListView: View {
             return
         }
         
-        log("favApps = \(favApps)")
-        log("selectedIndices = \(selectedIndices)")
+//        log("favApps = \(favApps)")
+//        log("selectedIndices = \(selectedIndices)")
         
         userdefault.set(favApps, forKey: "favorite-apps")
         WidgetCenter.shared.reloadTimelines(ofKind: "FavAppWidget")
@@ -70,14 +70,14 @@ struct AppListView: View {
         log("favApps in init = \(apps)")
         
         _ = apps.map { app in
-            log("app = \(app)")
+//            log("app = \(app)")
             
             guard let name = app["name"] else {
                 log("app name not found.")
                 return
             }
             let result = selectedIndices.insert(name)
-            log("result = \(result), selectedIndices in init = \(selectedIndices)")
+//            log("result = \(result), selectedIndices in init = \(selectedIndices)")
         }
     }
     
@@ -85,7 +85,7 @@ struct AppListView: View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
             
-            VStack {
+            VStack(spacing: 0) {
                 
                 HStack {
                     Button(action: {
@@ -168,8 +168,6 @@ struct AppListView: View {
                                 showToast = true
                             }
                         }
-                        
-                        updateFavoriteAppsInCache()
                     }
                 }
                 .listStyle(.plain)
@@ -179,14 +177,28 @@ struct AppListView: View {
                     doOnAppear()
                 }
                 
-                Spacer()
+                HStack(alignment: .center) {
+                    Spacer()
+                    Text("Done")
+                    Spacer()
+                }
+                .padding(.vertical, 10)
+                .background(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .onTapGesture {
+                    log("Done tapped.")
+                    
+                    updateFavoriteAppsInCache()
+                    
+                    dismiss()
+                }
+                .foregroundColor(.black)
+                .padding(.vertical, 5)
+                .padding(.horizontal, 35)
             }
-            
         }
         .foregroundColor(.gray)
     }
-    
-    
 }
 
 #Preview {
