@@ -16,7 +16,7 @@ struct DateWidgetView: View {
         let viewName = userdefault?.value(forKey: "current-widget-theme") as? String ?? "Nil"
         
         print("[DateWidget] [TimelineProvider] viewName = \(viewName)")
-
+        
         return viewName
     }
     
@@ -52,7 +52,7 @@ struct DateTimeViewType1: View {
                             .foregroundColor(.white)
                     }
                 )
-
+                
                 VStack(alignment: .leading) {
                     Text(date.formatted(.dateTime.month(.wide)))
                         .foregroundColor(.white)
@@ -124,15 +124,15 @@ struct DateTimeViewType3: View {
 
 struct DateTimeViewType4: View {
     var date: Date { .now }
-
+    
     private var hour: String { date.formatted(.dateTime.hour(.twoDigits(amPM: .omitted))) }
     private var minute: String { date.formatted(.dateTime.minute(.twoDigits)) }
     private var amPm: String { String(date.formatted(.dateTime.hour(.twoDigits(amPM: .abbreviated))).suffix(2)) }
-
+    
     private var day: String { date.formatted(.dateTime.day(.twoDigits)) }
     private var month: String { date.formatted(.dateTime.month(.wide)) }
     private var year: String { date.formatted(.dateTime.year()) }
-
+    
     var body: some View {
         VStack (alignment: .leading) {
             HStack(alignment: .center) {
@@ -141,22 +141,22 @@ struct DateTimeViewType4: View {
                     .padding(10)
                     .background(.white)
                     .clipShape(Circle())
-
+                
                 Text(":")
                     .font(.title2)
                     .foregroundColor(.white)
-
+                
                 Text(minute)
                     .font(.title2)
                     .padding(10)
                     .background(.white)
                     .clipShape(Circle())
-
+                
                 Text(amPm)
                     .font(.title2)
                     .foregroundColor(.white)
             }
-
+            
             HStack {
                 Text("\(month) \(day), \(year)")
                     .font(.title3)
@@ -169,15 +169,15 @@ struct DateTimeViewType4: View {
 
 struct DateTimeViewType5: View {
     var date: Date { .now }
-
+    
     private var hour: String { date.formatted(.dateTime.hour(.twoDigits(amPM: .omitted))) }
     private var minute: String { date.formatted(.dateTime.minute(.twoDigits)) }
     private var amPm: String { String(date.formatted(.dateTime.hour(.twoDigits(amPM: .abbreviated))).suffix(2)) }
-
+    
     private var day: String { date.formatted(.dateTime.day(.twoDigits)) }
     private var month: String { date.formatted(.dateTime.month(.wide)) }
     private var year: String { date.formatted(.dateTime.year()) }
-
+    
     var body: some View {
         VStack (alignment: .leading) {
             HStack(alignment: .center) {
@@ -186,22 +186,22 @@ struct DateTimeViewType5: View {
                     .padding(10)
                     .background(.white)
                     .cornerRadius(10)
-
+                
                 Text(":")
                     .font(.title2)
                     .foregroundColor(.white)
-
+                
                 Text(minute)
                     .font(.title2)
                     .padding(10)
                     .background(.white)
                     .cornerRadius(10)
-
+                
                 Text(amPm)
                     .font(.title2)
                     .foregroundColor(.white)
             }
-
+            
             HStack {
                 Text("\(month) \(day), \(year)")
                     .font(.title3)
@@ -215,15 +215,15 @@ struct DateTimeViewType5: View {
 
 struct DateTimeViewType6: View {
     var date: Date { .now }
-
+    
     private var hour: String { date.formatted(.dateTime.hour(.twoDigits(amPM: .omitted))) }
     private var minute: String { date.formatted(.dateTime.minute(.twoDigits)) }
     private var amPm: String { String(date.formatted(.dateTime.hour(.twoDigits(amPM: .abbreviated))).suffix(2)) }
-
+    
     private var day: String { date.formatted(.dateTime.day(.twoDigits)) }
     private var month: String { date.formatted(.dateTime.month(.wide)) }
     private var year: String { date.formatted(.dateTime.year()) }
-
+    
     var body: some View {
         VStack (alignment: .leading, spacing: 5.0) {
             HStack(alignment: .center) {
@@ -238,17 +238,17 @@ struct DateTimeViewType6: View {
                     .padding(10)
                     .background(.white)
                     .clipShape(Circle())
-
+                
                 Text(":")
                     .font(.title2)
                     .foregroundColor(.white)
-
+                
                 Text(minute)
                     .font(.title2)
                     .padding(10)
                     .background(.white)
                     .clipShape(Circle())
-
+                
                 Text(amPm)
                     .font(.title2)
                     .foregroundColor(.white)

@@ -105,7 +105,6 @@ struct Widget: View {
                         WidgetList()
                     }
                     
-                    
                 }.padding(.bottom,40)
                 
                 
@@ -117,7 +116,7 @@ struct Widget: View {
                     gap = (screenWidth - widthToSet * 2)/3.0
                     heightToSet = (112 * widthToSet) / 176.0
                     // Perform any actions you want when the view appears
-            }
+                }
         }
         
         

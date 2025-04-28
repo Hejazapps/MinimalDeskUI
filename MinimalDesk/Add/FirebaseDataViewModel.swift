@@ -260,48 +260,48 @@ extension String {
 
 
 
-/*
- 
- func saveUserDefault () {
- let encoder = JSONEncoder()
- 
- do {
- let encodedData = try encoder.encode(appList)
- UserDefaults.standard.set(encodedData, forKey: "saveAppList")
- UserDefaults.standard.synchronize()
- 
- log("Saved array of persons to UserDefaults")
- } catch {
- log("Error encoding or saving array of persons: \(error.localizedDescription)")
- }
- 
- }
- 
- func getList() {
- appList.removeAll()
- onlyAppName.removeAll()
- if let savedData = UserDefaults.standard.data(forKey: "saveAppList") {
- let decoder = JSONDecoder()
- 
- do {
- // Decode the JSON Data into an array of Person objects
- let saveAppList = try decoder.decode([Appp].self, from: savedData)
- 
- // Use the retrieved array of objects
- print("Retrieved array of persons:")
- for app in saveAppList {
- print("Retrieved array of persons: \(app.appLink), \(app.appName), \(app.appRank)")
- appList.append(app)
- if !onlyAppName.contains(app.appName) {
- onlyAppName.append(app.appName)
- }
- }
- } catch {
- print("Error decoding or retrieving array of persons: \(error.localizedDescription)")
- }
- } else {
- print("No saved array of persons data found in UserDefaults")
- }
- }
- 
- */
+
+// 
+// func saveUserDefault () {
+// let encoder = JSONEncoder()
+// 
+// do {
+// let encodedData = try encoder.encode(appList)
+// UserDefaults.standard.set(encodedData, forKey: "saveAppList")
+// UserDefaults.standard.synchronize()
+// 
+// log("Saved array of persons to UserDefaults")
+// } catch {
+// log("Error encoding or saving array of persons: \(error.localizedDescription)")
+// }
+// 
+// }
+// 
+// func getList() {
+// appList.removeAll()
+// onlyAppName.removeAll()
+// if let savedData = UserDefaults.standard.data(forKey: "saveAppList") {
+// let decoder = JSONDecoder()
+// 
+// do {
+// // Decode the JSON Data into an array of Person objects
+// let saveAppList = try decoder.decode([Appp].self, from: savedData)
+// 
+// // Use the retrieved array of objects
+// print("Retrieved array of persons:")
+// for app in saveAppList {
+// print("Retrieved array of persons: \(app.appLink), \(app.appName), \(app.appRank)")
+// appList.append(app)
+// if !onlyAppName.contains(app.appName) {
+// onlyAppName.append(app.appName)
+// }
+// }
+// } catch {
+// print("Error decoding or retrieving array of persons: \(error.localizedDescription)")
+// }
+// } else {
+// print("No saved array of persons data found in UserDefaults")
+// }
+// }
+// 
+//

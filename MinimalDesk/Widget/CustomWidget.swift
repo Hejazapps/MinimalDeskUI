@@ -8,8 +8,6 @@
 import SwiftUI
 import Firebase
 
-
-
 struct CustomWidget: View {
     @Environment(\.dismiss) var dismiss
     

@@ -24,7 +24,6 @@ struct OpenAppIntent: AppIntent {
         urlStr = ""
     }
     
-    
     func perform() async throws -> some IntentResult {
         log("urlStr = \(urlStr)")
         

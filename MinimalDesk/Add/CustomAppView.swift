@@ -172,15 +172,15 @@ struct CustomAppView: View {
                         .padding([.top, .leading, .bottom])
                         .lineLimit(nil)  // Allow multi-line text
                         .fixedSize(horizontal: false, vertical: true)
-
+                    
                     Divider()
                         .background(Color(rgbRed: 0x2f, green: 0x32, blue: 0x3c))
-
+                    
                     Text("As an alternative to finding the URL Scheme, create an \"Open App\" Shortcut in the Shortcuts app.")
                         .padding([.horizontal, .bottom])
                         .lineLimit(nil)  // Allow multi-line text
                         .fixedSize(horizontal: false, vertical: true)
-
+                    
                     Text("Create New Shortcut")
                         .font(Font.custom("Inter", size: 16))
                         .foregroundStyle(Color(rgbRed: 0x8a, green: 0xc4, blue: 0x4b))
@@ -194,7 +194,7 @@ struct CustomAppView: View {
             .padding(.horizontal)
             .padding(.top)
             .frame(maxWidth: .infinity)  // Make sure the VStack stretches horizontally
-
+            
             
             
             // MARK: - Custom AppList
@@ -222,15 +222,12 @@ struct CustomAppView: View {
                 .padding()
             }
             
-            
             Spacer()
         }
         .background(.black)
         .foregroundStyle(.white)
     }
 }
-
-
 
 // MARK: - Helper Methods
 private extension CustomAppView {

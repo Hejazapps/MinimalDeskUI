@@ -23,7 +23,7 @@ struct AppListView: View {
             return viewModel.onlyAppName.filter { $0.lowercased().contains(searchText.lowercased()) }
         }
     }
-        
+    
     init(viewModel: FirebaseDataViewModel, cardIndex: Int = 0) {
         log("IN")
         
