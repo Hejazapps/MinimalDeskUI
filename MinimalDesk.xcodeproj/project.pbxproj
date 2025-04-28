@@ -3,12 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120A404C2CC3A16E00A8FB5E /* AppLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120A404B2CC3A16E00A8FB5E /* AppLocker.swift */; };
+		1223266B2CA462C00081A282 /* WidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223266A2CA462C00081A282 /* WidgetViewModel.swift */; };
+		1223266D2CA468E50081A282 /* FavAppWidgetConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223266C2CA468E50081A282 /* FavAppWidgetConfig.swift */; };
+		1223266E2CA468E50081A282 /* FavAppWidgetConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223266C2CA468E50081A282 /* FavAppWidgetConfig.swift */; };
+		1223266F2CA4DADE0081A282 /* FavAppWidgetConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223266C2CA468E50081A282 /* FavAppWidgetConfig.swift */; };
 		1232B2CF2C4187E500DD2FEE /* FirebaseDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232B2CE2C4187E500DD2FEE /* FirebaseDataViewModel.swift */; };
-		1232B2D32C418A1F00DD2FEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1232B2D22C418A1F00DD2FEE /* GoogleService-Info.plist */; };
+		1240EACE2CA1D26C001A71AA /* CustomAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1240EACD2CA1D26C001A71AA /* CustomAppView.swift */; };
 		124AF72B2C47A3F5008AD47C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124AF6FB2C46279B008AD47C /* WidgetKit.framework */; };
 		124AF72C2C47A3F5008AD47C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124AF6FD2C46279B008AD47C /* SwiftUI.framework */; };
 		124AF72F2C47A3F5008AD47C /* MinimalDeskDateWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124AF72E2C47A3F5008AD47C /* MinimalDeskDateWidgetBundle.swift */; };
@@ -18,6 +23,12 @@
 		124AF7402C47F88E008AD47C /* DateWidgetViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124AF73F2C47F88E008AD47C /* DateWidgetViews.swift */; };
 		124AF7412C47F88E008AD47C /* DateWidgetViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124AF73F2C47F88E008AD47C /* DateWidgetViews.swift */; };
 		124AF7432C480161008AD47C /* WidgetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124AF7422C480161008AD47C /* WidgetList.swift */; };
+		127EC5AF2CA09E650083616A /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EC5AE2CA09E650083616A /* ToastView.swift */; };
+		127EC5B02CA09E650083616A /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EC5AE2CA09E650083616A /* ToastView.swift */; };
+		127FCD6A2CECFD4200773D9D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 127FCD692CECFD4200773D9D /* GoogleService-Info.plist */; };
+		1286B0792C8DA146002C44EA /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1286B0782C8DA146002C44EA /* SubscriptionView.swift */; };
+		129694F82CC444CB000A9372 /* AppLockerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129694F72CC444CB000A9372 /* AppLockerViewModel.swift */; };
+		12AD58562C9F5F0F009903E9 /* FontListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AD58552C9F5F0F009903E9 /* FontListView.swift */; };
 		12C249152C5F77C200074874 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124AF6FB2C46279B008AD47C /* WidgetKit.framework */; };
 		12C249162C5F77C200074874 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124AF6FD2C46279B008AD47C /* SwiftUI.framework */; };
 		12C249192C5F77C200074874 /* FavAppWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C249182C5F77C200074874 /* FavAppWidgetBundle.swift */; };
@@ -55,7 +66,7 @@
 		C8052A602C3F755B009E0E9B /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = C8052A5F2C3F755B009E0E9B /* FirebaseStorageCombine-Community */; };
 		C8052A622C3F755B009E0E9B /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = C8052A612C3F755B009E0E9B /* FirebaseVertexAI-Preview */; };
 		C84B21A42C39594600825521 /* MinimalDeskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21A32C39594600825521 /* MinimalDeskApp.swift */; };
-		C84B21A62C39594600825521 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21A52C39594600825521 /* ContentView.swift */; };
+		C84B21A62C39594600825521 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21A52C39594600825521 /* RootView.swift */; };
 		C84B21A82C39594800825521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84B21A72C39594800825521 /* Assets.xcassets */; };
 		C84B21AB2C39594800825521 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84B21AA2C39594800825521 /* Preview Assets.xcassets */; };
 		C84B21CE2C39689C00825521 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84B21CD2C39689C00825521 /* AddView.swift */; };
@@ -68,6 +79,13 @@
 		C8C78BF42C439D53008CE138 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = C8C78BF32C439D53008CE138 /* AlertToast */; };
 		C8C78BF72C43AD94008CE138 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = C8C78BF62C43AD94008CE138 /* Reachability */; };
 		C8D763DA2C3A0905008615A2 /* CustomWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D763D92C3A0904008615A2 /* CustomWidget.swift */; };
+		E045B3902CF4DB0B0043E799 /* PublicModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E045B38F2CF4DB0B0043E799 /* PublicModels.swift */; };
+		E05DD4A92D00EB18001A0266 /* AppIconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05DD4A82D00EB18001A0266 /* AppIconsView.swift */; };
+		E07854562CF7B64C00E654DC /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E07854552CF7B64C00E654DC /* PropertyList.plist */; };
+		E07AC1802CF77092001B9814 /* MinimalDeskStoreKit.storekit in Resources */ = {isa = PBXBuildFile; fileRef = E07AC17F2CF77091001B9814 /* MinimalDeskStoreKit.storekit */; };
+		E07AC1812CF77092001B9814 /* MinimalDeskStoreKit.storekit in Resources */ = {isa = PBXBuildFile; fileRef = E07AC17F2CF77091001B9814 /* MinimalDeskStoreKit.storekit */; };
+		E07AC1822CF77092001B9814 /* MinimalDeskStoreKit.storekit in Resources */ = {isa = PBXBuildFile; fileRef = E07AC17F2CF77091001B9814 /* MinimalDeskStoreKit.storekit */; };
+		E07AC1862CF79B35001B9814 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07AC1852CF79B2F001B9814 /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,8 +121,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		120A404B2CC3A16E00A8FB5E /* AppLocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocker.swift; sourceTree = "<group>"; };
+		1223266A2CA462C00081A282 /* WidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewModel.swift; sourceTree = "<group>"; };
+		1223266C2CA468E50081A282 /* FavAppWidgetConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavAppWidgetConfig.swift; sourceTree = "<group>"; };
 		1232B2CE2C4187E500DD2FEE /* FirebaseDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataViewModel.swift; sourceTree = "<group>"; };
-		1232B2D22C418A1F00DD2FEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1240EACD2CA1D26C001A71AA /* CustomAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAppView.swift; sourceTree = "<group>"; };
 		124AF6FB2C46279B008AD47C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		124AF6FD2C46279B008AD47C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		124AF72A2C47A3F5008AD47C /* MinimalDeskDateWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MinimalDeskDateWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +137,12 @@
 		124AF73C2C47D674008AD47C /* MinimalDesk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MinimalDesk.entitlements; sourceTree = "<group>"; };
 		124AF73F2C47F88E008AD47C /* DateWidgetViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateWidgetViews.swift; sourceTree = "<group>"; };
 		124AF7422C480161008AD47C /* WidgetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetList.swift; sourceTree = "<group>"; };
+		127EC5AE2CA09E650083616A /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		127FCD692CECFD4200773D9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1286B0782C8DA146002C44EA /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
+		129694F72CC444CB000A9372 /* AppLockerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockerViewModel.swift; sourceTree = "<group>"; };
+		12AD58552C9F5F0F009903E9 /* FontListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontListView.swift; sourceTree = "<group>"; };
+		12AD59DB2CA01E85009903E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		12C249142C5F77C200074874 /* FavAppWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FavAppWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		12C249182C5F77C200074874 /* FavAppWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavAppWidgetBundle.swift; sourceTree = "<group>"; };
 		12C2491A2C5F77C200074874 /* FavAppWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavAppWidget.swift; sourceTree = "<group>"; };
@@ -125,7 +152,7 @@
 		12C249262C5F7D1D00074874 /* OpenAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAppIntent.swift; sourceTree = "<group>"; };
 		C84B21A02C39594600825521 /* MinimalDesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalDesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84B21A32C39594600825521 /* MinimalDeskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalDeskApp.swift; sourceTree = "<group>"; };
-		C84B21A52C39594600825521 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C84B21A52C39594600825521 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		C84B21A72C39594800825521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C84B21AA2C39594800825521 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C84B21CD2C39689C00825521 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
@@ -135,7 +162,18 @@
 		C896779B2C688B7400BDF603 /* CustomWallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWallpaper.swift; sourceTree = "<group>"; };
 		C8BCA7072C425CD90026DC58 /* AppListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListView.swift; sourceTree = "<group>"; };
 		C8D763D92C3A0904008615A2 /* CustomWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWidget.swift; sourceTree = "<group>"; };
+		E045B38F2CF4DB0B0043E799 /* PublicModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicModels.swift; sourceTree = "<group>"; };
+		E05DD4A82D00EB18001A0266 /* AppIconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconsView.swift; sourceTree = "<group>"; };
+		E07854552CF7B64C00E654DC /* PropertyList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
+		E07AC17F2CF77091001B9814 /* MinimalDeskStoreKit.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = MinimalDeskStoreKit.storekit; sourceTree = "<group>"; };
+		E07AC1852CF79B2F001B9814 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		12AD57982C9F5CF3009903E9 /* Font */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Font; sourceTree = "<group>"; };
+		E045AC902CF10B0D0043E799 /* Videos */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Videos; sourceTree = "<group>"; };
+		E05DD7D02D04D2E7001A0266 /* Onboarding */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Onboarding; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		124AF7272C47A3F5008AD47C /* Frameworks */ = {
@@ -197,6 +235,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		120A404A2CC3A13C00A8FB5E /* AppLocker */ = {
+			isa = PBXGroup;
+			children = (
+				120A404B2CC3A16E00A8FB5E /* AppLocker.swift */,
+				129694F72CC444CB000A9372 /* AppLockerViewModel.swift */,
+			);
+			path = AppLocker;
+			sourceTree = "<group>";
+		};
+		122326692CA4626F0081A282 /* CustomWidgetSubViews */ = {
+			isa = PBXGroup;
+			children = (
+				12AD58552C9F5F0F009903E9 /* FontListView.swift */,
+			);
+			path = CustomWidgetSubViews;
+			sourceTree = "<group>";
+		};
 		124AF6FA2C46279B008AD47C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +273,57 @@
 			path = MinimalDeskDateWidget;
 			sourceTree = "<group>";
 		};
+		12AD59D62C9FFC4B009903E9 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				C84B21CD2C39689C00825521 /* AddView.swift */,
+				C8BCA7072C425CD90026DC58 /* AppListView.swift */,
+				1240EACD2CA1D26C001A71AA /* CustomAppView.swift */,
+				1232B2CE2C4187E500DD2FEE /* FirebaseDataViewModel.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		12AD59D72C9FFC69009903E9 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				C84B21D22C396F3000825521 /* Widget.swift */,
+				124AF7422C480161008AD47C /* WidgetList.swift */,
+				C896779B2C688B7400BDF603 /* CustomWallpaper.swift */,
+				C8D763D92C3A0904008615A2 /* CustomWidget.swift */,
+				122326692CA4626F0081A282 /* CustomWidgetSubViews */,
+				1223266A2CA462C00081A282 /* WidgetViewModel.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		12AD59D82C9FFCB7009903E9 /* Tutorials */ = {
+			isa = PBXGroup;
+			children = (
+				C84B21D42C396FB900825521 /* Tutorials.swift */,
+			);
+			path = Tutorials;
+			sourceTree = "<group>";
+		};
+		12AD59D92C9FFCCC009903E9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C84B21D62C39702400825521 /* Settings.swift */,
+				E05DD4A82D00EB18001A0266 /* AppIconsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		12AD59DA2C9FFCF3009903E9 /* Utilities+Others */ = {
+			isa = PBXGroup;
+			children = (
+				127EC5AE2CA09E650083616A /* ToastView.swift */,
+				1286B0782C8DA146002C44EA /* SubscriptionView.swift */,
+				12C249262C5F7D1D00074874 /* OpenAppIntent.swift */,
+			);
+			path = "Utilities+Others";
+			sourceTree = "<group>";
+		};
 		12C249172C5F77C200074874 /* FavAppWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +331,7 @@
 				12C2491A2C5F77C200074874 /* FavAppWidget.swift */,
 				12C2491C2C5F77C300074874 /* Assets.xcassets */,
 				12C2491E2C5F77C300074874 /* Info.plist */,
+				1223266C2CA468E50081A282 /* FavAppWidgetConfig.swift */,
 			);
 			path = FavAppWidget;
 			sourceTree = "<group>";
@@ -232,9 +339,15 @@
 		C84B21972C39594600825521 = {
 			isa = PBXGroup;
 			children = (
+				E07854552CF7B64C00E654DC /* PropertyList.plist */,
+				E07AC1852CF79B2F001B9814 /* Store.swift */,
+				E07AC17F2CF77091001B9814 /* MinimalDeskStoreKit.storekit */,
+				127FCD692CECFD4200773D9D /* GoogleService-Info.plist */,
+				E045AC902CF10B0D0043E799 /* Videos */,
 				12C249252C5F792900074874 /* FavAppWidgetExtension.entitlements */,
 				124AF73B2C47D613008AD47C /* MinimalDeskDateWidgetExtension.entitlements */,
 				C84B21A32C39594600825521 /* MinimalDeskApp.swift */,
+				12AD57982C9F5CF3009903E9 /* Font */,
 				C84B21A22C39594600825521 /* MinimalDesk */,
 				124AF72D2C47A3F5008AD47C /* MinimalDeskDateWidget */,
 				12C249172C5F77C200074874 /* FavAppWidget */,
@@ -256,21 +369,19 @@
 		C84B21A22C39594600825521 /* MinimalDesk */ = {
 			isa = PBXGroup;
 			children = (
-				124AF73C2C47D674008AD47C /* MinimalDesk.entitlements */,
-				1232B2D22C418A1F00DD2FEE /* GoogleService-Info.plist */,
-				C8D763D92C3A0904008615A2 /* CustomWidget.swift */,
-				C896779B2C688B7400BDF603 /* CustomWallpaper.swift */,
-				C84B21D62C39702400825521 /* Settings.swift */,
-				C8BCA7072C425CD90026DC58 /* AppListView.swift */,
-				C84B21D42C396FB900825521 /* Tutorials.swift */,
-				C84B21D22C396F3000825521 /* Widget.swift */,
-				124AF7422C480161008AD47C /* WidgetList.swift */,
-				C84B21CD2C39689C00825521 /* AddView.swift */,
-				C84B21A52C39594600825521 /* ContentView.swift */,
-				1232B2CE2C4187E500DD2FEE /* FirebaseDataViewModel.swift */,
-				C84B21A92C39594800825521 /* Preview Content */,
+				E05DD7D02D04D2E7001A0266 /* Onboarding */,
+				12AD59DB2CA01E85009903E9 /* Info.plist */,
 				C84B21A72C39594800825521 /* Assets.xcassets */,
-				12C249262C5F7D1D00074874 /* OpenAppIntent.swift */,
+				124AF73C2C47D674008AD47C /* MinimalDesk.entitlements */,
+				C84B21A52C39594600825521 /* RootView.swift */,
+				12AD59D62C9FFC4B009903E9 /* Add */,
+				12AD59D72C9FFC69009903E9 /* Widget */,
+				12AD59D82C9FFCB7009903E9 /* Tutorials */,
+				12AD59D92C9FFCCC009903E9 /* Settings */,
+				120A404A2CC3A13C00A8FB5E /* AppLocker */,
+				12AD59DA2C9FFCF3009903E9 /* Utilities+Others */,
+				C84B21A92C39594800825521 /* Preview Content */,
+				E045B38F2CF4DB0B0043E799 /* PublicModels.swift */,
 			);
 			path = MinimalDesk;
 			sourceTree = "<group>";
@@ -334,6 +445,11 @@
 			dependencies = (
 				124AF7362C47A3F6008AD47C /* PBXTargetDependency */,
 				12C249202C5F77C300074874 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				12AD57982C9F5CF3009903E9 /* Font */,
+				E045AC902CF10B0D0043E799 /* Videos */,
+				E05DD7D02D04D2E7001A0266 /* Onboarding */,
 			);
 			name = MinimalDesk;
 			packageProductDependencies = (
@@ -425,6 +541,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E07AC1812CF77092001B9814 /* MinimalDeskStoreKit.storekit in Resources */,
 				124AF7332C47A3F6008AD47C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +550,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E07AC1822CF77092001B9814 /* MinimalDeskStoreKit.storekit in Resources */,
 				12C2491D2C5F77C300074874 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,8 +560,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84B21AB2C39594800825521 /* Preview Assets.xcassets in Resources */,
+				E07854562CF7B64C00E654DC /* PropertyList.plist in Resources */,
+				127FCD6A2CECFD4200773D9D /* GoogleService-Info.plist in Resources */,
+				E07AC1802CF77092001B9814 /* MinimalDeskStoreKit.storekit in Resources */,
 				C84B21A82C39594800825521 /* Assets.xcassets in Resources */,
-				1232B2D32C418A1F00DD2FEE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +577,7 @@
 				124AF7312C47A3F5008AD47C /* MinimalDeskDateWidget.swift in Sources */,
 				124AF7412C47F88E008AD47C /* DateWidgetViews.swift in Sources */,
 				124AF72F2C47A3F5008AD47C /* MinimalDeskDateWidgetBundle.swift in Sources */,
+				1223266F2CA4DADE0081A282 /* FavAppWidgetConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +585,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1223266D2CA468E50081A282 /* FavAppWidgetConfig.swift in Sources */,
+				127EC5AF2CA09E650083616A /* ToastView.swift in Sources */,
 				12C249192C5F77C200074874 /* FavAppWidgetBundle.swift in Sources */,
 				12C2491B2C5F77C200074874 /* FavAppWidget.swift in Sources */,
 				12C249282C5F7D1D00074874 /* OpenAppIntent.swift in Sources */,
@@ -474,19 +597,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				127EC5B02CA09E650083616A /* ToastView.swift in Sources */,
 				C84B21D72C39702800825521 /* Settings.swift in Sources */,
-				C84B21A62C39594600825521 /* ContentView.swift in Sources */,
+				C84B21A62C39594600825521 /* RootView.swift in Sources */,
 				C8D763DA2C3A0905008615A2 /* CustomWidget.swift in Sources */,
 				C84B21D52C396FBB00825521 /* Tutorials.swift in Sources */,
+				E07AC1862CF79B35001B9814 /* Store.swift in Sources */,
 				C84B21CE2C39689C00825521 /* AddView.swift in Sources */,
+				1286B0792C8DA146002C44EA /* SubscriptionView.swift in Sources */,
 				124AF7402C47F88E008AD47C /* DateWidgetViews.swift in Sources */,
 				C8BCA7082C425CDA0026DC58 /* AppListView.swift in Sources */,
+				1240EACE2CA1D26C001A71AA /* CustomAppView.swift in Sources */,
+				E045B3902CF4DB0B0043E799 /* PublicModels.swift in Sources */,
+				1223266E2CA468E50081A282 /* FavAppWidgetConfig.swift in Sources */,
 				124AF7432C480161008AD47C /* WidgetList.swift in Sources */,
 				1232B2CF2C4187E500DD2FEE /* FirebaseDataViewModel.swift in Sources */,
+				1223266B2CA462C00081A282 /* WidgetViewModel.swift in Sources */,
 				C84B21D32C396F3200825521 /* Widget.swift in Sources */,
 				C896779C2C688B7400BDF603 /* CustomWallpaper.swift in Sources */,
 				C84B21A42C39594600825521 /* MinimalDeskApp.swift in Sources */,
+				12AD58562C9F5F0F009903E9 /* FontListView.swift in Sources */,
+				E05DD4A92D00EB18001A0266 /* AppIconsView.swift in Sources */,
 				12C249272C5F7D1D00074874 /* OpenAppIntent.swift in Sources */,
+				120A404C2CC3A16E00A8FB5E /* AppLocker.swift in Sources */,
+				129694F82CC444CB000A9372 /* AppLockerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +660,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDesk.MinimalDeskDateWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiqul.MinimalDesk.MinimalDeskDateWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -555,7 +689,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDesk.MinimalDeskDateWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiqul.MinimalDesk.MinimalDeskDateWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -586,7 +720,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDesk.FavAppWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiqul.MinimalDesk.FavAppWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -617,7 +751,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDesk.FavAppWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiqul.MinimalDesk.FavAppWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -748,9 +882,10 @@
 		C84B21C52C39594800825521 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "\"App logo 61\" \"App logo 51\" \"App logo 41\" \"App logo 31\" \"App logo 21\" \"App logo 11\"";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = MinimalDesk/MinimalDesk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -758,6 +893,9 @@
 				DEVELOPMENT_TEAM = 68W2966MBV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MinimalDesk/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = _;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Permission needed to save wallpaper";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -769,7 +907,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDesk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiqul.MinimalDesk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -780,9 +918,10 @@
 		C84B21C62C39594800825521 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "\"App logo 61\" \"App logo 51\" \"App logo 41\" \"App logo 31\" \"App logo 21\" \"App logo 11\"";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = MinimalDesk/MinimalDesk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -790,6 +929,9 @@
 				DEVELOPMENT_TEAM = 68W2966MBV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MinimalDesk/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = _;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Permission needed to save wallpaper";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -801,7 +943,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sadiq.test.MinimalDesk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sadiqul.MinimalDesk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

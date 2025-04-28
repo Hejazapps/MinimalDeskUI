@@ -44,54 +44,103 @@ struct FavAppWidgetEntryView : View {
     
     @State private var favApps = [["name": "Testapp", "link": "Testlink"]]
     
+    @State private var widgetConfig: FavAppWidgetConfig
+    
+    let cardIndex: Int
+    
+    init(entry: Provider.Entry, cardIndex: Int = 0) {
+        self.entry = entry
+        self.widgetConfig = FavAppWidgetConfig.defaultConfig
+        self.cardIndex = cardIndex
+    }
+    
     var body: some View {
-        if favApps.isEmpty {
-            Text("Add Favorite apps to be shown here.")
-                .font(.title2)
-                .multilineTextAlignment(.center)
-                .foregroundColor(.white)
-        } else {
-            HStack {
-                VStack(alignment: .leading) {
-                    ForEach(favApps, id: \.self) { app in
-                        Button(intent: OpenAppIntent(urlStr: app["link"] ?? "Empty Link")) {
-                            Text(app["name"] ?? "Loading...")
-                        }
-                        .padding(.vertical, 3)
-                        .buttonStyle(PlainButtonStyle())
-                        .font(.title)
-                        .bold()
+//        ZStack {
+//            Color(hex: widgetConfig.backgroundColor)
+//                .ignoresSafeArea()
+            
+            if favApps.isEmpty {
+                Text("Add Favorite apps to be shown here.")
+                    .font(.title2)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(Color(hex: widgetConfig.fontColor))
+                    .ignoresSafeArea()
+            } else {
+                HStack {
+                    if getAlignment(widgetConfig.alignment) == .trailing {
+                        Spacer()
                     }
-                    .padding(.leading, 25)
+                    
+                    VStack(alignment: getAlignment(widgetConfig.alignment), spacing: widgetConfig.spacing) {
+                        
+                        ForEach(favApps.prefix(widgetConfig.maxNumberOfApps), id: \.self) { app in
+                            
+                            Button(intent: OpenAppIntent(urlStr: app["link"] ?? "Empty Link")) {
+                                Text(app["name"] ?? "Loading...")
+                                    .foregroundColor(Color(hex: widgetConfig.fontColor))
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            .font(Font.custom(widgetConfig.fontType, size: CGFloat(widgetConfig.fontSize)))
+                        }
+                    }
+                    .padding(.horizontal, 25)
                     .onAppear {
                         let userDefault = UserDefaults(suiteName: "group.minimaldesk") ?? UserDefaults()
-                        favApps = userDefault.value(forKey: "favorite-apps") as? [[String: String]] ?? []
+                        favApps = (userDefault.value(forKey: "favorite-apps\(cardIndex)") as? [[String: String]] ?? [])
+                            .sorted { Int($0["rank"] ?? "") ?? 0 < Int($1["rank"] ?? "") ?? 0 }
+                        
                         log(favApps)
+                        
+                        let config = userDefault.value(forKey: "favorite-apps-config") as? Data ?? Data()
+                        if let widgetConfig = try? JSONDecoder().decode(FavAppWidgetConfig.self, from: config) {
+                            FavAppWidgetConfig.defaultConfig = widgetConfig
+                            self.widgetConfig = widgetConfig
+                        }
                     }
-                    .foregroundColor(.white)
+                    
+                    if getAlignment(widgetConfig.alignment) == .leading {
+                        Spacer()
+                    }
                 }
-                
-                Spacer()
             }
-            .padding(.vertical)
+        //}
+    }
+    
+    private func getAlignment(_ alignmentString: String) -> HorizontalAlignment {
+        switch alignmentString {
+        case "center": .center
+        case "right": .trailing
+        default: .leading
         }
     }
 }
 
 struct FavAppWidget: Widget {
-    let kind: String = "FavAppWidget"
+    let kind: String
+    let cardIndex: Int
+    
+    init() {
+        cardIndex = 0
+        kind = "FavAppWidget0"
+    }
+    
+    init(cardIndex: Int) {
+        self.cardIndex = cardIndex
+        kind = "FavAppWidget\(cardIndex)"
+    }
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             if #available(iOS 17.0, *) {
-                FavAppWidgetEntryView(entry: entry)
-                    .containerBackground(.black, for: .widget)
+                FavAppWidgetEntryView(entry: entry, cardIndex: cardIndex)
+                    .containerBackground(for: .widget, alignment: .center, content: { EmptyView() })
             } else {
                 FavAppWidgetEntryView(entry: entry)
                     .padding()
                     .background()
             }
         }
+        .contentMarginsDisabled()
         .configurationDisplayName("FavoriteApps Widget")
         .description("Open favorite apps quickly")
         .supportedFamilies([.systemLarge])

@@ -11,7 +11,12 @@ import SwiftUI
 @main
 struct FavAppWidgetBundle: WidgetBundle {
     var body: some Widget {
-        FavAppWidget()
+        FavAppWidget(cardIndex: 0)
+        FavAppWidget(cardIndex: 1)
+        FavAppWidget(cardIndex: 2)
+        FavAppWidget(cardIndex: 3)
+        FavAppWidget(cardIndex: 4)
+        FavAppWidget(cardIndex: 5)
     }
 }
 

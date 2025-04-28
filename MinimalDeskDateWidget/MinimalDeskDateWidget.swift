@@ -41,10 +41,19 @@ struct SimpleEntry: TimelineEntry {
 struct MinimalDeskDateWidgetEntryView : View {
     var entry: Provider.Entry
     
+    @State private var widgetConfig: FavAppWidgetConfig
     let height = 90.0
+    
+    init(entry: Provider.Entry) {
+        self.entry = entry
+        self.widgetConfig = FavAppWidgetConfig.defaultConfig
+    }
 
     var body: some View {
-        DateWidgetView(height: height)
+        ZStack {
+            
+            DateWidgetView(height: height)
+        }
     }
 }
 
@@ -55,14 +64,16 @@ struct MinimalDeskDateWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             if #available(iOS 17.0, *) {
                 MinimalDeskDateWidgetEntryView(entry: entry)
-                    .containerBackground(.black, for: .widget)
+                    //.containerBackground(.black, for: .widget)
+                    .containerBackground(for: .widget, alignment: .center, content: { EmptyView() })
             } else {
                 MinimalDeskDateWidgetEntryView(entry: entry)
                     .padding()
             }
         }
-        .configurationDisplayName("DateTime Widget")
-        .description("Check date-time")
+        .contentMarginsDisabled()
+        .configurationDisplayName("Date & Time Widget")
+        .description("Add this widget to the top of your home screen page")
         .supportedFamilies([.systemMedium])
     }
 }
