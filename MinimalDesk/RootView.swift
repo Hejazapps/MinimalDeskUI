@@ -11,7 +11,7 @@ import TabBarModule
 //
 //struct RootView: View {
 //    @State private var item: Int = 0
-//    
+//
 //    var body: some View {
 //        TabBar(selection: $item) {
 //            AddView()
@@ -23,9 +23,9 @@ import TabBarModule
 //                     Text("Add")
 //                        .font(.system(.footnote, design: .rounded).weight(item == 0 ? .bold : .medium))
 //                        .foregroundColor(item == 0 ? .blue : .white)
-//                        
+//
 //                }
-//            
+//
 //            Widget()
 //                .tabItem(1) {
 //                    Image("Widget")
@@ -36,7 +36,7 @@ import TabBarModule
 //                        .font(.system(.footnote, design: .rounded).weight(item == 1 ? .bold : .medium))
 //                        .foregroundColor(item == 1 ? .blue : .white)
 //                }
-//            
+//
 //            Tutorials()
 //                .tabItem(2) {
 //                    Image("Tutorials")
@@ -47,7 +47,7 @@ import TabBarModule
 //                        .font(.system(.footnote, design: .rounded).weight(item == 2 ? .bold : .medium))
 //                        .foregroundColor(item == 2 ? .blue : .white)
 //                }
-//            
+//
 //            AppLocker()
 //                .tabItem(3) {
 //                    Image(systemName: "lock.app.dashed")
@@ -58,7 +58,7 @@ import TabBarModule
 //                        .font(.system(.footnote, design: .rounded).weight(item == 3 ? .bold : .medium))
 //                        .foregroundColor(item == 3 ? .blue : .white)
 //                }
-//            
+//
 //            Settings()
 //                .tabItem(4) {
 //                    Image("Settings")
@@ -69,8 +69,8 @@ import TabBarModule
 //                        .font(.system(.footnote, design: .rounded).weight(item == 4 ? .bold : .medium))
 //                        .foregroundColor(item == 4 ? .blue : .white)
 //                }
-//            
-//            
+//
+//
 //        }
 //        .tabBarFill(
 //            .linearGradient(
@@ -166,62 +166,77 @@ import TabBarModule
 struct RootView: View {
     @State private var item: Int = 0
     @State private var hasTappedAppLocker = false  // Flag to track if AppLocker tab is tapped
-
+    
     var body: some View {
         TabBar(selection: $item) {
             AddView()
                 .tabItem(0) {
                     Image("Add")
                         .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 24, height: 24)
                         .foregroundColor(item == 0 ? .blue : .white)
                         .font(.title3)
                     Text("Add")
                         .font(.system(.footnote, design: .rounded).weight(item == 0 ? .bold : .medium))
                         .foregroundColor(item == 0 ? .blue : .white)
+                        .padding(.top ,5)
                 }
-
+            
             Widget()
                 .tabItem(1) {
                     Image("Widget")
                         .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 24, height: 24)
                         .foregroundColor(item == 1 ? .blue : .white)
                         .font(.title3)
                     Text("Widget")
                         .font(.system(.footnote, design: .rounded).weight(item == 1 ? .bold : .medium))
                         .foregroundColor(item == 1 ? .blue : .white)
+                        .padding(.top ,5)
                 }
-
+            
             Tutorials()
                 .tabItem(2) {
                     Image("Tutorials")
                         .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 24, height: 24)
                         .foregroundColor(item == 2 ? .blue : .white)
                         .font(.title3)
                     Text("Tutorials")
                         .font(.system(.footnote, design: .rounded).weight(item == 2 ? .bold : .medium))
                         .foregroundColor(item == 2 ? .blue : .white)
+                        .padding(.top ,5)
                 }
-
+            
             AppLocker()
                 .tabItem(3) {
                     Image(systemName: "lock.app.dashed")
                         .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 24, height: 24)
                         .foregroundColor(item == 3 ? .blue : .white)
                         .font(.largeTitle)
                     Text("Lock")
                         .font(.system(.footnote, design: .rounded).weight(item == 3 ? .bold : .medium))
                         .foregroundColor(item == 3 ? .blue : .white)
+                        .padding(.top ,5)
                 }
-
+            
             Settings()
                 .tabItem(4) {
                     Image("Settings")
                         .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 24, height: 24)
                         .foregroundColor(item == 4 ? .blue : .white)
                         .font(.title3)
                     Text("Settings")
                         .font(.system(.footnote, design: .rounded).weight(item == 4 ? .bold : .medium))
                         .foregroundColor(item == 4 ? .blue : .white)
+                        .padding(.top ,5)
                 }
         }
         .tabBarFill(
