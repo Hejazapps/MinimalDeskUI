@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import TabBarModule
+//import TabBarModule
 
 struct AddView: View {
     @Environment(\.requestReview) var requestReview

@@ -20,7 +20,7 @@ public enum SubscriptionTier: Int, Comparable {
     case none = 0
     case monthly = 1
     case yearly = 2
-
+    
     public static func < (lhs: Self, rhs: Self) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
@@ -32,7 +32,7 @@ class Store: ObservableObject {
     @Published private(set) var purchasedSubscriptions: [Product] = []
     @Published private(set) var purchasedLifetime: Bool = false
     @Published private(set) var subscriptionGroupStatus: RenewalState?
-
+    
     var updateListenerTask: Task<Void, Error>? = nil
     private let productIds: [String: String]
     static let shared = Store()
@@ -47,11 +47,11 @@ class Store: ObservableObject {
             await updateCustomerProductStatus()
         }
     }
-
+    
     deinit {
         updateListenerTask?.cancel()
     }
-
+    
     static func loadProductIdData() -> [String: String] {
         guard let path = Bundle.main.path(forResource: "PropertyList", ofType: "plist"),
               let plist = FileManager.default.contents(atPath: path),
@@ -60,7 +60,7 @@ class Store: ObservableObject {
         }
         return data
     }
-
+    
     func listenForTransactions() -> Task<Void, Error> {
         return Task.detached {
             for await result in Transaction.updates {
@@ -74,7 +74,7 @@ class Store: ObservableObject {
             }
         }
     }
-
+    
     func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
         switch result {
         case .unverified:
@@ -83,13 +83,13 @@ class Store: ObservableObject {
             return safe
         }
     }
-
+    
     @MainActor
     func updateCustomerProductStatus() async {
         var purchasedSubscriptions: [Product] = []
         purchasedLifetime = false
         subscriptionGroupStatus = nil
-
+        
         for await result in Transaction.currentEntitlements {
             do {
                 let transaction = try self.checkVerified(result)
@@ -113,19 +113,19 @@ class Store: ObservableObject {
                 print("Failed to verify transaction: \(error)")
             }
         }
-
+        
         self.purchasedSubscriptions = purchasedSubscriptions
         self.subscriptionGroupStatus = try? await subscriptions.first?.subscription?.status.first?.state
     }
-
+    
     @MainActor
     func requestProducts() async {
         do {
             let storeProducts = try await Product.products(for: productIds.values)
-
+            
             var newLifetime: [Product] = []
             var newSubscriptions: [Product] = []
-
+            
             for product in storeProducts {
                 switch product.type {
                 case .nonConsumable:
@@ -136,18 +136,18 @@ class Store: ObservableObject {
                     print("unknown product")
                 }
             }
-
+            
             lifetime = sortByPrice(newLifetime)
             subscriptions = sortByPrice(newSubscriptions)
         } catch {
             print("Failed product request from the app store server with error: \(error)")
         }
     }
-
+    
     func sortByPrice(_ products: [Product]) -> [Product] {
         products.sorted { $0.price < $1.price }
     }
-
+    
     func isSubscriptionActive(productId: String) async -> Bool {
         for await result in Transaction.currentEntitlements {
             do {
@@ -161,7 +161,7 @@ class Store: ObservableObject {
         }
         return false
     }
-
+    
     func tier(for productId: String) -> SubscriptionTier {
         switch productId {
         case "monthly_subscription":
@@ -172,7 +172,7 @@ class Store: ObservableObject {
             return .none
         }
     }
-
+    
     func purchased(_ product: Product) async throws -> Transaction? {
         let result = try await product.purchase()
         switch result {

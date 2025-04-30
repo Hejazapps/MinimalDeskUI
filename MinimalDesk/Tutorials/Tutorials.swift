@@ -71,11 +71,32 @@ struct Tutorials: View {
         }
     }
     
+//    private func loadVideo(of type: TutorialType) {
+//        if let videoURL = Bundle.main.url(forResource: type.videoName, withExtension: type.videoType) {
+//            player = AVPlayer(url: videoURL)
+//        }
+//    }
+    
     private func loadVideo(of type: TutorialType) {
-        if let videoURL = Bundle.main.url(forResource: type.videoName, withExtension: type.videoType) {
-            player = AVPlayer(url: videoURL)
+        let tag = "tutorial-videos"
+        let request = NSBundleResourceRequest(tags: [tag])
+        request.beginAccessingResources { error in
+            if let error = error {
+                print("Failed to load ODR resources: \(error)")
+                return
+            }
+
+            if let videoURL = Bundle.main.url(forResource: type.videoName, withExtension: type.videoType) {
+                DispatchQueue.main.async {
+                    player = AVPlayer(url: videoURL)
+                }
+            } else {
+                print("Video not found in ODR bundle.")
+            }
         }
     }
+    
+    
     
     private func circleWithNumberView(_ number: String) -> some View {
         Text(number)
@@ -149,7 +170,9 @@ struct Tutorials: View {
         .cornerRadius(15)
         .padding(10)
     }
-    
+
+
+
     private func pagination(type: TutorialType) -> some View {
         VStack {
             ScrollView(.horizontal, showsIndicators: false) {

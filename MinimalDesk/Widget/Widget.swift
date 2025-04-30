@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import TabBarModule
+//import TabBarModule
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
 
