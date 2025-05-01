@@ -71,11 +71,11 @@ struct Tutorials: View {
         }
     }
     
-//    private func loadVideo(of type: TutorialType) {
-//        if let videoURL = Bundle.main.url(forResource: type.videoName, withExtension: type.videoType) {
-//            player = AVPlayer(url: videoURL)
-//        }
-//    }
+    //    private func loadVideo(of type: TutorialType) {
+    //        if let videoURL = Bundle.main.url(forResource: type.videoName, withExtension: type.videoType) {
+    //            player = AVPlayer(url: videoURL)
+    //        }
+    //    }
     
     private func loadVideo(of type: TutorialType) {
         let tag = "tutorial-videos"
@@ -85,7 +85,7 @@ struct Tutorials: View {
                 print("Failed to load ODR resources: \(error)")
                 return
             }
-
+            
             if let videoURL = Bundle.main.url(forResource: type.videoName, withExtension: type.videoType) {
                 DispatchQueue.main.async {
                     player = AVPlayer(url: videoURL)
@@ -170,9 +170,9 @@ struct Tutorials: View {
         .cornerRadius(15)
         .padding(10)
     }
-
-
-
+    
+    
+    
     private func pagination(type: TutorialType) -> some View {
         VStack {
             ScrollView(.horizontal, showsIndicators: false) {
@@ -224,11 +224,11 @@ struct Tutorials: View {
                 }) {
                     HStack(spacing: 3) {
                         Image(systemName: "arrow.down.circle.fill")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .foregroundStyle(Color.white)
-                                        .opacity(0.8)
-                                        .frame(width: 13, height: 13)
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundStyle(Color.white)
+                            .opacity(0.8)
+                            .frame(width: 13, height: 13)
                         Text("Save")
                             .foregroundStyle(Color.white)
                             .font(.system(size: 13))
@@ -241,6 +241,39 @@ struct Tutorials: View {
             .frame(width: screenWidth * 0.60, height: 100, alignment: .bottom)
             .padding(10)
         }
+    }
+    
+    private func saveImageToGallery(imageName: String) {
+        let status = PHPhotoLibrary.authorizationStatus(for: .addOnly)
+        
+        if status == .notDetermined {
+            PHPhotoLibrary.requestAuthorization(for: .addOnly) { newStatus in
+                if newStatus == .authorized || newStatus == .limited {
+                    saveImage(imageName: imageName)
+                } else {
+                    toastMessage = "Permission denied. Enable access in settings."
+                    showToast = true
+                }
+            }
+        } else if status == .authorized || status == .limited {
+            saveImage(imageName: imageName)
+        } else {
+            toastMessage = "Permission denied. Enable access in settings."
+            showToast = true
+        }
+    }
+    
+    private func saveImage(imageName: String) {
+        //let imageName = "darkWallpaper"
+        guard let image = UIImage(named: imageName) else {
+            toastMessage = "Image \(imageName) not found!"
+            showToast = true
+            return
+        }
+        
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        toastMessage = "Image saved to gallery!"
+        showToast = true
     }
     
     private func showGuide(type: TutorialType) -> some View {
@@ -284,38 +317,7 @@ struct Tutorials: View {
         }
     }
     
-    private func saveImageToGallery(imageName: String) {
-        let status = PHPhotoLibrary.authorizationStatus(for: .addOnly)
-        
-        if status == .notDetermined {
-            PHPhotoLibrary.requestAuthorization(for: .addOnly) { newStatus in
-                if newStatus == .authorized || newStatus == .limited {
-                    saveImage(imageName: imageName)
-                } else {
-                    toastMessage = "Permission denied. Enable access in settings."
-                    showToast = true
-                }
-            }
-        } else if status == .authorized || status == .limited {
-            saveImage(imageName: imageName)
-        } else {
-            toastMessage = "Permission denied. Enable access in settings."
-            showToast = true
-        }
-    }
     
-    private func saveImage(imageName: String) {
-        //let imageName = "darkWallpaper"
-        guard let image = UIImage(named: imageName) else {
-            toastMessage = "Image \(imageName) not found!"
-            showToast = true
-            return
-        }
-        
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        toastMessage = "Image saved to gallery!"
-        showToast = true
-    }
     
     private func handleToast() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
