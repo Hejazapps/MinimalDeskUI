@@ -77,26 +77,44 @@ struct Tutorials: View {
     //        }
     //    }
     
+//    private func loadVideo(of type: TutorialType) {
+//        let tag = "tutorial-videos"
+//        let request = NSBundleResourceRequest(tags: [tag])
+//        request.beginAccessingResources { error in
+//            if let error = error {
+//                print("Failed to load ODR resources: \(error)")
+//                return
+//            }
+//            
+//            if let videoURL = Bundle.main.url(forResource: type.videoName, withExtension: type.videoType) {
+//                DispatchQueue.main.async {
+//                    player = AVPlayer(url: videoURL)
+//                }
+//            } else {
+//                print("Video not found in ODR bundle.")
+//            }
+//        }
+//    }
+    
     private func loadVideo(of type: TutorialType) {
-        let tag = "tutorial-videos"
-        let request = NSBundleResourceRequest(tags: [tag])
-        request.beginAccessingResources { error in
-            if let error = error {
-                print("Failed to load ODR resources: \(error)")
-                return
-            }
-            
-            if let videoURL = Bundle.main.url(forResource: type.videoName, withExtension: type.videoType) {
-                DispatchQueue.main.async {
-                    player = AVPlayer(url: videoURL)
+        // Reset player before loading new video
+        self.player = nil
+        
+        VideoLoader.shared.loadVideo(for: type) { loadedPlayer in
+            DispatchQueue.main.async {
+                if let player = loadedPlayer {
+                    self.player = player
+                    self.selectedMedia = .video(player: player)
+                    print("Video loaded successfully for type: \(type.videoName).\(type.videoType)")
+                } else {
+                    print("Failed to load video for \(type.videoName).\(type.videoType)")
+                    self.toastMessage = "Failed to load video."
+                    self.showToast = true
                 }
-            } else {
-                print("Video not found in ODR bundle.")
             }
         }
     }
-    
-    
+
     
     private func circleWithNumberView(_ number: String) -> some View {
         Text(number)
@@ -120,7 +138,6 @@ struct Tutorials: View {
                     .bold()
                     .font(.system(size: 15))
             }
-            
             VStack(spacing: 0) {
                 if index == 0 {
                     ZStack {
@@ -134,16 +151,18 @@ struct Tutorials: View {
                                     .stroke(Color.black, lineWidth: 1)
                             )
                             .onTapGesture {
+                                // Reset player before loading new video
+                                self.player = nil
                                 loadVideo(of: type)
-                                selectedMedia = .video(player: player!)
                             }
                         Image(systemName: "play.fill")
                             .font(.largeTitle)
                             .foregroundColor(.white)
                             .bold()
                             .onTapGesture {
+                                // Reset player before loading new video
+                                self.player = nil
                                 loadVideo(of: type)
-                                selectedMedia = .video(player: player!)
                             }
                     }
                 } else {
@@ -171,7 +190,29 @@ struct Tutorials: View {
         .padding(10)
     }
     
-    
+//    private func pagination(type: TutorialType) -> some View {
+//        VStack {
+//            ScrollView(.horizontal, showsIndicators: false) {
+//                HStack(spacing: 0) {
+//                    ForEach(0..<type.numberOfCards, id: \.self) { index in
+//                        cardView(for: index, of: type)
+//                    }
+//                }
+//                divider
+//            }
+//            .ignoresSafeArea()
+//            .scrollTargetLayout()
+//            .scrollBounceBehavior(.basedOnSize)
+//            .scrollTargetBehavior(.viewAligned)
+//            .scrollPosition(id: $activeCard)
+//            .scrollIndicators(.never)
+//        }
+//        .frame(height: totalHeight * 0.4)
+//        .onAppear {
+//            activeCard = 0
+//            loadVideo(of: type)
+//        }
+//    }
     
     private func pagination(type: TutorialType) -> some View {
         VStack {
@@ -192,8 +233,7 @@ struct Tutorials: View {
         }
         .frame(height: totalHeight * 0.4)
         .onAppear {
-            activeCard = 0
-            loadVideo(of: type)
+            activeCard = 0 // Only set the active card, do not load video here
         }
     }
     
@@ -374,5 +414,37 @@ struct FullScreenMediaView: View {
 struct Tutorials_Previews: PreviewProvider {
     static var previews: some View {
         Tutorials()
+    }
+}
+
+import AVKit
+import Foundation
+
+class VideoLoader {
+    static let shared = VideoLoader()
+    
+    private init() {}
+
+    func loadVideo(for type: TutorialType, completion: @escaping (AVPlayer?) -> Void) {
+        let tag = "tutorial-videos"
+        let request = NSBundleResourceRequest(tags: [tag])
+        
+        request.beginAccessingResources { error in
+            if let error = error {
+                print("ODR loading failed: \(error)")
+                completion(nil)
+                return
+            }
+
+            if let url = Bundle.main.url(forResource: type.videoName, withExtension: type.videoType) {
+                let player = AVPlayer(url: url)
+                DispatchQueue.main.async {
+                    completion(player)
+                }
+            } else {
+                print("Video not found for \(type.videoName).\(type.videoType)")
+                completion(nil)
+            }
+        }
     }
 }
