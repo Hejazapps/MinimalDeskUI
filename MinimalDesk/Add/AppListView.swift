@@ -182,15 +182,18 @@ private extension AppListView {
             viewModel.favApps[cardIndex].forEach { app in
                 selectedIndices.insert(app["name"] ?? "Nil")
             }
-            
             return
         }
-        
+
+        // Remove or comment this block if you don't want automatic selection:
+        /*
         let lim = min(6, viewModel.appList.count)
         viewModel.appList[0..<lim].forEach { app in
             selectedIndices.insert(app.appName)
         }
+        */
     }
+
     
     func onSelectingApp(_ name: String) {
         if selectedIndices.contains(name) {

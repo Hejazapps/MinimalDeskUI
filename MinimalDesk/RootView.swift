@@ -55,7 +55,6 @@ struct RootView: View {
                         .foregroundColor(item == 2 ? .blue : .white)
                         .padding(.top ,5)
                 }
-            
             AppLocker()
                 .tabItem(3) {
                     Image(systemName: "lock.app.dashed")
