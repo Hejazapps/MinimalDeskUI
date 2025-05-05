@@ -77,24 +77,24 @@ struct Tutorials: View {
     //        }
     //    }
     
-//    private func loadVideo(of type: TutorialType) {
-//        let tag = "tutorial-videos"
-//        let request = NSBundleResourceRequest(tags: [tag])
-//        request.beginAccessingResources { error in
-//            if let error = error {
-//                print("Failed to load ODR resources: \(error)")
-//                return
-//            }
-//            
-//            if let videoURL = Bundle.main.url(forResource: type.videoName, withExtension: type.videoType) {
-//                DispatchQueue.main.async {
-//                    player = AVPlayer(url: videoURL)
-//                }
-//            } else {
-//                print("Video not found in ODR bundle.")
-//            }
-//        }
-//    }
+    //    private func loadVideo(of type: TutorialType) {
+    //        let tag = "tutorial-videos"
+    //        let request = NSBundleResourceRequest(tags: [tag])
+    //        request.beginAccessingResources { error in
+    //            if let error = error {
+    //                print("Failed to load ODR resources: \(error)")
+    //                return
+    //            }
+    //
+    //            if let videoURL = Bundle.main.url(forResource: type.videoName, withExtension: type.videoType) {
+    //                DispatchQueue.main.async {
+    //                    player = AVPlayer(url: videoURL)
+    //                }
+    //            } else {
+    //                print("Video not found in ODR bundle.")
+    //            }
+    //        }
+    //    }
     
     private func loadVideo(of type: TutorialType) {
         // Reset player before loading new video
@@ -114,7 +114,7 @@ struct Tutorials: View {
             }
         }
     }
-
+    
     
     private func circleWithNumberView(_ number: String) -> some View {
         Text(number)
@@ -190,29 +190,29 @@ struct Tutorials: View {
         .padding(10)
     }
     
-//    private func pagination(type: TutorialType) -> some View {
-//        VStack {
-//            ScrollView(.horizontal, showsIndicators: false) {
-//                HStack(spacing: 0) {
-//                    ForEach(0..<type.numberOfCards, id: \.self) { index in
-//                        cardView(for: index, of: type)
-//                    }
-//                }
-//                divider
-//            }
-//            .ignoresSafeArea()
-//            .scrollTargetLayout()
-//            .scrollBounceBehavior(.basedOnSize)
-//            .scrollTargetBehavior(.viewAligned)
-//            .scrollPosition(id: $activeCard)
-//            .scrollIndicators(.never)
-//        }
-//        .frame(height: totalHeight * 0.4)
-//        .onAppear {
-//            activeCard = 0
-//            loadVideo(of: type)
-//        }
-//    }
+    //    private func pagination(type: TutorialType) -> some View {
+    //        VStack {
+    //            ScrollView(.horizontal, showsIndicators: false) {
+    //                HStack(spacing: 0) {
+    //                    ForEach(0..<type.numberOfCards, id: \.self) { index in
+    //                        cardView(for: index, of: type)
+    //                    }
+    //                }
+    //                divider
+    //            }
+    //            .ignoresSafeArea()
+    //            .scrollTargetLayout()
+    //            .scrollBounceBehavior(.basedOnSize)
+    //            .scrollTargetBehavior(.viewAligned)
+    //            .scrollPosition(id: $activeCard)
+    //            .scrollIndicators(.never)
+    //        }
+    //        .frame(height: totalHeight * 0.4)
+    //        .onAppear {
+    //            activeCard = 0
+    //            loadVideo(of: type)
+    //        }
+    //    }
     
     private func pagination(type: TutorialType) -> some View {
         VStack {
@@ -424,7 +424,7 @@ class VideoLoader {
     static let shared = VideoLoader()
     
     private init() {}
-
+    
     func loadVideo(for type: TutorialType, completion: @escaping (AVPlayer?) -> Void) {
         let tag = "tutorial-videos"
         let request = NSBundleResourceRequest(tags: [tag])
@@ -435,7 +435,7 @@ class VideoLoader {
                 completion(nil)
                 return
             }
-
+            
             if let url = Bundle.main.url(forResource: type.videoName, withExtension: type.videoType) {
                 let player = AVPlayer(url: url)
                 DispatchQueue.main.async {

@@ -293,7 +293,6 @@ struct Settings: View {
                             //                            openApp(urlString: "mailto:?subject=Feedback&body=Hello,")
                             
                             openApp(urlString: "mailto:assistance.minimaldesk@gmail.com?subject=Feedback%20about%20LessPhone%20app&body=Hello,")
-                            
                         }
                     Image("rateApp")
                         .resizable()

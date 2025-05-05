@@ -24,8 +24,8 @@ let wallpaperInstructions: [String] = [
     "Tap To All Then Select The Saved Wallpaper",
     "Tap to Add Button",
     "Now Tap To Customize Home Screen",
-    "Select Blur Option",
-    "Enjoy Your New Wallpaper"
+    "Select Blur Option"
+    // "Enjoy Your New Wallpaper"
 ]
 
 let widgetInstructions: [String] = [
@@ -126,7 +126,7 @@ public enum TutorialType: String, Identifiable {
     var numberOfCards: Int {
         switch self {
         case .wallpaper:
-            return 10
+            return 9
         case .widget:
             return 5
         case .customApps:
