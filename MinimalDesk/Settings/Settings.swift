@@ -149,7 +149,7 @@ struct Settings: View {
                                                 
                                                 Text(item.rawValue)
                                                     .foregroundColor(Color.white)
-                                                    //.fixedSize(horizontal: false, vertical: true)
+                                                //.fixedSize(horizontal: false, vertical: true)
                                                     .font(.system(size: 14, weight: .medium))
                                                 
                                                 

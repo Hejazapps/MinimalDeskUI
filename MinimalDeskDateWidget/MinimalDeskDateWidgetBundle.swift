@@ -15,9 +15,6 @@ struct MinimalDeskDateWidgetBundle: WidgetBundle {
     }
 }
 
-
-
-
 // MARK: - Utility Functions
 func log(
     _ message: Any = "",

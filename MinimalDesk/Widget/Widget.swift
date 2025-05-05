@@ -119,11 +119,9 @@ struct Widget: View {
                 }
         }
         
-        
     }
 }
 
 #Preview {
-    
     Widget()
 }

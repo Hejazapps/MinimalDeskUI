@@ -55,55 +55,55 @@ struct FavAppWidgetEntryView : View {
     }
     
     var body: some View {
-        //        ZStack {
-        //            Color(hex: widgetConfig.backgroundColor)
-        //                .ignoresSafeArea()
-        
-        if favApps.isEmpty {
-            Text("Add Favorite apps to be shown here.")
-                .font(.title2)
-                .multilineTextAlignment(.center)
-                .foregroundColor(Color(hex: widgetConfig.fontColor))
+        ZStack {
+            Color(hex: widgetConfig.backgroundColor)
                 .ignoresSafeArea()
-        } else {
-            HStack {
-                if getAlignment(widgetConfig.alignment) == .trailing {
-                    Spacer()
-                }
-                
-                VStack(alignment: getAlignment(widgetConfig.alignment), spacing: widgetConfig.spacing) {
+            
+            if favApps.isEmpty {
+                Text("Add Favorite apps to be shown here.")
+                    .font(.title2)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(Color(hex: widgetConfig.fontColor))
+                    .ignoresSafeArea()
+            } else {
+                HStack {
+                    if getAlignment(widgetConfig.alignment) == .trailing {
+                        Spacer()
+                    }
                     
-                    ForEach(favApps.prefix(widgetConfig.maxNumberOfApps), id: \.self) { app in
+                    VStack(alignment: getAlignment(widgetConfig.alignment), spacing: widgetConfig.spacing) {
                         
-                        Button(intent: OpenAppIntent(urlStr: app["link"] ?? "Empty Link")) {
-                            Text(app["name"] ?? "Loading...")
-                                .foregroundColor(Color(hex: widgetConfig.fontColor))
+                        ForEach(favApps.prefix(widgetConfig.maxNumberOfApps), id: \.self) { app in
+                            
+                            Button(intent: OpenAppIntent(urlStr: app["link"] ?? "Empty Link")) {
+                                Text(app["name"] ?? "Loading...")
+                                    .foregroundColor(Color(hex: widgetConfig.fontColor))
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            .font(Font.custom(widgetConfig.fontType, size: CGFloat(widgetConfig.fontSize)))
                         }
-                        .buttonStyle(PlainButtonStyle())
-                        .font(Font.custom(widgetConfig.fontType, size: CGFloat(widgetConfig.fontSize)))
                     }
-                }
-                .padding(.horizontal, 25)
-                .onAppear {
-                    let userDefault = UserDefaults(suiteName: "group.minimaldesk") ?? UserDefaults()
-                    favApps = (userDefault.value(forKey: "favorite-apps\(cardIndex)") as? [[String: String]] ?? [])
-                        .sorted { Int($0["rank"] ?? "") ?? 0 < Int($1["rank"] ?? "") ?? 0 }
-                    
-                    log(favApps)
-                    
-                    let config = userDefault.value(forKey: "favorite-apps-config") as? Data ?? Data()
-                    if let widgetConfig = try? JSONDecoder().decode(FavAppWidgetConfig.self, from: config) {
-                        FavAppWidgetConfig.defaultConfig = widgetConfig
-                        self.widgetConfig = widgetConfig
+                    .padding(.horizontal, 25)
+                    .onAppear {
+                        let userDefault = UserDefaults(suiteName: "group.minimaldesk") ?? UserDefaults()
+                        favApps = (userDefault.value(forKey: "favorite-apps\(cardIndex)") as? [[String: String]] ?? [])
+                            .sorted { Int($0["rank"] ?? "") ?? 0 < Int($1["rank"] ?? "") ?? 0 }
+                        
+                        log(favApps)
+                        
+                        let config = userDefault.value(forKey: "favorite-apps-config") as? Data ?? Data()
+                        if let widgetConfig = try? JSONDecoder().decode(FavAppWidgetConfig.self, from: config) {
+                            FavAppWidgetConfig.defaultConfig = widgetConfig
+                            self.widgetConfig = widgetConfig
+                        }
                     }
-                }
-                
-                if getAlignment(widgetConfig.alignment) == .leading {
-                    Spacer()
+                    
+                    if getAlignment(widgetConfig.alignment) == .leading {
+                        Spacer()
+                    }
                 }
             }
         }
-        //}
     }
     
     private func getAlignment(_ alignmentString: String) -> HorizontalAlignment {

@@ -21,10 +21,6 @@ struct FavAppWidgetBundle: WidgetBundle {
 }
 
 
-
-
-
-
 // MARK: - Utility Functions
 func log(
     _ message: Any = "",

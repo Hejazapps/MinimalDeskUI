@@ -13,12 +13,12 @@ struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date())
     }
-
+    
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         let entry = SimpleEntry(date: Date())
         completion(entry)
     }
-
+    
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
         
@@ -28,7 +28,7 @@ struct Provider: TimelineProvider {
             let entry = SimpleEntry(date: entryDate)
             entries.append(entry)
         }
-
+        
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -48,9 +48,12 @@ struct MinimalDeskDateWidgetEntryView : View {
         self.entry = entry
         self.widgetConfig = FavAppWidgetConfig.defaultConfig
     }
-
+    
     var body: some View {
+        
         ZStack {
+            Color(hex: widgetConfig.backgroundColor)
+                .ignoresSafeArea()
             
             DateWidgetView(height: height)
         }
@@ -59,12 +62,12 @@ struct MinimalDeskDateWidgetEntryView : View {
 
 struct MinimalDeskDateWidget: Widget {
     let kind: String = "MinimalDeskDateWidget"
-
+    
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             if #available(iOS 17.0, *) {
                 MinimalDeskDateWidgetEntryView(entry: entry)
-                    //.containerBackground(.black, for: .widget)
+                //.containerBackground(.black, for: .widget)
                     .containerBackground(for: .widget, alignment: .center, content: { EmptyView() })
             } else {
                 MinimalDeskDateWidgetEntryView(entry: entry)
