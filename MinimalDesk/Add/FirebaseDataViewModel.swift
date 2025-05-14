@@ -328,6 +328,7 @@ extension FirebaseDataViewModel {
     func saveFavoriteApps(in selectedIndices: Set<String>, for cardIndex: Int) {
         var favApps = appList.map { app in
             guard selectedIndices.contains(app.appName) else { return [String: String]() }
+            print(app.appName)
             return ["name": app.appName, "link": app.appLink, "rank": "\(app.appRank)"]
         }.filter { $0 != [String: String]() }
         
@@ -367,6 +368,45 @@ private extension FirebaseDataViewModel {
         log("Custom Apps: \(customAppList)")
     }
     
+//    func fetchAllAppsFromServer() {
+//        var remoteAppList = [Appp]()
+//        
+//        dbRef.getDocuments { [weak self] snapshot, error in
+//            guard error == nil else {
+//                log("Failed with - \(String(describing: error))")
+//                DispatchQueue.main.async {
+//                    self?.showToast(message: "Failed to fetch data. Loading saved data.")
+//                    self?.loadSavedAppList() // Fallback to saved data if server fetch fails
+//                }
+//                return
+//            }
+//            
+//            snapshot?.documents.forEach { document in
+//                let doc = document.data()
+//                guard
+//                    let appName = doc["appName"] as? String,
+//                    let appLink = doc["appLink"] as? String,
+//                    let rank = doc["rank"] as? Int
+//                else {
+//                    log("Did not find the properties name and/or link")
+//                    return
+//                }
+//                
+//                remoteAppList.append(Appp(appName: appName, appLink: appLink, appRank: rank))
+//            }
+//            
+//            guard let self else { return }
+//            
+//            self.remoteAppList = remoteAppList
+//            self.mergeRemoteAndLocalApps()
+//            self.saveAppListToUserDefaults() // Save the merged appList to UserDefaults
+//            
+//            (0...20).forEach { cardIndex in
+//                self.setAppsOnAddView(for: cardIndex)
+//            }
+//        }
+//    }
+    
     func fetchAllAppsFromServer() {
         var remoteAppList = [Appp]()
         
@@ -382,15 +422,20 @@ private extension FirebaseDataViewModel {
             
             snapshot?.documents.forEach { document in
                 let doc = document.data()
+                
+                // Ensure both appName and appLink are present
                 guard
-                    let appName = doc["appName"] as? String,
-                    let appLink = doc["appLink"] as? String,
-                    let rank = doc["rank"] as? Int
+                    let appName = doc["appName"] as? String, !appName.isEmpty,
+                    let appLink = doc["appLink"] as? String, !appLink.isEmpty
                 else {
-                    log("Did not find the properties name and/or link")
-                    return
+                    log("Missing appName or appLink")
+                    return // Skip this document if appName or appLink is missing
                 }
                 
+                // Optional: Check if appRank is available, otherwise, you can set a default value
+                let rank = doc["rank"] as? Int ?? 0
+                
+                // Create the Appp object and add it to the remoteAppList
                 remoteAppList.append(Appp(appName: appName, appLink: appLink, appRank: rank))
             }
             
@@ -405,11 +450,15 @@ private extension FirebaseDataViewModel {
             }
         }
     }
+
+    
     
     func mergeRemoteAndLocalApps() {
         self.appList = (self.customAppList + self.remoteAppList)
             .sorted { $0.appRank < $1.appRank }
         self.onlyAppName = self.appList.map { $0.appName }
+        
+        print("All App Names: \(self.onlyAppName)")
     }
     
     func saveAppListToUserDefaults() {
