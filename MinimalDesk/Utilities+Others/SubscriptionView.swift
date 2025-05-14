@@ -17,7 +17,12 @@ struct SubscriptionView: View {
                     ZStack(alignment: .top) {
                         Image(.subscriptionBG)
                             .resizable()
-                            .scaledToFit()
+                            .scaledToFill()
+                            .frame(height: 300)
+                            .frame(maxWidth: .infinity)
+                            .clipped()
+                            .ignoresSafeArea(edges: .top)
+                        
                         
                         VStack {
                             HStack {
@@ -42,17 +47,24 @@ struct SubscriptionView: View {
                                         }
                                         isLoading = false
                                     }
+                                    
                                 }
                             }
-                            .padding(.top, 30)
+                            .padding(.top, 20)
+                            .padding(.leading, 100)
+                            .padding(.trailing, 100)
+                            .foregroundColor(.white)
                             
                             Text("LessPhone Pro")
                                 .font(.largeTitle)
+                                .foregroundColor(.white)
                                 .bold()
                             
                             Text("Break free from digital overlord.")
+                                .foregroundColor(.white)
                         }
                         .padding()
+                        .padding(.top, 30)
                     }
                     
                     Text("Get Premium")
@@ -133,12 +145,14 @@ struct SubscriptionView: View {
                     ProgressView()
                         .progressViewStyle(.circular)
                         .tint(.white)
+                        .tint(.black)
                         .scaleEffect(3)
                 }
             }
         }
-        .foregroundStyle(.white)
-        .background(.black)
+        //.foregroundStyle(.white)
+        .foregroundStyle(.black)
+        .background(Color.white)
         .edgesIgnoringSafeArea(.all)
         .task {
             await store.updateCustomerProductStatus()
@@ -162,7 +176,8 @@ struct SubscriptionView: View {
                     .resizable()
                     .frame(width: 20, height: 20)
                     .foregroundColor(.blue)
-                    .background(.white)
+                //.background(.white)
+                    .background(.clear)
                     .clipShape(Circle())
                     .padding(.leading)
             } else {
@@ -189,7 +204,7 @@ struct SubscriptionView: View {
             
             if let imageName = imageName {
                 Image(imageName)
-                    .resizable()
+                //.resizable()
                     .frame(width: 45, height: 45)
                     .padding(.trailing)
             }

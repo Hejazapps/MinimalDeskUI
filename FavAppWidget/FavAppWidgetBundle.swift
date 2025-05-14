@@ -16,7 +16,7 @@ struct FavAppWidgetBundle: WidgetBundle {
         FavAppWidget(cardIndex: 2)
         FavAppWidget(cardIndex: 3)
         FavAppWidget(cardIndex: 4)
-        FavAppWidget(cardIndex: 5)
+        //FavAppWidget(cardIndex: 5)
     }
 }
 

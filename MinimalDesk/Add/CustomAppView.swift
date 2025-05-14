@@ -166,36 +166,40 @@ struct CustomAppView: View {
             
             // MARK: - DEEPLINK
             VStack(alignment: .leading) {
-                if deepLinkType == .urlScheme {
-                    // MARK: - URL Scheme
-                    Text("URL Schemes, like 'Camera://' often follow a structured format that includes the target application's identifier.")
-                        .padding([.top, .leading, .bottom])
-                        .lineLimit(nil)  // Allow multi-line text
-                        .fixedSize(horizontal: false, vertical: true)
-                    
-                    Divider()
-                        .background(Color(rgbRed: 0x2f, green: 0x32, blue: 0x3c))
-                    
-                    Text("As an alternative to finding the URL Scheme, create an \"Open App\" Shortcut in the Shortcuts app.")
-                        .padding([.horizontal, .bottom])
-                        .lineLimit(nil)  // Allow multi-line text
-                        .fixedSize(horizontal: false, vertical: true)
-                    
-                    Text("Create New Shortcut")
-                        .font(Font.custom("Inter", size: 16))
-                        .foregroundStyle(Color(rgbRed: 0x8a, green: 0xc4, blue: 0x4b))
-                        .padding([.horizontal, .bottom])
-                        .padding(.top, 5)
-                        .lineLimit(nil)  // Allow multi-line text
-                }
+                //if deepLinkType == .urlScheme {
+                // MARK: - URL Scheme
+                Text("URL Schemes, like 'Camera://' often follow a structured format that includes the target application's identifier.")
+                    .padding([.top, .leading, .bottom])
+                    .lineLimit(nil)  // Allow multi-line text
+                    .fixedSize(horizontal: false, vertical: true)
+                
+                Divider()
+                    .background(Color(rgbRed: 0x2f, green: 0x32, blue: 0x3c))
+                
+                Text("As an alternative to finding the URL Scheme, create an \"Open App\" Shortcut in the Shortcuts app.")
+                    .padding([.horizontal, .bottom])
+                    .lineLimit(nil)  // Allow multi-line text
+                    .fixedSize(horizontal: false, vertical: true)
+                
+                Text("Create New Shortcut")
+                    .font(Font.custom("Inter", size: 16))
+                    .foregroundStyle(Color(rgbRed: 0x8a, green: 0xc4, blue: 0x4b))
+                    .padding([.horizontal, .bottom])
+                    .padding(.top, 5)
+                    .lineLimit(nil)  // Allow multi-line text
+                    .onTapGesture {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            testCustomApp()
+                        }
+                    }
+                
+                //}
             }
             .background(Color(rgbRed: 28, green: 28, blue: 28))
             .clipShape(RoundedRectangle(cornerRadius: 9))
             .padding(.horizontal)
             .padding(.top)
-            .frame(maxWidth: .infinity)  // Make sure the VStack stretches horizontally
-            
-            
+            .frame(maxWidth: .infinity)
             
             // MARK: - Custom AppList
             ScrollView {

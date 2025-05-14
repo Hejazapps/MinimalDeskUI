@@ -19,7 +19,7 @@ struct Settings: View {
     @State private var appIcon = "AppIcon"
     
     private let colors = ["System", "Dark", "Light"]
-    let items: [SettingsOptions] = [.downloadText, .share, .faq]
+    let items: [SettingsOptions] = [.share, .faq]
     
     private var rootViewController: UIViewController? {
         UIApplication.shared.connectedScenes
@@ -150,7 +150,7 @@ struct Settings: View {
                                                 Text(item.rawValue)
                                                     .foregroundColor(Color.white)
                                                 //.fixedSize(horizontal: false, vertical: true)
-                                                    .font(.system(size: 14, weight: .medium))
+                                                    .font(.system(size: 17, weight: .medium))
                                                 
                                                 
                                                 Spacer()
@@ -162,7 +162,7 @@ struct Settings: View {
                                             )
                                             .listRowInsets(EdgeInsets())
                                             .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                            .frame(height: 50)
+                                            //.frame(height: 50)
                                             //                                            .onTapGesture {
                                             //                                                switch item {
                                             //                                                case .share:
@@ -244,17 +244,31 @@ struct Settings: View {
         
         rootViewController.present(alert, animated: true, completion: nil)
     }
+//    
+//    func shareAppLink() {
+//        let appID = "APP_ID" // TODO: Replace with app’s ID (found in App Store Connect)
+//        let appStoreLink = "https://apps.apple.com/app/id\(appID)"
+//        let activityViewController = UIActivityViewController(activityItems: [appStoreLink], applicationActivities: nil)
+//        activityViewController.overrideUserInterfaceStyle = .dark
+//        
+//        if let rootViewController {
+//            rootViewController.present(activityViewController, animated: true, completion: nil)
+//        }
+//    }
     
     func shareAppLink() {
-        let appID = "APP_ID" // TODO: Replace with app’s ID (found in App Store Connect)
+        let appID = "APP_ID" // Replace with your real App Store app ID
         let appStoreLink = "https://apps.apple.com/app/id\(appID)"
-        let activityViewController = UIActivityViewController(activityItems: [appStoreLink], applicationActivities: nil)
+        let shareText = "Download Less Phone on the App Store"
+        let activityViewController = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
         activityViewController.overrideUserInterfaceStyle = .dark
-        
+
         if let rootViewController {
             rootViewController.present(activityViewController, animated: true, completion: nil)
         }
     }
+
+    
     //"https://docs.google.com/document/d/11PN0_mtIvf5DWj5663SZtJAYtgANvhWPkWIX3YU2eI/edit?usp=sharing"
     func openFAQ() {
         if let url = URL(string:

@@ -71,7 +71,7 @@ public enum SettingsOptions: String {
     case review = "Give us a 5-star review"
     case share = "Share to Friends"
     case faq = "Frequently Asked Questions"
-    case downloadText = "Download Less Phone on the App Store"
+    //case downloadText = "Download Less Phone on the App Store"
 }
 
 public enum TutorialType: String, Identifiable {
