@@ -16,13 +16,26 @@ struct AppListView: View {
     @State private var selectedIndices: Set<String> = []
     private var cardIndex: Int = 0
     
-    var searchResults: [String] {
-        if searchText.isEmpty {
-            return viewModel.onlyAppName
-        } else {
-            return viewModel.onlyAppName.filter { $0.lowercased().contains(searchText.lowercased()) }
+        var searchResults: [String] {
+            if searchText.isEmpty {
+                return viewModel.onlyAppName
+            } else {
+                return viewModel.onlyAppName.filter { $0.lowercased().contains(searchText.lowercased()) }
+            }
         }
-    }
+    
+//    var searchResults: [String] {
+//        let apps = viewModel.onlyAppName.sorted { $0.localizedCaseInsensitiveCompare($1) == .orderedAscending }
+//        
+//        if searchText.isEmpty {
+//            return apps
+//        } else {
+//            return apps.filter { $0.lowercased().contains(searchText.lowercased()) }
+//        }
+//    }
+//    
+    
+    
     
     init(viewModel: FirebaseDataViewModel, cardIndex: Int = 0) {
         log("IN")
@@ -96,10 +109,8 @@ private extension AppListView {
     func guideText() -> some View {
         HStack {
             Spacer()
-            
             Text("Pick your top 6 frequently used apps to keep on your home screen for easy access, avoiding clutter and distractions.")
                 .multilineTextAlignment(.center)
-            
             Spacer()
         }
     }
@@ -136,7 +147,7 @@ private extension AppListView {
                 }
             }
             .padding()
-            .listRowInsets(EdgeInsets()) // Remove default padding
+            .listRowInsets(EdgeInsets())
             .listRowSeparator(.hidden)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .listRowBackground(Color.black)
@@ -173,6 +184,7 @@ private extension AppListView {
                 }
         }
     }
+    
 }
 
 // MARK: - Utility Functions
@@ -184,16 +196,15 @@ private extension AppListView {
             }
             return
         }
-
+        
         // Remove or comment this block if you don't want automatic selection:
         /*
-        let lim = min(6, viewModel.appList.count)
-        viewModel.appList[0..<lim].forEach { app in
-            selectedIndices.insert(app.appName)
-        }
-        */
+         let lim = min(6, viewModel.appList.count)
+         viewModel.appList[0..<lim].forEach { app in
+         selectedIndices.insert(app.appName)
+         }
+         */
     }
-
     
     func onSelectingApp(_ name: String) {
         if selectedIndices.contains(name) {
@@ -210,7 +221,6 @@ private extension AppListView {
                 }
             }
         }
-        
         log(selectedIndices)
     }
 }

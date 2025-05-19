@@ -454,8 +454,22 @@ private extension FirebaseDataViewModel {
     
     
     func mergeRemoteAndLocalApps() {
+//        self.appList = (self.customAppList + self.remoteAppList)
+//            .sorted { $0.appRank < $1.appRank }
+        
         self.appList = (self.customAppList + self.remoteAppList)
-            .sorted { $0.appRank < $1.appRank }
+            .sorted {
+                if $0.appRank > 0 && $1.appRank > 0 {
+                    return $0.appRank < $1.appRank
+                } else if $0.appRank > 0 {
+                    return true
+                } else if $1.appRank > 0 {
+                    return false
+                } else {
+                    return $0.appName.lowercased() < $1.appName.lowercased()
+                }
+            }
+
         self.onlyAppName = self.appList.map { $0.appName }
         
         print("All App Names: \(self.onlyAppName)")
