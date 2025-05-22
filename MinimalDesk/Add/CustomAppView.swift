@@ -18,6 +18,10 @@ struct CustomAppView: View {
     @State var shortcut: String = ""
     @State var deepLinkType: DeepLinkType = .urlScheme
     
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
+    @State private var showInstructions = false
+    
     private var placeHolderUrlScheme: String {
         guard scheme.isEmpty else { return scheme }
         guard appName.isEmpty else { return "\(appName.lowercased())://" }
@@ -37,6 +41,7 @@ struct CustomAppView: View {
             return scheme.isEmpty ? placeHolderUrlScheme : scheme
         } else {
             let shortcutName = (shortcut.isEmpty ? appName : shortcut).replacingOccurrences(of: " ", with: "%20")
+            print("shortcuts://run-shortcut?name=\(shortcutName)")
             return "shortcuts://run-shortcut?name=\(shortcutName)"
         }
     }
@@ -230,27 +235,87 @@ struct CustomAppView: View {
         }
         .background(.black)
         .foregroundStyle(.white)
+
     }
 }
 
 // MARK: - Helper Methods
 private extension CustomAppView {
+    //    func testCustomApp() {
+    ////        let application = UIApplication.shared
+    ////
+    ////        guard let url = URL(string: appLink) else {
+    ////            log("Invalid url.")
+    ////            return
+    ////        }
+    ////
+    ////        application.open(url, options: [:]) { (success) in
+    ////            if success {
+    ////                log("\(appLink) successfully launched.")
+    ////            } else {
+    ////                log("\(appLink) failed to launch.")
+    ////            }
+    ////        }
+    //
+    //
+    //
+    //            let shortcutName = (shortcut.isEmpty ? appName : shortcut)
+    //
+    //            // Fallback if both are empty
+    //            let finalName = shortcutName.isEmpty ? "My App Shortcut" : shortcutName
+    //
+    //            // Encode for URL
+    //            guard let encodedName = finalName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+    //                showingAlert = true
+    //                alertMessage = "Invalid shortcut name."
+    //                return
+    //            }
+    //
+    //            let shortcutURL = URL(string: "shortcuts://create-shortcut?name=\(encodedName)")!
+    //
+    //            if UIApplication.shared.canOpenURL(shortcutURL) {
+    //                UIApplication.shared.open(shortcutURL)
+    //            } else {
+    //                showingAlert = true
+    //                alertMessage = "Shortcuts app is not available. Please install it from the App Store."
+    //            }
+    //
+    //
+    //
+    //    }
+    
+    
+    
     func testCustomApp() {
-        let application = UIApplication.shared
+        let shortcutName = (shortcut.isEmpty ? appName : shortcut)
         
-        guard let url = URL(string: appLink) else {
-            log("Invalid url.")
+        // Fallback if both are empty
+        let finalName = shortcutName.isEmpty ? "My App Shortcut" : shortcutName
+        
+        // Encode for URL
+        guard let encodedName = finalName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            showingAlert = true
+            alertMessage = "Invalid shortcut name."
             return
         }
         
-        application.open(url, options: [:]) { (success) in
-            if success {
-                log("\(appLink) successfully launched.")
-            } else {
-                log("\(appLink) failed to launch.")
+        let shortcutURL = URL(string: "shortcuts://create-shortcut?name=\(encodedName)")!
+
+        if UIApplication.shared.canOpenURL(shortcutURL) {
+            UIApplication.shared.open(shortcutURL)
+            
+            // Show instructions after opening the shortcut link
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                showInstructions = true
             }
+        } else {
+            showingAlert = true
+            alertMessage = "Shortcuts app is not available. Please install it from the App Store."
         }
+        
+        
     }
+    
 }
 
 #Preview {

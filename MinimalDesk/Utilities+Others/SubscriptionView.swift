@@ -134,7 +134,7 @@ struct SubscriptionView: View {
                         }
                         .font(.caption2)
                     }
-                    .padding(.top, 5)
+                    .padding(.top, 0)
                 }
                 
                 if shouldShowProgressView {

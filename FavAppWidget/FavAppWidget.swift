@@ -144,15 +144,13 @@ struct FavAppWidget: Widget {
         //.configurationDisplayName("LessPhone") // also add the page number here
         .configurationDisplayName(
             cardIndex == 0 ? "LessPhone - Page 1" :
-            cardIndex == 1 ? "LessPhone - Page 2" :
-            cardIndex == 2 ? "LessPhone - Page 3" :
-            cardIndex == 3 ? "LessPhone - Page 4" :
-            cardIndex == 4 ? "LessPhone - Page 5" :
-            "LessPhone"
+                cardIndex == 1 ? "LessPhone - Page 2" :
+                cardIndex == 2 ? "LessPhone - Page 3" :
+                cardIndex == 3 ? "LessPhone - Page 4" :
+                cardIndex == 4 ? "LessPhone - Page 5" :
+                "LessPhone"
         )
-
-
-
+        
         .description("Display your selected apps on Home Screen")
         .supportedFamilies([.systemLarge])
     }
